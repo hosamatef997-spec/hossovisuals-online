@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-wa="971556226197" data-mail="hosamatef997@gmail.com">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>سطّب Claude Code على جهازك · EP 05 · HOSSO Visuals</title>
+<meta name="description" content="خطوات الحلقة الخامسة من «بتعلّم Claude قدامكم»: الاشتراك اللي محتاجه، وأمر التسطيب الرسمي، وإزاي تتأكد إنه اشتغل، وأول تشغيل في فولدر مشروعك." />
+<meta property="og:title" content="سطّب Claude Code على جهازك · EP 05 · HOSSO Visuals" />
+<meta property="og:description" content="خطوات الحلقة الخامسة من «بتعلّم Claude قدامكم»: الاشتراك اللي محتاجه، وأمر التسطيب الرسمي، وإزاي تتأكد إنه اشتغل، وأول تشغيل في فولدر مشروعك." />
+<meta property="og:url" content="https://hossovisuals.online/ep05/" />
+<meta property="og:image" content="https://hossovisuals.online/og-cover.jpg" />
+<meta property="og:type" content="website" />
+<meta name="theme-color" content="#ede4d3" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600&family=El+Messiri:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/brand.css" />
+<link rel="stylesheet" href="/brand-pages.css" />
+</head>
+<body data-lang="ar" dir="rtl">
+  <nav id="nav" class="solid">
+    <a class="logo" href="/" aria-label="HOSSO Visuals home"><img src="/logo-mark-dark.png" alt="HOSSO Visuals" /></a>
+    <div class="nav-links">
+      <a href="/"><span data-en>Home</span><span data-ar>الرئيسية</span></a>
+      <a href="/#story"><span data-en>My Story</span><span data-ar>قصتي</span></a>
+      <a href="/#gallery"><span data-en>Gallery</span><span data-ar>المعرض</span></a>
+      <a href="/claude/"><span data-en>Learning Claude</span><span data-ar>بتعلّم Claude</span></a>
+      <a href="/library/"><span data-en>Library</span><span data-ar>المكتبة</span></a>
+      <a href="/#contact"><span data-en>Contact</span><span data-ar>تواصل</span></a>
+    </div>
+    <div class="nav-right">
+      <div class="lang-toggle"><button onclick="setLang('en')">EN</button><button onclick="setLang('ar')">ع</button></div>
+      <a class="nav-cta whatsapp-btn" href="/#contact"><span data-en>Let's talk</span><span data-ar>كلّمني</span></a>
+      <button class="nav-burger" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <main class="inner">
+
+    <section class="block"><div class="wrap">
+      <div class="page-head">
+        <div class="eyebrow"><span data-en>Learning Claude in public · EP 05</span><span data-ar>بتعلّم Claude قدامكم · EP 05</span></div>
+        <h1 class="section-title" dir="rtl">سطّب <em>Claude Code</em> على جهازك</h1>
+        <div class="thin-rule"></div>
+        <p class="x-lead" dir="rtl">خطوات الحلقة الخامسة من «بتعلّم Claude قدامكم»: الاشتراك اللي محتاجه، وأمر التسطيب الرسمي، وإزاي تتأكد إنه اشتغل، وأول تشغيل في فولدر مشروعك.</p>
+        <div class="cta-row"><a class="btn-gold" href="https://www.instagram.com/hossovisuals.ae/" target="_blank" rel="noopener"><span data-en>Watch the reel</span><span data-ar>شوف الريل</span></a><a class="btn-outline" href="/claude/"><span data-en>All episodes</span><span data-ar>كل الحلقات</span></a></div>
+      </div>
+      <ol class="x-steps" dir="rtl">
+        <li><div class="x-num">01</div><div>
+          <h2>محتاج <em>اشتراك</em></h2><p>Claude Code شغال مع اشتراك Pro أو أعلى (Max، أو Team، أو Enterprise)، أو حساب Console بتاع الـ API. الباقة المجانية مش بتشغّله.</p>
+          
+          <a class="go" href="https://claude.com/pricing" target="_blank" rel="noopener">claude.com/pricing ↗</a>
+          
+        </div></li>
+        <li><div class="x-num">02</div><div>
+          <h2>افتح <em>PowerShell</em></h2><p>على ويندوز: دوس زرار الويندوز، واكتب PowerShell، وافتحه. على الماك: افتح Terminal.</p>
+          
+          
+          
+        </div></li>
+        <li><div class="x-num">03</div><div>
+          <h2>انسخ الأمر <em>الرسمي</em></h2><p>ده أمر التسطيب من صفحة Claude Code الرسمية. انسخه، وحطه في PowerShell، ودوس Enter. التسطيب مش بيبيّن تقدّم وهو شغال، فاستنى لحد ما يخلص.</p>
+          <div class="copy"><code>irm https://claude.ai/install.ps1 | iex</code><button data-copy="irm https://claude.ai/install.ps1 | iex"><span class="do">انسخ</span><span class="done">اتنسخ ✓</span></button></div>
+          <a class="go" href="https://code.claude.com/docs/en/quickstart" target="_blank" rel="noopener">صفحة البداية الرسمية ↗</a>
+          
+        </div></li>
+        <li><div class="x-num">04</div><div>
+          <h2>على <em>الماك</em></h2><p>على الماك أو لينكس، الأمر ده بدل اللي فوق، في Terminal:</p>
+          <div class="copy"><code>curl -fsSL https://claude.ai/install.sh | bash</code><button data-copy="curl -fsSL https://claude.ai/install.sh | bash"><span class="do">انسخ</span><span class="done">اتنسخ ✓</span></button></div>
+          
+          
+        </div></li>
+        <li><div class="x-num">05</div><div>
+          <h2>اتأكد إنه <em>اشتغل</em></h2><p>اقفل الشباك وافتح PowerShell جديد، واكتب الأمر ده. لو طلعلك رقم النسخة، يبقى كله تمام.</p>
+          <div class="copy"><code>claude --version</code><button data-copy="claude --version"><span class="do">انسخ</span><span class="done">اتنسخ ✓</span></button></div>
+          
+          
+        </div></li>
+        <li><div class="x-num">06</div><div>
+          <h2>اعمل فولدر <em>للمشروع</em></h2><p>Claude Code بيشتغل جوه الفولدر اللي إنت فيه. اعمل فولدر جديد وادخل جواه:</p>
+          <div class="copy"><code>mkdir my-first-project; cd my-first-project</code><button data-copy="mkdir my-first-project; cd my-first-project"><span class="do">انسخ</span><span class="done">اتنسخ ✓</span></button></div>
+          
+          
+        </div></li>
+        <li><div class="x-num">07</div><div>
+          <h2>شغّله <em>وكلّمه</em></h2><p>اكتب claude ودوس Enter. أول مرة هيفتحلك المتصفح تسجّل دخول بحسابك، وبعدها هيسألك لو بتثق في الفولدر ده. قوله آه، وابدأ كلّمه بالعربي عادي.</p>
+          <div class="copy"><code>claude</code><button data-copy="claude"><span class="do">انسخ</span><span class="done">اتنسخ ✓</span></button></div>
+          
+          
+        </div></li>
+      </ol>
+      <div class="note" dir="rtl"><h3>نصايح صغيرة</h3><ul><li>لو PowerShell قالك إن claude مش موجود، اقفل الشباك وافتح واحد جديد. لو لسه، الصفحة الرسمية فيها جزء «Fix your PATH».</li><li>لو كتبت الأمر في CMD بدل PowerShell هيطلعلك إن irm مش معروف. اتأكد إن السطر بيبدأ بـ PS.</li><li>Claude Code بيحدّث نفسه لوحده، فمش محتاج تسطّبه تاني.</li></ul></div>
+      <div class="next-up" dir="rtl"><div class="thin-rule"></div><p>الحلقة الجاية: أول مشروع في Claude Code، الأذونات والتخطيط والذاكرة.</p><div class="cta-row" style="justify-content:center"><a class="btn-gold" href="https://www.instagram.com/hossovisuals.ae/" target="_blank" rel="noopener"><span data-en>Follow so you don't miss it</span><span data-ar>تابعني عشان متفوتكش</span></a></div></div>
+    </div></section>
+  </main>
+  <footer>
+    <div class="wrap">
+      <a href="/"><img src="/logo-mark-dark.png" alt="HOSSO Visuals" /></a>
+      <div class="fl">
+        <a href="/"><span data-en>Home</span><span data-ar>الرئيسية</span></a>
+        <a href="/#story"><span data-en>My Story</span><span data-ar>قصتي</span></a>
+        <a href="/#gallery"><span data-en>Gallery</span><span data-ar>المعرض</span></a>
+        <a href="/claude/"><span data-en>Learning Claude</span><span data-ar>بتعلّم Claude</span></a>
+        <a href="/library/"><span data-en>Library</span><span data-ar>المكتبة</span></a>
+        <a href="/#contact"><span data-en>Contact</span><span data-ar>تواصل</span></a>
+        <a href="/links/"><span data-en>All links</span><span data-ar>كل اللينكات</span></a>
+      </div>
+      <small>© <span id="yr"></span> HOSSO Visuals — Hossam Atef · Dubai, UAE</small>
+    </div>
+  </footer>
+  <script src="/brand.js"></script>
+</body>
+</html>
