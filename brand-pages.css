@@ -192,3 +192,178 @@ footer { border-top-color: var(--border); }
 .x-dprompt { border-color: rgba(216,184,120,.55); background: rgba(244,239,230,.04); color: rgba(244,239,230,.9); }
 .x-dprompt li::marker { color: #D8B878; }
 .x-film .x-pcopy:focus-visible { outline-color: #D8B878; }
+
+/* ===================================================================================================================
+   Glass «زجاجي» — Hossam 2026-11-06: «اللينكات اللي تتبعت يكون زجاجي وحركات وأموشنات نفس الآيفون… بنفس الهوية بس بنظام
+   زجاجي… متغيرش الخط والألوان». Identity H stays exactly as it is (navy #0F1B33, deep #08101F, slate #5A6E93, champagne
+   #D8B878, ivory #F4EFE6, muted #A9B1C2; Beiruti + Bricolage Grotesque). The glass is only a material: translucent ivory
+   fills, a white specular edge, a soft deep shadow and a backdrop blur, over a slow field of slate and champagne light.
+   Inner pages only (the home page never loads this). Motion lives in brand.js and stops under prefers-reduced-motion.
+   =================================================================================================================== */
+:root {
+  --g-fill: linear-gradient(170deg, rgba(244,239,230,.15), rgba(244,239,230,.05) 46%, rgba(244,239,230,.07));
+  --g-fill-deep: rgba(8,16,31,.5);
+  --g-rim: rgba(244,239,230,.08);
+  --g-edge: inset 0 1px 0 rgba(255,255,255,.24), inset 0 -1px 0 rgba(255,255,255,.04);
+  --g-shadow: 0 22px 54px rgba(4,9,20,.42), 0 2px 6px rgba(4,9,20,.25);
+  --g-blur: blur(22px) saturate(165%);
+  --g-r: 28px;                                     /* the card corner, iOS-sized */
+  --sheet: cubic-bezier(.32, .72, 0, 1);           /* the iOS sheet curve */
+  --spring: cubic-bezier(.34, 1.56, .64, 1);       /* a press that springs back past its rest */
+}
+
+/* the light behind the glass: slate and a little champagne, drifting slowly so the glass has something to bend */
+body::before {
+  content: ""; position: fixed; inset: -18vmax; z-index: -1; pointer-events: none;
+  background:
+    radial-gradient(38vmax 38vmax at 14% 22%, rgba(90,110,147,.78), rgba(90,110,147,0) 62%),
+    radial-gradient(30vmax 30vmax at 88% 40%, rgba(216,184,120,.24), rgba(216,184,120,0) 64%),
+    radial-gradient(44vmax 44vmax at 36% 86%, rgba(90,110,147,.55), rgba(90,110,147,0) 62%),
+    radial-gradient(28vmax 28vmax at 94% 94%, rgba(216,184,120,.13), rgba(216,184,120,0) 64%);
+}
+@media (prefers-reduced-motion: no-preference) {
+  body::before { animation: g-drift 46s ease-in-out infinite alternate; }
+  @keyframes g-drift { from { transform: translate3d(0, 0, 0) scale(1); } to { transform: translate3d(3vmax, -2.5vmax, 0) scale(1.08); } }
+}
+
+/* one material for every panel */
+.x-steps > li, .note, .x-pcard, .lib-grid a, .eps, .x-how, .x-style, .lk, .page-head .eyebrow, .x-steps .go, .btn-outline, .nav-links.open {
+  background: var(--g-fill);
+  border: 1px solid var(--g-rim);
+  box-shadow: var(--g-edge), var(--g-shadow);
+  -webkit-backdrop-filter: var(--g-blur); backdrop-filter: var(--g-blur);
+}
+
+/* the glass edge: light catches the top corner and fades round the rim (a 1 px gradient ring, iOS-style) */
+.x-steps > li, .note, .x-pcard, .lib-grid a, .eps, .x-how, .x-style, .lk { position: relative; } /* the menu stays fixed; fixed already holds its ring */
+.x-steps > li::before, .note::before, .x-pcard::before, .lib-grid a::before, .eps::before, .x-how::before, .x-style::before, .lk::before, nav#nav::before {
+  content: ""; position: absolute; inset: -1px; border-radius: inherit; padding: 1px; pointer-events: none; z-index: 0;
+  background: linear-gradient(145deg, rgba(255,255,255,.55), rgba(255,255,255,.12) 28%, rgba(255,255,255,0) 52%, rgba(216,184,120,.10) 78%, rgba(216,184,120,.34));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+}
+
+/* the menu: a floating glass capsule that tucks away when you read down and comes back when you scroll up */
+nav#nav, nav#nav.solid {
+  top: 10px; left: 12px; right: 12px; max-width: 1180px; margin: 0 auto; border-radius: 22px; padding: .55rem 12px .55rem 18px;
+  background: rgba(15,27,51,.46); border: 1px solid var(--g-rim);
+  box-shadow: var(--g-edge), 0 14px 40px rgba(4,9,20,.45);
+  -webkit-backdrop-filter: blur(26px) saturate(175%); backdrop-filter: blur(26px) saturate(175%);
+  transition: transform .55s var(--sheet), opacity .4s var(--sheet);
+}
+nav#nav.tuck { transform: translateY(calc(-100% - 18px)); }
+.lang-toggle { border-color: var(--g-rim); background: rgba(8,16,31,.35); }
+.lang-toggle button.active { background: rgba(216,184,120,.16); color: #D8B878; border-radius: 999px; }
+.nav-burger { border-color: var(--g-rim); border-radius: 14px; background: rgba(244,239,230,.06); }
+.nav-cta { border-color: rgba(216,184,120,.7); background: rgba(216,184,120,.08); }
+@media (max-width: 880px) {
+  .nav-links.open { top: calc(100% + 10px); left: 0; right: 0; border-radius: 22px; padding: 1.3rem 1.5rem; background: rgba(8,16,31,.62); border-top: 1px solid var(--g-rim); transform-origin: top center; }
+}
+
+/* page head: the eyebrow is a chip, the buttons are capsules */
+.inner { padding-top: 104px; }
+.page-head .eyebrow { display: inline-block; padding: .5rem 1.1rem; border-radius: 999px; color: rgba(244,239,230,.82); }
+.btn-gold, .btn-outline { border-radius: 999px; }
+.btn-gold:hover { transform: none; }
+.btn-outline { color: var(--text); }
+
+/* steps: glass cards with a round number badge */
+.x-steps { gap: 1.1rem; }
+.x-steps > li { border-radius: var(--g-r); padding: 1.7rem 1.6rem; grid-template-columns: 52px minmax(0, 1fr); }
+.x-steps .x-num { width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.35rem; letter-spacing: .02em;
+  background: rgba(8,16,31,.45); border: 1px solid rgba(216,184,120,.55); box-shadow: inset 0 1px 0 rgba(255,255,255,.14); direction: ltr; }
+.x-steps img { border-radius: 18px; border-color: var(--g-rim); }
+.x-steps .go { display: inline-flex; align-items: center; gap: .4rem; padding: .55rem 1.05rem; border-radius: 999px; border-bottom: 1px solid var(--g-rim); color: #D8B878; letter-spacing: .06em; }
+
+/* the copy box: an inset of deep glass with the champagne rim, and a champagne capsule that springs */
+.copy code { border-radius: 16px; background: var(--g-fill-deep); border: 1.5px dashed rgba(216,184,120,.6); box-shadow: inset 0 2px 10px rgba(0,0,0,.25); }
+.copy button { border-radius: 999px; padding: 0 1.25rem; min-height: 3.1rem; }
+
+/* the champagne buttons — Hossam 2026-11-06 picked option 3 «شامبين سايل» from five, then «مش تكون لامعة كده وثري دي»:
+   flat translucent champagne. The colour is thicker at the top and thins out towards the bottom; the backdrop under it is
+   warmed (sepia) so the see-through part stays champagne, not grey. No shine, no inner glow, no drop shadow, ivory text. */
+.btn-gold, .lk.main, .x-pcopy, .copy button {
+  background: linear-gradient(180deg, rgba(236,211,160,.86) 0%, rgba(216,184,120,.60) 55%, rgba(216,184,120,.46) 100%);
+  border: 1px solid rgba(236,211,160,.7); color: #F4EFE6; font-weight: 700; text-shadow: 0 1px 3px rgba(8,16,31,.45);
+  box-shadow: none;
+  -webkit-backdrop-filter: blur(16px) sepia(.65) saturate(1.35) brightness(1.2); backdrop-filter: blur(16px) sepia(.65) saturate(1.35) brightness(1.2);
+}
+.btn-gold:hover, .lk.main:hover, .copy button:hover, .x-pcopy:hover { color: #FFFFFF; border-color: rgba(236,211,160,.9); box-shadow: none;
+  background: linear-gradient(180deg, rgba(236,211,160,.94) 0%, rgba(216,184,120,.70) 55%, rgba(216,184,120,.56) 100%); }
+.copy button.ok, .x-pcopy.ok { color: #08101F; text-shadow: none; border-color: rgba(236,211,160,.9);
+  background: linear-gradient(180deg, rgba(236,211,160,.9), rgba(216,184,120,.72)); }
+
+.note { border-radius: var(--g-r); }
+.note ul li::marker { color: #D8B878; }
+
+/* lists and tiles on the other inner pages: iOS inset-grouped lists, glass tiles and capsules */
+.eps { border-radius: var(--g-r); overflow: hidden; border-top: 1px solid var(--g-rim); }
+.eps li { border-bottom-color: rgba(244,239,230,.08); padding-inline: 1.2rem; }
+.eps li:last-child { border-bottom: 0; }
+.lib-grid { gap: 1rem; background: transparent; border: 0; border-radius: 0; overflow: visible; }
+.lib-grid a { border-radius: 24px; }
+.lib-grid a:hover { background: var(--g-fill); }
+.lk { border-radius: 20px; }
+.lk:hover { border-color: rgba(216,184,120,.6); color: #D8B878; }
+.x-pcard { border-radius: var(--g-r); }
+.x-how, .x-style { border-radius: var(--g-r); padding: 1.6rem 1.6rem 1.2rem; }
+.x-prefix, .x-ex ul, .x-dprompt { border-radius: 16px; }
+.lib-film { border-radius: 24px; border-color: var(--g-rim); }
+footer { border-top-color: rgba(244,239,230,.1); }
+
+/* the copied HUD (brand.js): a small glass capsule that springs up from the bottom, like iOS */
+#g-toast { position: fixed; left: 50%; bottom: calc(22px + env(safe-area-inset-bottom)); z-index: 80; transform: translate(-50%, 140%); opacity: 0;
+  padding: .75rem 1.35rem; border-radius: 999px; font-family: var(--ar); font-weight: 600; font-size: 1.02rem; color: #F4EFE6; pointer-events: none;
+  background: rgba(15,27,51,.62); border: 1px solid var(--g-rim); box-shadow: var(--g-edge), 0 16px 40px rgba(4,9,20,.5);
+  -webkit-backdrop-filter: blur(24px) saturate(170%); backdrop-filter: blur(24px) saturate(170%);
+  transition: transform .5s var(--sheet), opacity .3s ease; }
+#g-toast b { color: #D8B878; font-weight: 700; }
+#g-toast.on { transform: translate(-50%, 0); opacity: 1; }
+
+/* ---- motion (brand.js adds html.gm only when the reader allows motion) ---- */
+html.gm .g-press { transition: transform .5s var(--spring); }
+html.gm .g-press.down { transform: scale(.965); transition: transform .14s ease-out; }
+html.gm .x-steps > li.g-press.down, html.gm .note.g-press.down { transform: scale(.985); }
+/* things arrive like iOS widgets: out of a soft blur, a touch smaller, settling on the sheet curve.
+   What is on screen at load arrives from the CSS itself (from the very first paint, so nothing flashes); brand.js hands
+   everything below the fold to the scroll (html.gm .g-in) before anyone can see it. */
+@media (prefers-reduced-motion: no-preference) {
+  .page-head > *, .x-steps > li, .note, .next-up, .eps, .phase, .lib-grid a, .lib-film, .links-card > *, .lk, .x-pcard, .x-how, .x-style, .x-drop > * {
+    animation: g-arrive .9s var(--sheet) backwards; }
+  .page-head > :nth-child(2), .links-card > :nth-child(2) { animation-delay: .07s; }
+  .page-head > :nth-child(3), .links-card > :nth-child(3) { animation-delay: .14s; }
+  .page-head > :nth-child(4), .links-card > :nth-child(4) { animation-delay: .21s; }
+  .page-head > :nth-child(n+5), .links-card > :nth-child(n+5) { animation-delay: .28s; }
+  .x-steps > li:nth-child(1), .lk:nth-of-type(1), .lib-grid a:nth-child(1), .x-pcard:nth-child(1) { animation-delay: .34s; }
+  .x-steps > li:nth-child(2), .lk:nth-of-type(2), .lib-grid a:nth-child(2), .x-pcard:nth-child(2) { animation-delay: .42s; }
+  .x-steps > li:nth-child(n+3), .lk:nth-of-type(n+3), .lib-grid a:nth-child(n+3), .x-pcard:nth-child(n+3) { animation-delay: .5s; }
+  @keyframes g-arrive { from { opacity: 0; transform: translateY(16px) scale(.97); filter: blur(8px); } }
+  html.gm .g-in { animation: none; opacity: 0; transform: translateY(16px) scale(.97); filter: blur(8px); }
+  html.gm .g-in.on { opacity: 1; transform: none; filter: none;
+    transition: opacity .55s ease-out, transform .85s var(--sheet), filter .6s ease-out; transition-delay: var(--gd, 0s); }
+}
+html.gm .nav-links.open { animation: g-sheet .5s var(--sheet) both; }
+@keyframes g-sheet { from { opacity: 0; transform: translateY(-10px) scale(.97); } to { opacity: 1; transform: none; } }
+html.gm .copy button.ok { animation: g-pop .5s var(--spring); }
+@keyframes g-pop { 0% { transform: scale(.9); } 100% { transform: scale(1); } }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  nav#nav, #g-toast { transition: none; }
+}
+/* iOS «Reduce Transparency»: solid panels, no blur */
+@media (prefers-reduced-transparency: reduce) {
+  .x-steps > li, .note, .x-pcard, .lib-grid a, .eps, .x-how, .x-style, .lk, .page-head .eyebrow, .x-steps .go, .btn-outline, .nav-links.open, nav#nav, #g-toast {
+    background: #172440; -webkit-backdrop-filter: none; backdrop-filter: none; }
+  .btn-gold, .lk.main, .x-pcopy, .copy button { background: #D8B878; color: #08101F; text-shadow: none; -webkit-backdrop-filter: none; backdrop-filter: none; }
+}
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .x-steps > li, .note, .x-pcard, .lib-grid a, .eps, .x-how, .x-style, .lk { background: rgba(23,36,64,.92); }
+  nav#nav, #g-toast { background: rgba(15,27,51,.94); }
+}
+@media (max-width: 760px) {
+  .inner { padding-top: 92px; }
+  .x-steps > li { grid-template-columns: minmax(0, 1fr); gap: .8rem; padding: 1.35rem 1.15rem; border-radius: 24px; }
+  .x-steps .x-num { width: 44px; height: 44px; font-size: 1.15rem; }
+  .note { padding: 1.4rem 1.2rem; border-radius: 24px; }
+}

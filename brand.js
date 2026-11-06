@@ -32,3 +32,71 @@ function setLang(lang) {
     });
   });
 })();
+
+// Glass motion «حركات الآيفون» (Hossam 2026-11-06), inner pages only: things arrive out of a soft blur on the iOS sheet curve,
+// every tappable thing springs under the finger, a copy shows the small «اتنسخ» capsule, and the menu tucks away while
+// you read down and comes back when you scroll up. Nothing moves when the reader asks for reduced motion.
+(function () {
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var ar = function () { return (document.body.getAttribute("dir") || "rtl") === "rtl"; };
+
+  // the copied capsule (shown with or without motion; without motion it simply appears)
+  var toast = document.createElement("div");
+  toast.id = "g-toast"; toast.setAttribute("role", "status"); toast.setAttribute("aria-live", "polite");
+  document.body.appendChild(toast);
+  var tt = 0;
+  document.querySelectorAll("[data-copy], .x-pcopy").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      toast.innerHTML = ar() ? "اتنسخ <b>✓</b>" : "Copied <b>✓</b>";
+      toast.classList.add("on"); clearTimeout(tt);
+      tt = setTimeout(function () { toast.classList.remove("on"); }, 1500);
+    });
+  });
+  if (reduce) return;
+  document.documentElement.classList.add("gm");
+
+  // press: a quick shrink under the finger, a spring back on release
+  var pressables = ".btn-gold, .btn-outline, .copy button, .x-pcopy, .x-steps .go, .lk, .lib-grid a, .eps li a, .nav-cta, .nav-burger, .lang-toggle button, .x-steps > li, .note";
+  document.querySelectorAll(pressables).forEach(function (el) {
+    el.classList.add("g-press");
+    var up = function () { el.classList.remove("down"); };
+    el.addEventListener("pointerdown", function (e) { if (e.button === 0) el.classList.add("down"); });
+    ["pointerup", "pointerleave", "pointercancel", "dragstart"].forEach(function (t) { el.addEventListener(t, up); });
+  });
+  // a step card springs only when the press starts on the card itself, not on its button or link
+  document.querySelectorAll(".x-steps > li").forEach(function (li) {
+    li.addEventListener("pointerdown", function (e) { if (e.target.closest("a, button, code")) li.classList.remove("down"); }, true);
+  });
+
+  // arrival: what is on screen at load already comes in from the CSS (first paint, no flash); what sits below the fold is
+  // hidden now, while nobody can see it, and arrives as it scrolls into view
+  var vh = window.innerHeight;
+  var items = Array.prototype.slice.call(document.querySelectorAll(
+    ".page-head > *, .x-steps > li, .note, .next-up, .eps, .phase, .lib-grid a, .lib-film, .links-card > *, .lk, .x-pcard, .x-how, .x-style, .x-drop > *"))
+    .filter(function (el) { return el.getBoundingClientRect().top > vh; });
+  items.forEach(function (el) { el.classList.add("g-in"); });
+  var batch = 0, bt = 0;
+  var show = function (el) {
+    el.style.setProperty("--gd", Math.min(batch, 6) * 0.07 + "s"); batch++;
+    clearTimeout(bt); bt = setTimeout(function () { batch = 0; }, 120);
+    el.classList.add("on");
+  };
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { show(e.target); io.unobserve(e.target); } });
+    }, { rootMargin: "0px 0px -6% 0px", threshold: 0 }); // threshold 0: a card taller than the screen still arrives
+    items.forEach(function (el) { io.observe(el); });
+  } else items.forEach(show);
+
+  // the menu tucks away on the way down and springs back on the way up (never while its sheet is open)
+  var nav = document.getElementById("nav"), last = window.scrollY, ticking = false;
+  if (nav) window.addEventListener("scroll", function () {
+    if (ticking) return; ticking = true;
+    requestAnimationFrame(function () {
+      var y = window.scrollY, open = nav.querySelector(".nav-links.open");
+      if (!open && y > 160 && y > last + 4) nav.classList.add("tuck");
+      else if (y < last - 4 || y < 120) nav.classList.remove("tuck");
+      last = y; ticking = false;
+    });
+  }, { passive: true });
+})();
