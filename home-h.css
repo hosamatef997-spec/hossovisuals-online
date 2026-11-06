@@ -1,0 +1,161 @@
+/* ===================================================================================================================
+   The home page in identity H with the glass material — a SAMPLE (Hossam 2026-11-06 «عايز تغير الموقع الرئيسي يكون بنفس
+   الهوية… أيوه، اعمل عينة»). Loaded after the page's own <style> and after /brand-pages.css (which brings the H tokens,
+   the Beiruti + Bricolage faces, the glass nav, the glass panels and the flat «شامبين سايل» buttons).
+   Same sections, photos and words. His work keeps its true colour: no tint is laid over the gallery, the featured reels,
+   the portraits or the hero footage; only the room around them changes.
+   =================================================================================================================== */
+
+/* the room */
+body { background: radial-gradient(1100px 640px at 50% -60px, rgba(90,110,147,.32), rgba(90,110,147,0) 70%) no-repeat, #0F1B33; color: #F4EFE6; }
+body::after { display: none; }
+.lead, .story p, .card p, .tl p, .step p, .svc p { color: rgba(244,239,230,.82); }
+.story p { opacity: 1; }
+.section-title, .contact .big, .card h3, .tl h4, .step h4, .svc h3, .g .t { color: #F4EFE6; }
+.section-title em, .contact .big em { font-style: normal; color: #D8B878; }
+.eyebrow, #work .eyebrow, #ai .eyebrow, #gear .eyebrow { color: #A9B1C2; }
+.rule { background: linear-gradient(90deg, transparent, #D8B878, transparent); height: 2px; }
+/* the accent face is Bricolage now: upright, champagne */
+.hero .role, .sign, .card .num, .tl .yr, .step .i, .empty-note, .about-banner .bcap .r { font-family: var(--accent); font-style: normal; }
+body[dir="rtl"] .hero .role, body[dir="rtl"] .sign, body[dir="rtl"] .about-banner .bcap .r { font-family: var(--ar); }
+.sign, .card .num, .tl .yr, .step .i, .stat .n { color: #D8B878; }
+.hero h1, .stat .n, .contact .big { font-weight: 700; }
+body[dir="rtl"] .hero h1, body[dir="rtl"] .section-title, body[dir="rtl"] .contact .big { font-weight: 800; }
+
+/* the menu: the light logo, the same glass capsule as the inner pages (from brand-pages.css) */
+nav .logo img, footer img { filter: none; }
+nav:not(.solid) .logo img { filter: none; opacity: 1; }
+nav:not(.solid) .lang-toggle button.active, .lang-toggle button.active { color: #D8B878; background: transparent; }
+.lang-toggle button + button, nav:not(.solid) .lang-toggle button + button { border-left-color: rgba(244,239,230,.2); }
+nav:not(.solid) .nav-links a, .nav-links a { color: #F4EFE6; }
+
+/* hero: his footage untouched; a neutral shade only where the words sit, melting into the navy room below */
+.hero { background: #08101F; }
+.hero-media::after { background: linear-gradient(90deg, rgba(4,6,10,.88), rgba(4,6,10,.5) 48%, rgba(4,6,10,.1)), linear-gradient(0deg, rgba(4,6,10,.7), transparent 52%); }
+[dir="rtl"] .hero-media::after { background: linear-gradient(270deg, rgba(4,6,10,.88), rgba(4,6,10,.5) 48%, rgba(4,6,10,.1)), linear-gradient(0deg, rgba(4,6,10,.7), transparent 52%); }
+.hero::after { background: linear-gradient(180deg, transparent, #0F1B33); }
+.hero-eyebrow { color: #D8B878; }
+.hero h1 { color: #F4EFE6; }
+.hero .role { color: #D8B878; }
+.hero .intro { color: rgba(244,239,230,.9); }
+.scroll-cue { color: rgba(244,239,230,.72); }
+.scroll-cue i { background: linear-gradient(#D8B878, transparent); }
+
+/* the dark video bands: the same navy deep under them, so they sit in the room */
+#work, #ai, #gear { background: #08101F; }
+#work .work-bg::after { background: linear-gradient(180deg, rgba(8,16,31,.9), rgba(8,16,31,.86)); }
+#ai .ai-bg::after { background: linear-gradient(180deg, rgba(8,16,31,.86), rgba(8,16,31,.76)); }
+#gear .gear-bg::after { background: linear-gradient(180deg, rgba(8,16,31,.87), rgba(8,16,31,.8)); }
+#gear::before { background: linear-gradient(180deg, #0F1B33, transparent); }
+#ai::after, #gear::after { background: linear-gradient(0deg, #0F1B33, transparent); }
+#work::before { background: linear-gradient(180deg, #0F1B33, transparent); }
+#work .section-title, #ai .section-title, #gear .section-title { color: #F4EFE6; }
+#work .svc h3 { color: #F4EFE6; }
+#work .svc p { color: rgba(244,239,230,.82); }
+.svc-icon, #work .svc-icon { color: #D8B878; background: rgba(8,16,31,.45); border: 1px solid rgba(216,184,120,.38); }
+.svc:hover .svc-icon { background: rgba(216,184,120,.14); }
+.svc:hover h3 { color: #D8B878; }
+.exp { background: linear-gradient(180deg, #0F1B33, #0B1528 24%, #0B1528 76%, #0F1B33); }
+.vclip { border-color: rgba(244,239,230,.14); box-shadow: 0 14px 30px rgba(4,9,20,.5); }
+
+/* every panel is glass: service and skill cards, the call bar, the filters, the social pills, the fan arrows */
+.card, #ai .card, .g, #gear .g, .cta-bar, .filter, .socials a, .fan-btn {
+  position: relative; background: var(--g-fill); border: 1px solid var(--g-rim); color: #F4EFE6;
+  box-shadow: var(--g-edge), var(--g-shadow); -webkit-backdrop-filter: var(--g-blur); backdrop-filter: var(--g-blur);
+}
+.card::before, .g::before, .cta-bar::before {
+  content: ""; position: absolute; inset: -1px; border-radius: inherit; padding: 1px; pointer-events: none;
+  background: linear-gradient(145deg, rgba(255,255,255,.55), rgba(255,255,255,.12) 28%, rgba(255,255,255,0) 52%, rgba(216,184,120,.10) 78%, rgba(216,184,120,.34));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+}
+.card { border-radius: 26px; }
+.g { border-radius: 20px; }
+.g .s { color: #D8B878; }
+.card:hover, .g:hover { border-color: rgba(216,184,120,.45); }
+.cta-bar { border-radius: 26px; color: #F4EFE6; }
+.cta-bar h3 { color: #F4EFE6; }
+.cta-bar p { color: rgba(244,239,230,.82); }
+.tl, .step { border-top: 2px solid rgba(216,184,120,.4); }
+.stat .l { color: #A9B1C2; }
+.filter { color: #F4EFE6; border-radius: 999px; }
+.filter:hover { border-color: rgba(216,184,120,.6); }
+.filter.active {
+  color: #F4EFE6; font-weight: 700; text-shadow: 0 1px 3px rgba(8,16,31,.45); box-shadow: none;
+  background: linear-gradient(180deg, rgba(236,211,160,.86) 0%, rgba(216,184,120,.60) 55%, rgba(216,184,120,.46) 100%); border-color: rgba(236,211,160,.7);
+  -webkit-backdrop-filter: blur(16px) sepia(.65) saturate(1.35) brightness(1.2); backdrop-filter: blur(16px) sepia(.65) saturate(1.35) brightness(1.2);
+}
+.socials a { border-radius: 999px; color: #F4EFE6; }
+.socials a:hover { color: #D8B878; border-color: rgba(216,184,120,.6); }
+.fan-btn { color: #F4EFE6; border-radius: 999px; }
+.fan-btn:hover { background: rgba(216,184,120,.2); color: #F4EFE6; border-color: rgba(216,184,120,.7); }
+.fan-dot { background: rgba(244,239,230,.28); }
+.fan-dot.on { background: #D8B878; }
+.fan-play { background: rgba(244,239,230,.92); color: #08101F; }
+.empty-note { color: #A9B1C2; }
+
+/* photo frames: champagne hairline, deep navy shadow; the photo itself is left exactly as it is */
+.about-banner, .about-photo, .portrait { border-color: rgba(244,239,230,.14); background: #172440; box-shadow: 0 24px 60px rgba(4,9,20,.5); border-radius: 26px; }
+.about-banner .bframe, .about-photo .frame, .portrait::before { border-color: rgba(216,184,120,.45); border-radius: 20px; }
+.about-banner .bcap .n { color: #F4EFE6; }
+.about-banner .bcap .r { color: #D8B878; }
+.btile { border-color: rgba(244,239,230,.12); border-radius: 18px; }
+.btile:hover { box-shadow: 0 18px 44px rgba(4,9,20,.55); }
+.btile .ov .c, .btile .tag { color: #D8B878; }
+.btile .pb { border-color: #D8B878; }
+.fan-card { box-shadow: 0 22px 50px -16px rgba(4,9,20,.7); border-radius: 18px; }
+.fan-card:hover::after { box-shadow: inset 0 0 0 2px rgba(216,184,120,.85); }
+
+/* overlays and lightboxes in the navy deep */
+.bmodal { background: rgba(8,16,31,.96); }
+.bmodal-close, .bmodal-nav { background: rgba(23,36,64,.6); border-color: rgba(244,239,230,.25); color: #F4EFE6; }
+.bmodal-cap .c { color: #D8B878; }
+.fx-back { background: rgba(8,16,31,.88); }
+.fx-close { background: #D8B878; color: #08101F; }
+.bdock { background: rgba(15,27,51,.55); border-color: rgba(244,239,230,.2); }
+
+footer { border-top-color: rgba(244,239,230,.1); color: #A9B1C2; }
+footer .fl a:hover { color: #D8B878; }
+
+/* mobile: the hero words sit on navy deep under the landscape clip; section rules in the hairline colour */
+@media (max-width: 768px) {
+  .hero-media::after { background: linear-gradient(0deg, rgba(8,16,31,.55), transparent 58%); }
+  .hero-inner { background: linear-gradient(180deg, #08101F 80%, #0F1B33); }
+  section.block { border-top-color: rgba(216,184,120,.14); }
+  #work, #ai, #gear { background: #08101F; }
+  #work .work-bg::after, #ai .ai-bg::after, #gear .gear-bg::after { background: linear-gradient(0deg, #08101F, transparent 62%); }
+}
+
+/* motion, iOS-like: sections arrive out of a soft blur on the sheet curve; anything you press springs back */
+.reveal, .sx { filter: blur(8px); transform: translateY(18px) scale(.97);
+  transition: opacity .6s ease-out, transform .9s cubic-bezier(.32,.72,0,1), filter .65s ease-out; }
+.reveal.in, .sx.sxin { filter: none; transform: none; }
+.btn-gold, .btn-outline, .filter, .socials a, .fan-btn, .nav-cta, .card, .g { transition: transform .5s cubic-bezier(.34,1.56,.64,1), border-color .3s, background .3s, color .3s; }
+.btn-gold:active, .btn-outline:active, .filter:active, .socials a:active, .fan-btn:active, .nav-cta:active { transform: scale(.965); transition-duration: .12s; }
+.card:active, .g:active { transform: scale(.985); transition-duration: .12s; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .sx { filter: none !important; transform: none !important; opacity: 1 !important; transition: none; }
+}
+@media (prefers-reduced-transparency: reduce) {
+  .card, .g, .cta-bar, .filter, .socials a, .fan-btn { background: #172440; -webkit-backdrop-filter: none; backdrop-filter: none; }
+}
+
+/* 11-06 Hossam picked A «زجاج» for the WhatsApp button: a navy glass capsule, champagne rim, champagne WhatsApp mark, ivory words */
+.btn-gold.wa-glass {
+  display: inline-flex; align-items: center; justify-content: center; gap: .7rem;
+  background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.02)), rgba(23,36,64,.55);
+  border: 1px solid rgba(216,184,120,.55); color: #F4EFE6; text-shadow: none; font-weight: 600;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.18), 0 10px 30px rgba(4,8,18,.45);
+  -webkit-backdrop-filter: blur(18px) saturate(1.4); backdrop-filter: blur(18px) saturate(1.4);
+}
+.btn-gold.wa-glass:hover { color: #FFFFFF; border-color: rgba(236,211,160,.85);
+  background: linear-gradient(180deg, rgba(255,255,255,.14), rgba(255,255,255,.04)), rgba(23,36,64,.62); }
+.btn-gold.wa-glass .wa-ico { width: 1.25em; height: 1.25em; flex: none; fill: #D8B878; }
+.btn-gold.wa-glass { white-space: nowrap; padding-inline: 1.5rem; }
+@media (max-width: 360px) { .btn-gold.wa-glass { font-size: .92rem; padding-inline: 1.1rem; gap: .55rem; } }
+@media (prefers-reduced-transparency: reduce) {
+  .btn-gold.wa-glass { background: #172440; -webkit-backdrop-filter: none; backdrop-filter: none; }
+}
+/* the glass buttons are the main actions: a firmer champagne rim and a faint warm light, so they read above «View my work» */
+.btn-gold.wa-glass { border: 1.5px solid rgba(216,184,120,.82);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.18), inset 0 0 22px rgba(216,184,120,.12), 0 0 0 4px rgba(216,184,120,.07), 0 10px 30px rgba(4,8,18,.45); }
