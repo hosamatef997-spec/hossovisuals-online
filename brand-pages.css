@@ -438,3 +438,9 @@ body[dir="ltr"] .hub-row .chev { transform: rotate(135deg); }
   .hub-ep-go { background: #D8B878; color: #08101F; text-shadow: none; -webkit-backdrop-filter: none; backdrop-filter: none; }
 }
 @media (max-width: 380px) { .hub-soc { grid-template-columns: 1fr; } }
+
+/* 11-06 Hossam: the chip touched the shadda/hamza of the Arabic title, and Beiruti glued words («بأمرواحد»).
+   Room above every Arabic title, and a real word space. */
+.page-head .eyebrow { margin-bottom: 1.5rem; }
+body[dir="rtl"], [dir="rtl"] p, [dir="rtl"] li { word-spacing: .08em; }
+[dir="rtl"] .section-title, body[dir="rtl"] h1, body[dir="rtl"] h2 { word-spacing: .14em; line-height: 1.4; }
