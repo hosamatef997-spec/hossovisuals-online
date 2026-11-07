@@ -16,8 +16,11 @@
 <link rel="preload" href="/fonts/beiruti-var-arabic.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="stylesheet" href="/brand.css" />
 <link rel="stylesheet" href="/brand-pages.css" />
+<link rel="stylesheet" href="/cover-look.css" />
 </head>
 <body data-lang="ar" dir="rtl">
+  <div class="cl-grid" aria-hidden="true"></div>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="cl-ring" x="-5%" y="-25%" width="110%" height="150%"><feMorphology in="SourceAlpha" operator="dilate" radius="2" result="g"/><feComposite in="g" in2="SourceAlpha" operator="out" result="e"/><feFlood flood-color="#F4EFE6"/><feComposite in2="e" operator="in"/></filter></svg>
   <nav id="nav" class="solid">
     <a class="logo" href="/" aria-label="HOSSO Visuals home"><img src="/logo-mark.png" alt="HOSSO Visuals" /></a>
     <div class="nav-links">
@@ -75,5 +78,6 @@
     </div>
   </footer>
   <script src="/brand.js"></script>
+  <script src="/cover-look.js"></script>
 </body>
 </html>
