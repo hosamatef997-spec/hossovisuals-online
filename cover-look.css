@@ -67,4 +67,18 @@ main, footer, section { position: relative; z-index: 1; }
 .page-head:not(.cl-head) .eyebrow { background: none; border: 0; box-shadow: none; padding: 0; -webkit-backdrop-filter: none; backdrop-filter: none;
   color: var(--cl-champ); font-weight: 600; letter-spacing: 0; text-transform: none; }
 
+/* ---------- the 3D room down the page (cover-look.js room(), R126): shapes from the topic peek in from the screen edges,
+   behind the content; «near» ones are soft like a lens at f/1.6, «far» ones small and a little soft ---------- */
+html { background: #0F1B33; }
+body { position: relative; }
+.cl-room { position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+.cl-shape { position: absolute; display: block; height: auto; -webkit-user-select: none; user-select: none; }
+.cl-shape.mid { width: clamp(120px, 15vw, 210px); }
+.cl-shape.near { width: clamp(170px, 22vw, 300px); filter: blur(7px); opacity: .92; }
+.cl-shape.far { width: clamp(78px, 9vw, 128px); filter: blur(1.6px); opacity: .82; }
+.cl-shape.left { left: 0; transform: translateX(-44%) rotate(-8deg); }
+.cl-shape.right { right: 0; transform: translateX(44%) rotate(9deg); }
+/* the hero shapes: a soft one near the lens */
+.cl-objs img.soft { filter: blur(6px); }
+
 @media (prefers-reduced-motion: reduce) { .cl-loop path { transition: none; } }
