@@ -19,7 +19,7 @@ main, footer, section { position: relative; z-index: 1; }
 .section-title em, .x-steps h2 em, .cl-title em, .hub-ep-title em, .x-drop .section-title em {
   font-style: normal; background: var(--cl-champ); color: var(--cl-navy); -webkit-text-fill-color: var(--cl-navy);
   -webkit-background-clip: border-box; background-clip: border-box; text-shadow: none;
-  padding: 0 .2em .06em; border-radius: 0; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+  padding: 0 .2em .06em; border-radius: .2em;   /* «زوايا ناعمة», his pick 2026-11-07 */ -webkit-box-decoration-break: clone; box-decoration-break: clone; }
 
 /* ---------- the page head of an episode / news page (tools/make-page.mjs writes .cl-head) ---------- */
 .page-head.cl-head { position: relative; text-align: right; max-width: none; margin: 0 0 3rem; padding: 1rem 0 0; }
@@ -32,7 +32,7 @@ main, footer, section { position: relative; z-index: 1; }
 .cl-title .cl-row { display: block; }
 .cl-title .cl-row + .cl-row { margin-top: .35rem; }
 .cl-fit { display: inline-block; white-space: nowrap; font-size: clamp(2.6rem, 11vw, 6.6rem); }
-.cl-title .cl-row.l2 .cl-fit { background: var(--cl-champ); color: var(--cl-navy); padding: .02em .2em .1em; line-height: 1.12; }
+.cl-title .cl-row.l2 .cl-fit { background: var(--cl-champ); color: var(--cl-navy); padding: .02em .2em .1em; line-height: 1.12; border-radius: .2em; }
 .cl-fit.wrap { white-space: normal; }
 .cl-title bdi { unicode-bidi: isolate; font-family: "Bricolage Grotesque", var(--sans), sans-serif; font-weight: 700; letter-spacing: -.02em; }
 .cl-title .cl-row.l1 .cl-fit.cl-outline { filter: url(#cl-ring); }
