@@ -16,8 +16,11 @@
 <link rel="preload" href="/fonts/beiruti-var-arabic.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="stylesheet" href="/brand.css" />
 <link rel="stylesheet" href="/brand-pages.css" />
+<link rel="stylesheet" href="/cover-look.css" />
 </head>
 <body data-lang="ar" dir="rtl">
+  <div class="cl-grid" aria-hidden="true"></div>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="cl-ring" x="-5%" y="-25%" width="110%" height="150%"><feMorphology in="SourceAlpha" operator="dilate" radius="2" result="g"/><feComposite in="g" in2="SourceAlpha" operator="out" result="e"/><feFlood flood-color="#F4EFE6"/><feComposite in2="e" operator="in"/></filter></svg>
   <nav id="nav" class="solid">
     <a class="logo" href="/" aria-label="HOSSO Visuals home"><img src="/logo-mark.png" alt="HOSSO Visuals" /></a>
     <div class="nav-links">
@@ -37,51 +40,54 @@
   <main class="inner">
 
     <section class="block"><div class="wrap">
-      <div class="page-head">
-        <div class="eyebrow"><span data-en>Learning Claude in public · EP 06</span><span data-ar>بتعلّم Claude قدامكم · EP 06</span></div>
-        <h1 class="section-title" dir="rtl">أول مشروع في <em>Claude Code</em></h1>
-        <div class="thin-rule"></div>
-        <p class="x-lead" dir="rtl">خطوات الحلقة السادسة من «بتعلّم Claude قدامكم»: 3 حاجات تعرفها قبل أول طلب. إزاي توافق على اللي هيعمله، وإزاي تخليه يخطط الأول، وإزاي يفتكر مشروعك كل مرة. وزرار يوقّفه في أي لحظة.</p>
-        <div class="cta-row"><a class="btn-gold" href="https://www.instagram.com/hossovisuals.ai/" target="_blank" rel="noopener"><span data-en>Watch the reel</span><span data-ar>شوف الريل</span></a><a class="btn-outline" href="/claude/"><span data-en>All episodes</span><span data-ar>كل الحلقات</span></a></div>
+      <div class="page-head cl-head">
+        <div class="cl-text">
+          <div class="eyebrow"><span data-en>Learning Claude in public · EP 06</span><span data-ar>بتعلّم Claude قدامكم · EP 06</span></div>
+          <h1 class="cl-title" dir="rtl"><span class="cl-row l1"><span class="cl-fit">أول مشــروع في</span></span><span class="cl-row l2"><span class="cl-fit"><bdi>Claude Code</bdi></span></span></h1>
+          <p class="x-lead" dir="rtl">خطوات الحلقة السادسة من «بتعلّم Claude قدامكم»: 3 حاجات تعرفها قبل أول طلب. إزاي توافق على اللي هيعمله، وإزاي تخليه يخطط الأول، وإزاي يفتكر مشروعك كل مرة. وزرار يوقّفه في أي لحظة.</p>
+          <div class="cta-row"><a class="btn-gold" href="https://www.instagram.com/hossovisuals.ae/" target="_blank" rel="noopener"><span data-en>Watch the reel</span><span data-ar>شوف الريل</span></a><a class="btn-outline" href="/claude/"><span data-en>All episodes</span><span data-ar>كل الحلقات</span></a></div>
+        </div>
+        <svg class="cl-loop" aria-hidden="true"><path /></svg>
+        <div class="cl-objs" aria-hidden="true"><img class="o-disc" src="/media/cover/disc-face.webp" alt="" /><img class="o-spark" src="/media/cover/spark.webp" alt="" /><img class="o-edge" src="/media/cover/disc-edge.webp" alt="" /></div>
       </div>
       <ol class="x-steps" dir="rtl">
-        <li><div class="x-num">01</div><div>
+        <li><div>
           <h2>افتح فولدر <em>تجربة</em></h2><p>اعمل فولدر فاضي للتجربة (مش ملفاتك المهمة)، وادخله من PowerShell، وشغّل Claude Code.</p>
           <div class="copy"><code>mkdir my-first-project; cd my-first-project; claude</code><button data-copy="mkdir my-first-project; cd my-first-project; claude"><span class="do">انسخ</span><span class="done">اتنسخ ✓</span></button></div>
           
           
         </div></li>
-        <li><div class="x-num">02</div><div>
+        <li><div>
           <h2>اطلب أول <em>حاجة</em></h2><p>اكتبله بالمصري عادي، مثلًا:</p>
           <div class="copy"><code>اعمل صفحة HTML بسيطة فيها اسمي وشغلي، وافتحهالي</code><button data-copy="اعمل صفحة HTML بسيطة فيها اسمي وشغلي، وافتحهالي"><span class="do">انسخ</span><span class="done">اتنسخ ✓</span></button></div>
           
           
         </div></li>
-        <li><div class="x-num">03</div><div>
-          <h2>1 · <em>الإذن</em>: اقرا قبل ما توافق</h2><p>قبل ما يعمل ملف جديد أو يعدّل ملف أو يشغّل أمر، Claude Code بيعرض عليك هو ناوي يعمل إيه وبيستناك. اقرا السطر، ولو تمام اختار Yes. ولو مش عاجبك اختار No وقوله يعمل إيه بدل كده.</p>
+        <li><div class="x-num">01</div><div>
+          <h2><em>الإذن</em>: اقرا قبل ما توافق</h2><p>قبل ما يعمل ملف جديد أو يعدّل ملف أو يشغّل أمر، Claude Code بيعرض عليك هو ناوي يعمل إيه وبيستناك. اقرا السطر، ولو تمام اختار Yes. ولو مش عاجبك اختار No وقوله يعمل إيه بدل كده.</p>
           
           
           
         </div></li>
-        <li><div class="x-num">04</div><div>
-          <h2>2 · <em>الخطة</em>: Shift+Tab</h2><p>دوس Shift+Tab لحد ما تشوف تحت كلمة plan mode. في الوضع ده Claude بيقرا ويفكّر ويكتبلك خطة بس، من غير ما يغيّر أي ملف. لو الخطة عاجباك وافق عليها، وهو يبدأ ينفّذ.</p>
+        <li><div class="x-num">02</div><div>
+          <h2><em>الخطة</em>: Shift+Tab</h2><p>دوس Shift+Tab لحد ما تشوف تحت كلمة plan mode. في الوضع ده Claude بيقرا ويفكّر ويكتبلك خطة بس، من غير ما يغيّر أي ملف. لو الخطة عاجباك وافق عليها، وهو يبدأ ينفّذ.</p>
           
           
           
         </div></li>
-        <li><div class="x-num">05</div><div>
+        <li><div>
           <h2><em>Esc</em>: وقّفه في أي لحظة</h2><p>لو لقيته رايح في سكة غلط وهو شغّال، دوس Esc مرة واحدة. هيوقف، وتقدر تكتبله تصحيح وتكمّل من نفس المكان.</p>
           
           
           
         </div></li>
-        <li><div class="x-num">06</div><div>
-          <h2>3 · <em>الذاكرة</em>: /init</h2><p>اكتب الأمر ده. Claude بيبص على ملفات الفولدر، ويكتب ملف اسمه CLAUDE.md فيه ملخص المشروع وطريقة الشغل، وبيقراه أول ما تفتحه هنا كل مرة.</p>
+        <li><div class="x-num">03</div><div>
+          <h2><em>الذاكرة</em>: /init</h2><p>اكتب الأمر ده. Claude بيبص على ملفات الفولدر، ويكتب ملف اسمه CLAUDE.md فيه ملخص المشروع وطريقة الشغل، وبيقراه أول ما تفتحه هنا كل مرة.</p>
           <div class="copy"><code>/init</code><button data-copy="/init"><span class="do">انسخ</span><span class="done">اتنسخ ✓</span></button></div>
           
           
         </div></li>
-        <li><div class="x-num">07</div><div>
+        <li><div>
           <h2>زوّد على <em>CLAUDE.md</em></h2><p>الملف ده نص عادي. افتحه وزوّد أي حاجة عايزه يفتكرها، زي إنه يكلّمك بالمصري، أو الألوان بتاعتك، أو إنه يعرض الخطة قبل أي تعديل كبير.</p>
           <div class="copy"><code>زوّد في CLAUDE.md إنك تكلّمني بالمصري</code><button data-copy="زوّد في CLAUDE.md إنك تكلّمني بالمصري"><span class="do">انسخ</span><span class="done">اتنسخ ✓</span></button></div>
           
@@ -108,5 +114,6 @@
     </div>
   </footer>
   <script src="/brand.js"></script>
+  <script src="/cover-look.js"></script>
 </body>
 </html>

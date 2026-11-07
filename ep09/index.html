@@ -16,8 +16,11 @@
 <link rel="preload" href="/fonts/beiruti-var-arabic.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="stylesheet" href="/brand.css" />
 <link rel="stylesheet" href="/brand-pages.css" />
+<link rel="stylesheet" href="/cover-look.css" />
 </head>
 <body data-lang="ar" dir="rtl">
+  <div class="cl-grid" aria-hidden="true"></div>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="cl-ring" x="-5%" y="-25%" width="110%" height="150%"><feMorphology in="SourceAlpha" operator="dilate" radius="2" result="g"/><feComposite in="g" in2="SourceAlpha" operator="out" result="e"/><feFlood flood-color="#F4EFE6"/><feComposite in2="e" operator="in"/></filter></svg>
   <nav id="nav" class="solid">
     <a class="logo" href="/" aria-label="HOSSO Visuals home"><img src="/logo-mark.png" alt="HOSSO Visuals" /></a>
     <div class="nav-links">
@@ -37,51 +40,54 @@
   <main class="inner">
 
     <section class="block"><div class="wrap">
-      <div class="page-head">
-        <div class="eyebrow"><span data-en>Learning Claude in public · EP 09</span><span data-ar>بتعلّم Claude قدامكم · EP 09</span></div>
-        <h1 class="section-title" dir="rtl">أهم 5 <em>Skills</em> للإديت والموشن</h1>
-        <div class="thin-rule"></div>
-        <p class="x-lead" dir="rtl">من الحلقة التاسعة من «بتعلّم Claude قدامكم»: عندي 124 Skill، ودول الخمسة اللي شغالين معايا كل يوم في الإديت والموشن، وكل واحد بيعمل إيه، ومنين تجيبه.</p>
-        <div class="cta-row"><a class="btn-gold" href="https://www.instagram.com/hossovisuals.ai/" target="_blank" rel="noopener"><span data-en>Watch the reel</span><span data-ar>شوف الريل</span></a><a class="btn-outline" href="/claude/"><span data-en>All episodes</span><span data-ar>كل الحلقات</span></a></div>
+      <div class="page-head cl-head">
+        <div class="cl-text">
+          <div class="eyebrow"><span data-en>Learning Claude in public · EP 09</span><span data-ar>بتعلّم Claude قدامكم · EP 09</span></div>
+          <h1 class="cl-title" dir="rtl"><span class="cl-row l1"><span class="cl-fit">أهــم 5</span></span><span class="cl-row l2"><span class="cl-fit"><bdi>Skills</bdi> للإديت والموشـــن</span></span></h1>
+          <p class="x-lead" dir="rtl">من الحلقة التاسعة من «بتعلّم Claude قدامكم»: عندي 124 Skill، ودول الخمسة اللي شغالين معايا كل يوم في الإديت والموشن، وكل واحد بيعمل إيه، ومنين تجيبه.</p>
+          <div class="cta-row"><a class="btn-gold" href="https://www.instagram.com/hossovisuals.ai/" target="_blank" rel="noopener"><span data-en>Watch the reel</span><span data-ar>شوف الريل</span></a><a class="btn-outline" href="/claude/"><span data-en>All episodes</span><span data-ar>كل الحلقات</span></a></div>
+        </div>
+        <svg class="cl-loop" aria-hidden="true"><path /></svg>
+        <div class="cl-objs" aria-hidden="true"><img class="o-disc" src="/media/cover/disc-face.webp" alt="" /><img class="o-spark" src="/media/cover/spark.webp" alt="" /><img class="o-edge" src="/media/cover/disc-edge.webp" alt="" /></div>
       </div>
       <ol class="x-steps" dir="rtl">
-        <li><div class="x-num">01</div><div>
+        <li><div>
           <h2>شوف <em>عندك كام</em></h2><p>الـ Skills الشخصية بتاعتك في فولدر ‎~/.claude/skills. الأمر ده بيعدّهم في PowerShell:</p>
           <div class="copy"><code>(ls ~/.claude/skills).Count</code><button data-copy="(ls ~/.claude/skills).Count"><span class="do">انسخ</span><span class="done">اتنسخ ✓</span></button></div>
           
           
         </div></li>
-        <li><div class="x-num">02</div><div>
-          <h2>1 · <em>HyperFrames</em></h2><p>بيحوّل صفحة HTML لفيديو: عناوين، وكابشن، وموشن، وكل فيديو في الاستوديو بتاعي بيتعمل بيه. بيتنزّل كـ Plugin رسمي (الحلقة 8):</p>
+        <li><div class="x-num">01</div><div>
+          <h2><em>HyperFrames</em></h2><p>بيحوّل صفحة HTML لفيديو: عناوين، وكابشن، وموشن، وكل فيديو في الاستوديو بتاعي بيتعمل بيه. بيتنزّل كـ Plugin رسمي (الحلقة 8):</p>
           <div class="copy"><code>claude plugin install hyperframes@claude-plugins-official</code><button data-copy="claude plugin install hyperframes@claude-plugins-official"><span class="do">انسخ</span><span class="done">اتنسخ ✓</span></button></div>
           
           
         </div></li>
-        <li><div class="x-num">03</div><div>
-          <h2>2 · <em>Remotion</em></h2><p>نفس الفكرة بس بـ React. الـ Skills دي من Remotion نفسهم، وبتعلّم Claude الطريقة الصح للأنيميشن والصوت والكابشن والرندر.</p>
+        <li><div class="x-num">02</div><div>
+          <h2><em>Remotion</em></h2><p>نفس الفكرة بس بـ React. الـ Skills دي من Remotion نفسهم، وبتعلّم Claude الطريقة الصح للأنيميشن والصوت والكابشن والرندر.</p>
           <div class="copy"><code>npx skills add remotion-dev/skills</code><button data-copy="npx skills add remotion-dev/skills"><span class="do">انسخ</span><span class="done">اتنسخ ✓</span></button></div>
           <a class="go" href="https://github.com/remotion-dev/skills" target="_blank" rel="noopener">Remotion Skills على GitHub ↗</a>
           
         </div></li>
-        <li><div class="x-num">04</div><div>
-          <h2>3 · <em>Motion Copy</em></h2><p>ده Skill عملته لنفسي بالطريقة بتاعة الحلقة 7: تبعتله فيديو عاجبك، ويعيده حركة بحركة (نفس التوقيت والزووم والبلور) بهويتك واسمك. اعمل واحد زيه: اطلب من Claude Code يعمل Skill من طريقة شغلك في نسخ الفيديوهات.</p>
+        <li><div class="x-num">03</div><div>
+          <h2><em>Motion Copy</em></h2><p>ده Skill عملته لنفسي بالطريقة بتاعة الحلقة 7: تبعتله فيديو عاجبك، ويعيده حركة بحركة (نفس التوقيت والزووم والبلور) بهويتك واسمك. اعمل واحد زيه: اطلب من Claude Code يعمل Skill من طريقة شغلك في نسخ الفيديوهات.</p>
           
           
           
         </div></li>
-        <li><div class="x-num">05</div><div>
-          <h2>4 · <em>Video Use</em></h2><p>إديت للفيديو بالكلام: بيفرّغ، ويقص، ويلوّن، ويحط كابشن، وبيسألك قبل ما ينفّذ. مفتوح المصدر على GitHub، وطريقة التسطيب في الصفحة.</p>
+        <li><div class="x-num">04</div><div>
+          <h2><em>Video Use</em></h2><p>إديت للفيديو بالكلام: بيفرّغ، ويقص، ويلوّن، ويحط كابشن، وبيسألك قبل ما ينفّذ. مفتوح المصدر على GitHub، وطريقة التسطيب في الصفحة.</p>
           
           <a class="go" href="https://github.com/browser-use/video-use" target="_blank" rel="noopener">browser-use/video-use ↗</a>
           
         </div></li>
-        <li><div class="x-num">06</div><div>
-          <h2>5 · <em>Algorithmic Art</em></h2><p>خلفيات وأشكال بتتولّد بالكود (p5.js)، كل مرة شكل جديد. ده من مجموعة Skills الرسمية بتاعة Anthropic.</p>
+        <li><div class="x-num">05</div><div>
+          <h2><em>Algorithmic Art</em></h2><p>خلفيات وأشكال بتتولّد بالكود (p5.js)، كل مرة شكل جديد. ده من مجموعة Skills الرسمية بتاعة Anthropic.</p>
           
           <a class="go" href="https://github.com/anthropics/skills/tree/main/skills/algorithmic-art" target="_blank" rel="noopener">anthropics/skills ↗</a>
           
         </div></li>
-        <li><div class="x-num">07</div><div>
+        <li><div>
           <h2>اقرا الـ Skill <em>قبل ما تستخدمه</em></h2><p>أول سطرين في أي SKILL.md بيقولولك هو بيعمل إيه وإمتى بيشتغل:</p>
           <div class="copy"><code>type ~/.claude/skills/hyperframes/SKILL.md | select -first 3</code><button data-copy="type ~/.claude/skills/hyperframes/SKILL.md | select -first 3"><span class="do">انسخ</span><span class="done">اتنسخ ✓</span></button></div>
           
@@ -108,5 +114,6 @@
     </div>
   </footer>
   <script src="/brand.js"></script>
+  <script src="/cover-look.js"></script>
 </body>
 </html>
