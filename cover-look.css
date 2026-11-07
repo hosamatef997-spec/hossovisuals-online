@@ -1,0 +1,70 @@
+/* HOSSO «cover look» on the web, 2026-11-07.
+   The carousel cover Hossam picked (dashboard R114, R120) carried onto the site and the motion library, so every surface
+   speaks one language: a faint grid on the navy, titles in two big lines with the second on a solid champagne block,
+   look A «مفرّغ» (an ivory outline line) for news and look D (a champagne pen loop) for episodes and tips, the champagne
+   word of every title on the block, big champagne step numbers, and the 3D objects (frosted-glass discs, the Claude symbol
+   in its own orange) rendered by design/cover/objects.py.
+   Loaded after brand.css + brand-pages.css (inner pages) or home-h.css (home). Script: /cover-look.js. */
+:root { --cl-champ: #D8B878; --cl-navy: #0F1B33; --cl-ivory: #F4EFE6; --cl-muted: #A9B1C2; --cl-line: #2B3B5E; }
+
+/* the grid, strongest behind the top of the page, gone at the edges */
+.cl-grid { position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background-image: linear-gradient(rgba(169,177,194,.075) 1px, transparent 1px), linear-gradient(90deg, rgba(169,177,194,.075) 1px, transparent 1px);
+  background-size: 64px 64px; background-position: center top;
+  -webkit-mask-image: radial-gradient(ellipse 85% 70% at 50% 32%, #000 30%, transparent 100%);
+          mask-image: radial-gradient(ellipse 85% 70% at 50% 32%, #000 30%, transparent 100%); }
+main, footer, section { position: relative; z-index: 1; }
+
+/* the champagne word of a title sits on the champagne block, in navy (it was champagne text) */
+.section-title em, .x-steps h2 em, .cl-title em, .hub-ep-title em, .x-drop .section-title em {
+  font-style: normal; background: var(--cl-champ); color: var(--cl-navy); -webkit-text-fill-color: var(--cl-navy);
+  -webkit-background-clip: border-box; background-clip: border-box; text-shadow: none;
+  padding: 0 .2em .06em; border-radius: 0; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+
+/* ---------- the page head of an episode / news page (tools/make-page.mjs writes .cl-head) ---------- */
+.page-head.cl-head { position: relative; text-align: right; max-width: none; margin: 0 0 3rem; padding: 1rem 0 0; }
+[dir="ltr"] .page-head.cl-head { text-align: left; }
+.cl-head .cl-text { position: relative; z-index: 2; width: min(100%, 680px); margin-inline-start: 0; }
+.cl-head .eyebrow { display: block; background: none; border: 0; box-shadow: none; padding: 0; border-radius: 0;
+  -webkit-backdrop-filter: none; backdrop-filter: none; color: var(--cl-champ); font-family: var(--ar), sans-serif;
+  font-weight: 600; font-size: 1.15rem; letter-spacing: 0; text-transform: none; margin: 0 0 1.1rem; }
+.cl-title { margin: 0; color: var(--cl-ivory); font-family: var(--ar), sans-serif; font-weight: 800; line-height: 1.08; letter-spacing: 0; }
+.cl-title .cl-row { display: block; }
+.cl-title .cl-row + .cl-row { margin-top: .35rem; }
+.cl-fit { display: inline-block; white-space: nowrap; font-size: clamp(2.6rem, 11vw, 6.6rem); }
+.cl-title .cl-row.l2 .cl-fit { background: var(--cl-champ); color: var(--cl-navy); padding: .02em .2em .1em; line-height: 1.12; }
+.cl-fit.wrap { white-space: normal; }
+.cl-title bdi { unicode-bidi: isolate; font-family: "Bricolage Grotesque", var(--sans), sans-serif; font-weight: 700; letter-spacing: -.02em; }
+.cl-title .cl-row.l1 .cl-fit.cl-outline { filter: url(#cl-ring); }
+.cl-loop { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; z-index: 3; }
+.cl-loop path { fill: none; stroke: var(--cl-champ); stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+.cl-head p.x-lead { text-align: inherit; color: var(--cl-ivory); font-weight: 600; margin-top: 1.6rem; max-width: 640px; }
+.cl-head .cta-row { justify-content: flex-start; }
+
+/* the 3D objects: in the empty half of the head on wide screens, peeking over the top on phones */
+.cl-objs { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+.cl-objs img { position: absolute; display: block; height: auto; -webkit-user-select: none; user-select: none; }
+.cl-objs .o-disc { width: clamp(150px, 24vw, 330px); left: -6%; top: -3.5rem; }
+.cl-objs .o-spark { width: clamp(96px, 15vw, 230px); left: 18%; top: 34%; }
+.cl-objs .o-edge { width: clamp(90px, 12vw, 180px); left: 4%; bottom: -2.5rem; }
+@media (max-width: 899px) {
+  .page-head.cl-head { padding-top: 9.5rem; }
+  .cl-head .cl-text { width: 100%; }
+  .cl-objs .o-disc { width: 168px; left: -58px; top: -1.5rem; }
+  .cl-objs .o-spark { width: 104px; left: auto; right: 4%; top: .5rem; }
+  .cl-objs .o-edge { display: none; }
+}
+
+/* ---------- steps: a big champagne number instead of the ringed one ---------- */
+.x-steps .x-num { width: auto; height: auto; border: 0; border-radius: 0; background: none; box-shadow: none;
+  font-family: "Bricolage Grotesque", var(--sans), sans-serif; font-weight: 600; font-size: 2.6rem; line-height: 1;
+  color: var(--cl-champ); letter-spacing: -.02em; }
+@media (max-width: 640px) { .x-steps .x-num { width: auto; height: auto; font-size: 2.1rem; } }
+.x-steps h2 { line-height: 1.45; }
+
+/* ---------- other page heads (hub, library gateway, links, portfolio): same kicker and a bigger title ---------- */
+.page-head:not(.cl-head) .section-title { font-weight: 800; font-size: clamp(2.3rem, 7vw, 4.2rem); line-height: 1.2; }
+.page-head:not(.cl-head) .eyebrow { background: none; border: 0; box-shadow: none; padding: 0; -webkit-backdrop-filter: none; backdrop-filter: none;
+  color: var(--cl-champ); font-weight: 600; letter-spacing: 0; text-transform: none; }
+
+@media (prefers-reduced-motion: reduce) { .cl-loop path { transition: none; } }
