@@ -1,0 +1,31 @@
+﻿Mustafa — brand colours / ألوان مصطفى
+
+Burgundy / عنابي
+  HEX #5A1424
+  RGB 90 20 36
+  CMYK 0 78 60 65 (approx. — ask the printer for a proof)
+  اللون الأساسي: الشعار، الخلفيات، الوشاح
+
+Cream / كريمي
+  HEX #F5EFE6
+  RGB 245 239 230
+  CMYK 0 2 6 4 (approx. — ask the printer for a proof)
+  الورق والخلفيات الفاتحة
+
+Gold / ذهبي
+  HEX #C29A4E
+  RGB 194 154 78
+  CMYK 0 21 60 24 (approx. — ask the printer for a proof)
+  القبعة، الغرزة، التفاصيل الصغيرة بس
+
+Ink / حبري
+  HEX #141114
+  RGB 20 17 20
+  CMYK 0 15 0 92 (approx. — ask the printer for a proof)
+  النصوص الطويلة
+
+White / أبيض
+  HEX #FFFFFF
+  RGB 255 255 255
+  CMYK 0 0 0 0 (approx. — ask the printer for a proof)
+  فوق الصور الغامقة
