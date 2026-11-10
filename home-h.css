@@ -159,3 +159,7 @@ footer .fl a:hover { color: #D8B878; }
 /* the glass buttons are the main actions: a firmer champagne rim and a faint warm light, so they read above «View my work» */
 .btn-gold.wa-glass { border: 1.5px solid rgba(216,184,120,.82);
   box-shadow: inset 0 1px 0 rgba(255,255,255,.18), inset 0 0 22px rgba(216,184,120,.12), 0 0 0 4px rgba(216,184,120,.07), 0 10px 30px rgba(4,8,18,.45); }
+/* 11-10: same hover/tap as every main button on the site — brighter champagne frame and a soft champagne glow */
+.btn-gold.wa-glass { border-color: #D8B878; }
+.btn-gold.wa-glass:hover, .btn-gold.wa-glass:focus-visible { border-color: #ECD3A0;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.2), inset 0 0 22px rgba(216,184,120,.16), 0 0 0 4px rgba(216,184,120,.10), 0 0 26px rgba(216,184,120,.28), 0 10px 30px rgba(4,8,18,.45); }

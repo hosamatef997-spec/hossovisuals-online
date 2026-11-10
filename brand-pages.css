@@ -153,7 +153,7 @@ body[dir="rtl"] h1, body[dir="rtl"] h2, body[dir="rtl"] h3, [dir="rtl"] .section
 nav.solid { background: rgba(15,27,51,.92); border-bottom: 1px solid var(--border); }
 nav .logo img { filter: none; }
 .nav-links a { color: var(--text); }
-.nav-cta:hover, .btn-gold { color: #08101F; }
+.nav-cta:hover { color: #08101F; }
 .lang-toggle button.active { color: #D8B878; }
 .nav-burger span { background: #F4EFE6; }
 .nav-links.open { background: rgba(8,16,31,.97); border-top-color: rgba(216,184,120,.22); }
@@ -163,8 +163,7 @@ nav .logo img { filter: none; }
 footer { border-top-color: var(--border); }
 
 /* buttons: solid champagne with navy text, outline in the hairline colour */
-.btn-gold, .lk.main, .x-pcopy, .copy button { background: #D8B878; border-color: #D8B878; color: #08101F; font-weight: 600; }
-.btn-gold:hover { box-shadow: 0 14px 34px rgba(216,184,120,.3); }
+/* (11-10: the main buttons are glass with a champagne frame now, defined further down) */
 .btn-outline { border-color: var(--border); color: var(--text); }
 
 /* series list, library gateway, links */
@@ -279,19 +278,28 @@ nav#nav.tuck { transform: translateY(calc(-100% - 18px)); }
 .copy code { border-radius: 16px; background: var(--g-fill-deep); border: 1.5px dashed rgba(216,184,120,.6); box-shadow: inset 0 2px 10px rgba(0,0,0,.25); }
 .copy button { border-radius: 999px; padding: 0 1.25rem; min-height: 3.1rem; }
 
-/* the champagne buttons — Hossam 2026-11-06 picked option 3 «شامبين سايل» from five, then «مش تكون لامعة كده وثري دي»:
-   flat translucent champagne. The colour is thicker at the top and thins out towards the bottom; the backdrop under it is
-   warmed (sepia) so the see-through part stays champagne, not grey. No shine, no inner glow, no drop shadow, ivory text. */
+/* the main buttons — 11-10 Hossam «عايزك تغير الزرار البيج دا تخليه الزجاجي بس فريم بيج»: no more champagne fill.
+   Navy glass (a faint ivory veil over a blurred backdrop), a 1.5px champagne frame, ivory words, a soft inner top light.
+   Hover / tap: the frame brightens and a soft champagne glow opens around it. (Was the 11-06 «شامبين سايل» fill.) */
 .btn-gold, .lk.main, .x-pcopy, .copy button {
-  background: linear-gradient(180deg, rgba(236,211,160,.86) 0%, rgba(216,184,120,.60) 55%, rgba(216,184,120,.46) 100%);
-  border: 1px solid rgba(236,211,160,.7); color: #F4EFE6; font-weight: 700; text-shadow: 0 1px 3px rgba(8,16,31,.45);
-  box-shadow: none;
-  -webkit-backdrop-filter: blur(16px) sepia(.65) saturate(1.35) brightness(1.2); backdrop-filter: blur(16px) sepia(.65) saturate(1.35) brightness(1.2);
+  background: linear-gradient(180deg, rgba(255,255,255,.09), rgba(255,255,255,.015)), rgba(244,239,230,.06);
+  border: 1.5px solid #D8B878; color: #F4EFE6; font-weight: 700; text-shadow: 0 1px 2px rgba(8,16,31,.55);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.16), inset 0 0 18px rgba(216,184,120,.08);
+  -webkit-backdrop-filter: blur(14px) saturate(1.3); backdrop-filter: blur(14px) saturate(1.3);
+  transition: border-color .3s, box-shadow .35s, background .3s, color .3s, transform .5s var(--spring, cubic-bezier(.34,1.56,.64,1));
 }
-.btn-gold:hover, .lk.main:hover, .copy button:hover, .x-pcopy:hover { color: #FFFFFF; border-color: rgba(236,211,160,.9); box-shadow: none;
-  background: linear-gradient(180deg, rgba(236,211,160,.94) 0%, rgba(216,184,120,.70) 55%, rgba(216,184,120,.56) 100%); }
-.copy button.ok, .x-pcopy.ok { color: #08101F; text-shadow: none; border-color: rgba(236,211,160,.9);
-  background: linear-gradient(180deg, rgba(236,211,160,.9), rgba(216,184,120,.72)); }
+.btn-gold:hover, .lk.main:hover, .copy button:hover, .x-pcopy:hover,
+.btn-gold:focus-visible, .lk.main:focus-visible, .copy button:focus-visible, .x-pcopy:focus-visible {
+  color: #FFFFFF; border-color: #ECD3A0;
+  background: linear-gradient(180deg, rgba(255,255,255,.13), rgba(255,255,255,.03)), rgba(216,184,120,.08);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.2), inset 0 0 22px rgba(216,184,120,.14), 0 0 0 4px rgba(216,184,120,.10), 0 0 26px rgba(216,184,120,.28); }
+.btn-gold:active, .lk.main:active, .copy button:active, .x-pcopy:active { transform: scale(.97); border-color: #ECD3A0; transition-duration: .12s;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 0 0 4px rgba(216,184,120,.12), 0 0 22px rgba(216,184,120,.3); }
+/* Arabic never gets letter-spacing (it breaks the joins); keep the words right-to-left */
+[dir="rtl"] .btn-gold, .btn-gold[dir="rtl"], body[dir="rtl"] .btn-gold, body[dir="rtl"] .copy button, body[dir="rtl"] .lk.main, body[dir="rtl"] .x-pcopy { letter-spacing: 0; text-transform: none; }
+/* copied: a moment of solid champagne so the tap reads as done */
+.copy button.ok, .x-pcopy.ok { color: #08101F; text-shadow: none; border-color: #ECD3A0;
+  background: linear-gradient(180deg, rgba(236,211,160,.92), rgba(216,184,120,.78)); }
 
 .note { border-radius: var(--g-r); }
 .note ul li::marker { color: #D8B878; }
@@ -355,7 +363,7 @@ html.gm .copy button.ok { animation: g-pop .5s var(--spring); }
 @media (prefers-reduced-transparency: reduce) {
   .x-steps > li, .note, .x-pcard, .lib-grid a, .eps, .x-how, .x-style, .lk, .page-head .eyebrow, .x-steps .go, .btn-outline, .nav-links.open, nav#nav, #g-toast {
     background: #172440; -webkit-backdrop-filter: none; backdrop-filter: none; }
-  .btn-gold, .lk.main, .x-pcopy, .copy button { background: #D8B878; color: #08101F; text-shadow: none; -webkit-backdrop-filter: none; backdrop-filter: none; }
+  .btn-gold, .lk.main, .x-pcopy, .copy button { background: #172440; border: 1.5px solid #D8B878; color: #F4EFE6; text-shadow: none; -webkit-backdrop-filter: none; backdrop-filter: none; }
 }
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
   .x-steps > li, .note, .x-pcard, .lib-grid a, .eps, .x-how, .x-style, .lk { background: rgba(23,36,64,.92); }
@@ -397,8 +405,11 @@ body[dir="ltr"] .hub-head h1 { font-family: var(--sans); font-weight: 700; }
 .hub-ep-title { display: block; margin: .8rem 0 1.05rem; font-family: var(--ar); font-weight: 800; font-size: 1.5rem; line-height: 1.4; color: #F4EFE6; }
 .hub-ep-title em { font-style: normal; color: #D8B878; }
 .hub-ep-go { display: flex; justify-content: center; padding: .85rem 1rem; border-radius: 999px; font-family: var(--ar); font-weight: 700; font-size: 1.05rem; color: #F4EFE6; text-shadow: 0 1px 3px rgba(8,16,31,.45);
-  background: linear-gradient(180deg, rgba(236,211,160,.86) 0%, rgba(216,184,120,.60) 55%, rgba(216,184,120,.46) 100%); border: 1px solid rgba(236,211,160,.7);
-  -webkit-backdrop-filter: blur(16px) sepia(.65) saturate(1.35) brightness(1.2); backdrop-filter: blur(16px) sepia(.65) saturate(1.35) brightness(1.2); }
+  background: linear-gradient(180deg, rgba(255,255,255,.09), rgba(255,255,255,.015)), rgba(244,239,230,.06); border: 1.5px solid #D8B878;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.16), inset 0 0 18px rgba(216,184,120,.08); transition: border-color .3s, box-shadow .35s;
+  -webkit-backdrop-filter: blur(14px) saturate(1.3); backdrop-filter: blur(14px) saturate(1.3); }
+.hub-ep:hover .hub-ep-go, .hub-ep:focus-visible .hub-ep-go, .hub-ep:active .hub-ep-go { border-color: #ECD3A0;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.2), inset 0 0 22px rgba(216,184,120,.14), 0 0 0 4px rgba(216,184,120,.10), 0 0 26px rgba(216,184,120,.28); }
 .hub-next { margin: .35rem 0 0; text-align: center; font-family: var(--ar); font-size: .98rem; color: var(--muted); }
 .hub-next b { color: #F4EFE6; font-weight: 700; }
 /* section label + grouped list */
@@ -435,7 +446,7 @@ body[dir="ltr"] .hub-row .chev { transform: rotate(135deg); }
 }
 @media (prefers-reduced-transparency: reduce) {
   .hub-ep, .hub-list, .hub-soc a { background: #172440; -webkit-backdrop-filter: none; backdrop-filter: none; }
-  .hub-ep-go { background: #D8B878; color: #08101F; text-shadow: none; -webkit-backdrop-filter: none; backdrop-filter: none; }
+  .hub-ep-go { background: #172440; border: 1.5px solid #D8B878; color: #F4EFE6; text-shadow: none; -webkit-backdrop-filter: none; backdrop-filter: none; }
 }
 @media (max-width: 380px) { .hub-soc { grid-template-columns: 1fr; } }
 
@@ -480,3 +491,7 @@ body[dir="rtl"], [dir="rtl"] p, [dir="rtl"] li { word-spacing: .08em; }
   .x-samples { grid-template-columns: 1fr; }
   .x-svc .btn-gold, .x-hire .btn-gold { width: 100%; justify-content: center; }
 }
+
+/* 11-10 «توكل علي الله»: the services capsule near the top of /links/ */
+.hub-svc { display: flex; align-items: center; justify-content: center; width: 100%; margin: 1.5rem 0 0; padding: 1rem 1.2rem; font-family: var(--ar); font-size: 1.08rem; line-height: 1.5; text-align: center; white-space: normal; letter-spacing: 0; }
+body[dir="ltr"] .hub-svc { font-family: var(--sans); font-size: 1rem; }
