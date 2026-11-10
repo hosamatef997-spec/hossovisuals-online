@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-wa="971556226197" data-mail="hosamatef997@gmail.com">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>كلون لصوتي في ElevenLabs · EP 13 · HOSSO Visuals</title>
+<meta name="description" content="خطوات الحلقة 13 من «بتعلّم Claude قدامكم»: عملت كلون لصوتي في ElevenLabs، وClaude كتبلي سكريبت بيبعت كل سطر من الريل للـ API ويرجّعه ملف MP3 بصوتي." />
+<meta property="og:title" content="كلون لصوتي في ElevenLabs · EP 13 · HOSSO Visuals" />
+<meta property="og:description" content="خطوات الحلقة 13 من «بتعلّم Claude قدامكم»: عملت كلون لصوتي في ElevenLabs، وClaude كتبلي سكريبت بيبعت كل سطر من الريل للـ API ويرجّعه ملف MP3 بصوتي." />
+<meta property="og:url" content="https://hossovisuals.online/ep13/" />
+<meta property="og:image" content="https://hossovisuals.online/og-cover.jpg" />
+<meta property="og:type" content="website" />
+<meta name="theme-color" content="#0F1B33" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="preload" href="/fonts/beiruti-var-arabic.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/brand.css" />
+<link rel="stylesheet" href="/brand-pages.css" />
+<link rel="stylesheet" href="/cover-look.css" />
+</head>
+<body data-lang="ar" dir="rtl">
+  <div class="cl-grid" aria-hidden="true"></div>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="cl-ring" x="-5%" y="-25%" width="110%" height="150%"><feMorphology in="SourceAlpha" operator="dilate" radius="2" result="g"/><feComposite in="g" in2="SourceAlpha" operator="out" result="e"/><feFlood flood-color="#F4EFE6"/><feComposite in2="e" operator="in"/></filter></svg>
+  <nav id="nav" class="solid">
+    <a class="logo" href="/" aria-label="HOSSO Visuals home"><img src="/logo-mark.png" alt="HOSSO Visuals" /></a>
+    <div class="nav-links">
+      <a href="/"><span data-en>Home</span><span data-ar>الرئيسية</span></a>
+      <a href="/#story"><span data-en>My Story</span><span data-ar>قصتي</span></a>
+      <a href="/#gallery"><span data-en>Gallery</span><span data-ar>المعرض</span></a>
+      <a href="/claude/"><span data-en>Learning Claude</span><span data-ar>بتعلّم Claude</span></a>
+      <a href="/library/"><span data-en>Library</span><span data-ar>المكتبة</span></a>
+      <a href="/#contact"><span data-en>Contact</span><span data-ar>تواصل</span></a>
+    </div>
+    <div class="nav-right">
+      <div class="lang-toggle"><button onclick="setLang('en')">EN</button><button onclick="setLang('ar')">ع</button></div>
+      <a class="nav-cta whatsapp-btn" href="/#contact"><span data-en>Let's talk</span><span data-ar>كلّمني</span></a>
+      <button class="nav-burger" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <main class="inner">
+
+    <section class="block"><div class="wrap">
+      <div class="page-head cl-head">
+        <div class="cl-text">
+          <div class="eyebrow"><span data-en>Learning Claude in public · EP 13</span><span data-ar>بتعلّم Claude قدامكم · EP 13</span></div>
+          <h1 class="cl-title" dir="rtl"><span class="cl-row l1"><span class="cl-fit">كلــون</span></span><span class="cl-row l2"><span class="cl-fit">لصوتـــي في <bdi>ElevenLabs</bdi></span></span></h1>
+          <p class="x-lead" dir="rtl">خطوات الحلقة 13 من «بتعلّم Claude قدامكم»: عملت كلون لصوتي في ElevenLabs، وClaude كتبلي سكريبت بيبعت كل سطر من الريل للـ API ويرجّعه ملف MP3 بصوتي.</p>
+          <div class="cta-row"><a class="btn-gold" href="https://www.instagram.com/hossovisuals.ai/" target="_blank" rel="noopener"><span data-en>Watch the reel</span><span data-ar>شوف الريل</span></a><a class="btn-outline" href="/claude/"><span data-en>All episodes</span><span data-ar>كل الحلقات</span></a></div>
+        </div>
+        <svg class="cl-loop" aria-hidden="true"><path /></svg>
+        <div class="cl-objs" aria-hidden="true" data-props="keys"><img class="o-disc" src="/media/cover/key-slash.webp" alt="" /><img class="o-spark" src="/media/cover/spark.webp" alt="" /><img class="o-edge soft" src="/media/cover/key-enter.webp" alt="" /></div>
+      </div>
+      <ol class="x-steps" dir="rtl">
+        <li><div class="x-num">01</div><div>
+          <h2>سجّل <em>دقيقة لدقيقتين</em> بصوتك</h2><p>ElevenLabs بتقول إن دقيقة لدقيقتين صوت نضيف كفاية، ومتزوّدش عن 3 دقايق. صوت واحد بس، من غير صدى ولا دوشة، وبنفس الطريقة اللي عايز الكلون يتكلم بيها، لأنه بيقلّد السرعة والنبرة واللهجة.</p>
+          
+          <a class="go" href="https://elevenlabs.io/docs/product-guides/voices/voice-cloning/instant-voice-cloning" target="_blank" rel="noopener">دليل Instant Voice Cloning الرسمي ↗</a>
+          
+        </div></li>
+        <li><div class="x-num">02</div><div>
+          <h2>اعمل <em>Instant Voice Clone</em></h2><p>في ElevenLabs افتح Voices ودوس علامة +، واختار Instant Voice Clone. ارفع التسجيل، سمّي الصوت، وأكّد إن ده صوتك ومن حقك تعمله كلون، وبعدين Save voice.</p>
+          
+          
+          
+        </div></li>
+        <li><div class="x-num">03</div><div>
+          <h2>هات <em>رقم الصوت</em> (voice_id)</h2><p>كل صوت ليه رقم. تقدر تشوف أصواتك كلها بالـ API ده (حط المفتاح بتاعك مكان الكلام):</p>
+          <div class="copy"><code>curl -H &quot;xi-api-key: YOUR_KEY&quot; https://api.elevenlabs.io/v2/voices</code><button data-copy="curl -H &quot;xi-api-key: YOUR_KEY&quot; https://api.elevenlabs.io/v2/voices"><span class="do">انسخ</span><span class="done">اتنسخ ✓</span></button></div>
+          
+          
+        </div></li>
+        <li><div class="x-num">04</div><div>
+          <h2>خبّي <em>المفتاح</em> في .env</h2><p>خد الـ API key من حسابك في ElevenLabs، وحطه في ملف إعدادات اسمه env (بنقطة في أوله) جوه فولدر المشروع. متكتبوش جوه الكود ولا تبعته لحد.</p>
+          <div class="copy"><code>ELEVENLABS_API_KEY=paste-your-key-here</code><button data-copy="ELEVENLABS_API_KEY=paste-your-key-here"><span class="do">انسخ</span><span class="done">اتنسخ ✓</span></button></div>
+          
+          
+        </div></li>
+        <li><div class="x-num">05</div><div>
+          <h2>خلّي <em>Claude</em> يكتب السكريبت</h2><p>افتح Claude Code في فولدر المشروع واطلب منه السكريبت. هو بيبعت السطر لـ text-to-speech بالـ voice_id بتاعك، ويحفظ الصوت ملف MP3.</p>
+          <div class="copy"><code>Write tts.mjs: read script.json, send each scene's vo to the ElevenLabs text-to-speech API (POST /v1/text-to-speech/{voice_id}, key from ELEVENLABS_API_KEY), save vo/01.mp3, 02.mp3 … Never print the key.</code><button data-copy="Write tts.mjs: read script.json, send each scene's vo to the ElevenLabs text-to-speech API (POST /v1/text-to-speech/{voice_id}, key from ELEVENLABS_API_KEY), save vo/01.mp3, 02.mp3 … Never print the key."><span class="do">انسخ</span><span class="done">اتنسخ ✓</span></button></div>
+          
+          
+        </div></li>
+        <li><div class="x-num">06</div><div>
+          <h2>شغّله على <em>الريل</em></h2><p>ده نفس الأمر اللي في الريل: 3 سطور اتقالوا بصوتي واتحفظوا ملفات في فولدر vo.</p>
+          <div class="copy"><code>node tts.mjs jobs/_demo13</code><button data-copy="node tts.mjs jobs/_demo13"><span class="do">انسخ</span><span class="done">اتنسخ ✓</span></button></div>
+          
+          
+        </div></li>
+        <li><div class="x-num">07</div><div>
+          <h2>اسأل <em>Claude</em> هو عمل إيه</h2><p>ده الأمر التاني اللي في الريل: Claude بيقرا السكريبت ويشرحه في 3 سطور، من غير ما يطبع أي مفتاح.</p>
+          <div class="copy"><code>claude -p &quot;Read tts.mjs and config.json. Answer in exactly 3 lines, English, never print any id or key: 1) what it sends to ElevenLabs 2) which model 3) what files it saves.&quot; --allowedTools Read</code><button data-copy="claude -p &quot;Read tts.mjs and config.json. Answer in exactly 3 lines, English, never print any id or key: 1) what it sends to ElevenLabs 2) which model 3) what files it saves.&quot; --allowedTools Read"><span class="do">انسخ</span><span class="done">اتنسخ ✓</span></button></div>
+          
+          
+        </div></li>
+      </ol>
+      <div class="note" dir="rtl"><h3>نصايح صغيرة</h3><ul><li>اعمل كلون لصوتك إنت بس، أو لحد معاك موافقته. ElevenLabs بتطلب منك تأكّد ده قبل ما تحفظ.</li><li>الكلون بيقلّد كل حاجة في التسجيل، حتى الدوشة وصوت الشفايف. سجّل في أوضة هادية.</li><li>المفتاح زي الباسورد: لو اتسرّب امسحه من حسابك واعمل واحد جديد.</li></ul></div>
+      <div class="next-up" dir="rtl"><div class="thin-rule"></div><p>الحلقة الجاية: خليت Claude يحلّل ريل فايرل مشهد مشهد.</p><div class="cta-row" style="justify-content:center"><a class="btn-gold" href="https://www.instagram.com/hossovisuals.ai/" target="_blank" rel="noopener"><span data-en>Follow so you don't miss it</span><span data-ar>تابعني عشان متفوتكش</span></a></div></div>
+    </div></section>
+  </main>
+  <footer>
+    <div class="wrap">
+      <a href="/"><img src="/logo-mark.png" alt="HOSSO Visuals" /></a>
+      <div class="fl">
+        <a href="/"><span data-en>Home</span><span data-ar>الرئيسية</span></a>
+        <a href="/#story"><span data-en>My Story</span><span data-ar>قصتي</span></a>
+        <a href="/#gallery"><span data-en>Gallery</span><span data-ar>المعرض</span></a>
+        <a href="/claude/"><span data-en>Learning Claude</span><span data-ar>بتعلّم Claude</span></a>
+        <a href="/library/"><span data-en>Library</span><span data-ar>المكتبة</span></a>
+        <a href="/#contact"><span data-en>Contact</span><span data-ar>تواصل</span></a>
+        <a href="/links/"><span data-en>All links</span><span data-ar>كل اللينكات</span></a>
+      </div>
+      <small>© <span id="yr"></span> HOSSO Visuals — Hossam Atef · Dubai, UAE</small>
+    </div>
+  </footer>
+  <script src="/brand.js"></script>
+  <script src="/cover-look.js"></script>
+</body>
+</html>
