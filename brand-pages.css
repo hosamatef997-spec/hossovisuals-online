@@ -495,3 +495,8 @@ body[dir="rtl"], [dir="rtl"] p, [dir="rtl"] li { word-spacing: .08em; }
 /* 11-10 «توكل علي الله»: the services capsule near the top of /links/ */
 .hub-svc { display: flex; align-items: center; justify-content: center; width: 100%; margin: 1.5rem 0 0; padding: 1rem 1.2rem; font-family: var(--ar); font-size: 1.08rem; line-height: 1.5; text-align: center; white-space: normal; letter-spacing: 0; }
 body[dir="ltr"] .hub-svc { font-family: var(--sans); font-size: 1rem; }
+
+/* 2026-11-15 portfolio samples (9:16) on /khadamat */
+.x-tall { display: grid; grid-template-columns: repeat(3, 1fr); gap: .8rem; align-items: start; margin-bottom: 1rem; }
+.x-tall .x-sample video { aspect-ratio: 9 / 16; }
+@media (max-width: 720px) { .x-tall { grid-template-columns: 1fr 1fr; } }
