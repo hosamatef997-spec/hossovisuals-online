@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-wa="971556226197" data-mail="hosamatef997@gmail.com">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>موقعك ساكت؟ · CLAUDE HOW-TO · HOSSO Visuals</title>
+<meta name="description" content="خلّي كل زرار في موقعك يعمل صوت ناعم لما حد يدوس عليه. Claude بيكتب الكود، والصوت نفسه معمول جوّه الكود، فمش محتاج تدوّر على ملفات صوت ولا تكون مبرمج." />
+<meta property="og:title" content="موقعك ساكت؟ · CLAUDE HOW-TO · HOSSO Visuals" />
+<meta property="og:description" content="خلّي كل زرار في موقعك يعمل صوت ناعم لما حد يدوس عليه. Claude بيكتب الكود، والصوت نفسه معمول جوّه الكود، فمش محتاج تدوّر على ملفات صوت ولا تكون مبرمج." />
+<meta property="og:url" content="https://hossovisuals.online/site-sounds/" />
+<meta property="og:image" content="https://hossovisuals.online/site-sounds/step1.webp" />
+<meta property="og:type" content="website" />
+<meta name="theme-color" content="#0F1B33" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="preload" href="/fonts/beiruti-var-arabic.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/brand.css" />
+<link rel="stylesheet" href="/brand-pages.css" />
+<link rel="stylesheet" href="/cover-look.css" />
+</head>
+<body data-lang="ar" dir="rtl">
+  <div class="cl-grid" aria-hidden="true"></div>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="cl-ring" x="-5%" y="-25%" width="110%" height="150%"><feMorphology in="SourceAlpha" operator="dilate" radius="2" result="g"/><feComposite in="g" in2="SourceAlpha" operator="out" result="e"/><feFlood flood-color="#F4EFE6"/><feComposite in2="e" operator="in"/></filter></svg>
+  <nav id="nav" class="solid">
+    <a class="logo" href="/" aria-label="HOSSO Visuals home"><img src="/logo-mark.png" alt="HOSSO Visuals" /></a>
+    <div class="nav-links">
+      <a href="/"><span data-en>Home</span><span data-ar>الرئيسية</span></a>
+      <a href="/#story"><span data-en>My Story</span><span data-ar>قصتي</span></a>
+      <a href="/#gallery"><span data-en>Gallery</span><span data-ar>المعرض</span></a>
+      <a href="/claude/"><span data-en>Learning Claude</span><span data-ar>بتعلّم Claude</span></a>
+      <a href="/library/"><span data-en>Library</span><span data-ar>المكتبة</span></a>
+      <a href="/khadamat/"><span data-en>Services</span><span data-ar>الخدمات</span></a>
+      <a href="/#contact"><span data-en>Contact</span><span data-ar>تواصل</span></a>
+    </div>
+    <div class="nav-right">
+      <div class="lang-toggle"><button onclick="setLang('en')">EN</button><button onclick="setLang('ar')">ع</button></div>
+      <a class="nav-cta whatsapp-btn" href="/#contact"><span data-en>Let's talk</span><span data-ar>كلّمني</span></a>
+      <button class="nav-burger" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <main class="inner">
+
+    <section class="block"><div class="wrap">
+      <div class="page-head cl-head">
+        <div class="cl-text">
+          <div class="eyebrow"><span data-en>Learning Claude in public · CLAUDE HOW-TO</span><span data-ar>بتعلّم Claude قدامكم · CLAUDE HOW-TO</span></div>
+          <h1 class="cl-title" dir="rtl"><span class="cl-row l1"><span class="cl-fit">موقعــك</span></span><span class="cl-row l2"><span class="cl-fit">ساكـــت؟</span></span></h1>
+          <p class="x-lead" dir="rtl">خلّي كل زرار في موقعك يعمل صوت ناعم لما حد يدوس عليه. Claude بيكتب الكود، والصوت نفسه معمول جوّه الكود، فمش محتاج تدوّر على ملفات صوت ولا تكون مبرمج.</p>
+          <div class="cta-row"><a class="btn-outline" href="/claude/"><span data-en>All episodes</span><span data-ar>كل الحلقات</span></a></div>
+        </div>
+        <svg class="cl-loop" aria-hidden="true"><path /></svg>
+        <div class="cl-objs" aria-hidden="true" data-props="keys"><img class="o-disc" src="/media/cover/key-slash.webp" alt="" /><img class="o-spark" src="/media/cover/spark.webp" alt="" /><img class="o-edge soft" src="/media/cover/key-enter.webp" alt="" /></div>
+      </div>
+      <ol class="x-steps" dir="rtl">
+        <li><div class="x-num">01</div><div>
+          <h2>الفكرة <em>في سطر</em></h2><p>المتصفح عنده أداة اسمها Web Audio API بتطلّع صوت من الكود نفسه (نغمة قصيرة بتختفي بسرعة). يعني «تِك» ناعمة مع كل ضغطة، من غير ما ترفع ولا ملف mp3. وفي قاعدة مهمة: المتصفحات مش بتشغّل صوت غير بعد ما الزائر يدوس على حاجة، وده بالظبط اللي إحنا عايزينه.</p>
+          
+          <a class="go" href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API" target="_blank" rel="noopener">MDN: Web Audio API ↗</a>
+          <figure style="margin:14px 0 0"><img loading="lazy" src="step1.webp" alt="من الريل: زرار الحجز وهو بيتداس" style="width:100%;border-radius:18px" /><figcaption style="margin-top:8px;font-size:.92em;opacity:.75">من الريل: زرار الحجز وهو بيتداس</figcaption></figure>
+        </div></li>
+        <li><div class="x-num">02</div><div>
+          <h2>اطلبها <em>من Claude</em></h2><p>افتح شات جديد في Claude وانسخ البرومبت ده، وغيّر اللي بين القوسين:</p>
+          <div class="copy"><code>عايز صوت ناعم وقصير لكل زرار في موقعي لما حد يدوس عليه. اعمله بالـ Web Audio API جوّه الكود (من غير ملفات صوت)، نغمة مختلفة سنة لكل نوع زرار، ومستوى صوت هادي. موقعي معمول على [Webflow / WordPress / HTML عادي]. اعملي صفحة تجربة فيها 3 زراير أجرّب عليها الأول، وبعدين اديني الكود اللي ألصقه في موقعي وقولي أحطه فين بالظبط.</code><button data-copy="عايز صوت ناعم وقصير لكل زرار في موقعي لما حد يدوس عليه. اعمله بالـ Web Audio API جوّه الكود (من غير ملفات صوت)، نغمة مختلفة سنة لكل نوع زرار، ومستوى صوت هادي. موقعي معمول على [Webflow / WordPress / HTML عادي]. اعملي صفحة تجربة فيها 3 زراير أجرّب عليها الأول، وبعدين اديني الكود اللي ألصقه في موقعي وقولي أحطه فين بالظبط."><span class="do">انسخ</span><span class="done">اتنسخ ✓</span></button></div>
+          
+          <figure style="margin:14px 0 0"><img loading="lazy" src="step2.webp" alt="من الريل: الطلب في شات عادي" style="width:100%;border-radius:18px" /><figcaption style="margin-top:8px;font-size:.92em;opacity:.75">من الريل: الطلب في شات عادي</figcaption></figure>
+        </div></li>
+        <li><div class="x-num">03</div><div>
+          <h2>جرّب <em>قبل ما تحطه</em></h2><p>Claude هيعملك صفحة تجربة تشتغل جنب الشات (Artifact) وتقدر تدوس على الزراير وتسمع. لو الصوت عالي أو حاد قوله «وطّي الصوت» أو «خليه أنعم»، ولما يعجبك انسخ الكود من زرار النسخ.</p>
+          
+          <a class="go" href="https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them" target="_blank" rel="noopener">شرح Anthropic: يعني إيه Artifact ↗</a>
+          <figure style="margin:14px 0 0"><img loading="lazy" src="step3.webp" alt="من الريل: الكود والصوت معمول جوّاه" style="width:100%;border-radius:18px" /><figcaption style="margin-top:8px;font-size:.92em;opacity:.75">من الريل: الكود والصوت معمول جوّاه</figcaption></figure>
+        </div></li>
+        <li><div class="x-num">04</div><div>
+          <h2>اسمعها <em>دلوقتي</em></h2><p>دي صفحة تجربة حقيقية عملناها بنفس الطريقة: 3 زراير، كل واحد ليه نغمة. افتحها من الموبايل ودوس عليهم: hossovisuals.online/site-sounds/demo.html</p>
+          
+          <a class="go" href="https://hossovisuals.online/site-sounds/demo.html" target="_blank" rel="noopener">افتح صفحة التجربة ↗</a>
+          <figure style="margin:14px 0 0"><img loading="lazy" src="step4.webp" alt="صفحة التجربة الحقيقية: دوس على أي زرار وهتسمع الصوت" style="width:100%;border-radius:18px" /><figcaption style="margin-top:8px;font-size:.92em;opacity:.75">صفحة التجربة الحقيقية: دوس على أي زرار وهتسمع الصوت</figcaption></figure>
+        </div></li>
+        <li><div class="x-num">05</div><div>
+          <h2>حطه <em>في موقعك</em></h2><p>الصق الكود في المكان اللي Claude قالك عليه (في Webflow مثلاً: Site settings ← Custom code ← قبل &lt;/body&gt;، وفي WordPress عن طريق بلجن بيضيف كود للفوتر). انشر، وجرّب من الموبايل والكمبيوتر.</p>
+          
+          
+          <figure style="margin:14px 0 0"><img loading="lazy" src="step5.webp" alt="من الريل: كل ضغطة ليها صوت" style="width:100%;border-radius:18px" /><figcaption style="margin-top:8px;font-size:.92em;opacity:.75">من الريل: كل ضغطة ليها صوت</figcaption></figure>
+        </div></li>
+      </ol>
+      <div class="note" dir="rtl"><h3>نصايح صغيرة</h3><ul><li>خلّي الصوت هادي وقصير جداً (أقل من ربع ثانية). الصوت العالي بيضايق الزائر بدل ما يفرّحه.</li><li>متشغّلش صوت أول ما الصفحة تفتح: المتصفح هيمنعه، وكمان مزعج.</li><li>عايز موقع كامل بالحركة والأصوات دي لبراندك؟ ابعتلي على الواتساب wa.me/971556226197 وأقولك السعر حسب اللي محتاجه.</li></ul></div>
+      <!-- hire:reels --><div class="note x-hire" dir="rtl"><h3>عايز حد <em>يعملهولك</em>؟</h3><p>مش فاضي تتعلم وتعمل بنفسك؟ أنا بعمل ريلز لبراندك بنفس الطريقة اللي بشرحها هنا.</p><div class="cta-row"><a class="btn-gold" dir="rtl" href="/khadamat/#reels">ريلز لبراندك ←</a></div></div><!-- /hire -->
+      
+    </div></section>
+  </main>
+  <footer>
+    <div class="wrap">
+      <a href="/"><img src="/logo-mark.png" alt="HOSSO Visuals" /></a>
+      <div class="fl">
+        <a href="/"><span data-en>Home</span><span data-ar>الرئيسية</span></a>
+        <a href="/#story"><span data-en>My Story</span><span data-ar>قصتي</span></a>
+        <a href="/#gallery"><span data-en>Gallery</span><span data-ar>المعرض</span></a>
+        <a href="/claude/"><span data-en>Learning Claude</span><span data-ar>بتعلّم Claude</span></a>
+        <a href="/library/"><span data-en>Library</span><span data-ar>المكتبة</span></a>
+        <a href="/khadamat/"><span data-en>Services</span><span data-ar>الخدمات</span></a>
+        <a href="/#contact"><span data-en>Contact</span><span data-ar>تواصل</span></a>
+        <a href="/links/"><span data-en>All links</span><span data-ar>كل اللينكات</span></a>
+      </div>
+      <small>© <span id="yr"></span> HOSSO Visuals — Hossam Atef · Dubai, UAE</small>
+    </div>
+  </footer>
+  <script src="/brand.js"></script>
+  <script src="/cover-look.js"></script>
+</body>
+</html>
