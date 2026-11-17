@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>صفحة لينكات — مثال</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Beiruti:wght@500;800&display=swap" rel="stylesheet">
+<style>
+  :root { --navy:#0F1B33; --deep:#08101F; --champ:#D8B878; --ivory:#F4EFE6; --slate:#5A6E93; }
+  * { box-sizing:border-box; margin:0 }
+  body { min-height:100vh; background:radial-gradient(120% 80% at 50% 0%, #1a2a4a 0%, var(--navy) 45%, var(--deep) 100%); color:var(--ivory); font-family:'Beiruti',system-ui,sans-serif; display:flex; justify-content:center; padding:48px 16px }
+  main { width:100%; max-width:440px; text-align:center }
+  .av { width:112px; height:112px; border-radius:50%; margin:0 auto 14px; background:linear-gradient(135deg,var(--champ),var(--slate)); display:grid; place-items:center; font:800 52px/1 system-ui; color:var(--navy) }
+  h1 { font-size:28px; font-weight:800 }
+  p.tag { opacity:.7; margin:6px 0 28px; font-size:17px }
+  a.l { display:flex; align-items:center; justify-content:center; gap:10px; min-height:58px; margin:12px 0; border-radius:29px; text-decoration:none; color:var(--ivory); font-size:19px; font-weight:800; background:rgba(244,239,230,.08); border:1.5px solid rgba(244,239,230,.2); transition:transform .15s, background .15s }
+  a.l:hover, a.l:focus-visible { transform:translateY(-2px); background:rgba(216,184,120,.16); outline:none }
+  a.l.main { background:var(--champ); color:var(--navy); border-color:var(--champ) }
+  footer { margin-top:30px; font-size:14px; opacity:.55 }
+</style>
+</head>
+<body>
+<main>
+  <div class="av">H</div>
+  <h1>HOSSO | VISUALS</h1>
+  <p class="tag">مثال لصفحة لينكات اتعملت بـ Claude في رسالة واحدة</p>
+  <a class="l main" href="https://wa.me/971556226197">💬 كلّمني على الواتساب</a>
+  <a class="l" href="https://www.instagram.com/hossovisuals.ai/">📸 Instagram</a>
+  <a class="l" href="https://www.tiktok.com/@hosso.visuals.ai">🎵 TikTok</a>
+  <a class="l" href="https://hossovisuals.online/khadamat/">✦ الخدمات</a>
+  <footer>hossovisuals.online/link-bio</footer>
+</main>
+</body>
+</html>
