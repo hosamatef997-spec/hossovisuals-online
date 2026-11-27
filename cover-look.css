@@ -155,3 +155,9 @@ body { position: relative; }
   .cl-light { display: none; }
   :is(nav:not(.solid), nav) .lang-toggle::before { transition: none; }
 }
+
+/* 2026-11-27 live 3D props (hosso3d.js): the canvas sits where the PNG props were; once WebGL runs, the PNGs step aside */
+.h3d { position: absolute; inset: -4rem -2rem -3rem calc(-1 * max(2rem, (100vw - 100%) / 2)); z-index: 1; pointer-events: none; }
+.h3d .h3d-canvas { width: 100%; height: 100%; display: block; opacity: 0; animation: h3d-in 1.1s ease-out .05s forwards; }
+@keyframes h3d-in { to { opacity: 1; } }
+.h3d-on .cl-objs { opacity: 0; transition: opacity .6s ease; }

@@ -455,3 +455,7 @@ nav:not(.solid) .lang-toggle button+button{border-left-color:rgba(245,239,226,.2
   .nav-burger{width:38px;height:38px;padding:0 11px;border-color:rgba(245,239,226,.26)}
   .nav-burger span{width:15px;height:2px}
 }
+
+/* 2026-11-27 live 3D props over the hero film (hosso3d.js): above the video + grain, under the words */
+.h3d-hero{position:absolute;inset:0;z-index:2;pointer-events:none}.h3d-hero .h3d-canvas{width:100%;height:100%;display:block;opacity:0;animation:h3dIn 1.2s ease-out .1s forwards}@keyframes h3dIn{to{opacity:1}}
+.hero-inner{position:relative;z-index:3}
