@@ -160,7 +160,8 @@ function mount(THREE, RoundedBoxGeometry, RoomEnvironment, host) {
     items = list.map((p, i) => {
       const obj = make[p.k]();
       obj.scale.setScalar(p.s * viewH);
-      obj.position.set((p.x - 0.5) * viewW, (0.5 - p.y) * viewH, 0);
+      const sq = w >= 760 && w < 1150 ? 0.7 : 1; // mid-width screens: keep the props in the left margin, clear of the title
+      obj.position.set((p.x * sq - 0.5) * viewW, (0.5 - p.y) * viewH, 0);
       obj.rotation.set(p.rx, p.ry, p.rz);
       root.add(obj);
       return { obj, base: obj.position.clone(), rot: obj.rotation.clone(), ph: i * 1.7, spd: 0.6 + i * 0.15 };
