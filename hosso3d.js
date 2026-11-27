@@ -31,6 +31,15 @@ const LAYOUTS = {
     narrow: [], // phone: the hero words sit on a solid panel under a short film strip, so no props there (and no three.js download)
   },
 };
+// every other inner page (steps, Claude, library, links…): same places as the services hero, props picked by the page's
+// data-props variant (lenses = disc, keys = keys, coins = coin) so each page keeps the look its PNGs had
+const VARIANT = { lenses: ["disc", "key"], keys: ["keySlash", "key"], coins: ["coin", "disc"] };
+function pageLayout(v) {
+  const [main, third] = VARIANT[v] || VARIANT.lenses;
+  const pick = (list) => list.map((p) => ({ ...p, k: p.k === "disc" ? main : p.k === "key" ? third : p.k, s: p.k === "disc" && main === "keySlash" ? p.s * 0.78 : p.s }));
+  return { wide: pick(LAYOUTS.services.wide), narrow: pick(LAYOUTS.services.narrow) };
+}
+const presetFor = (h) => (h.dataset.h3d === "page" ? pageLayout(h.dataset.variant) : LAYOUTS[h.dataset.h3d] || LAYOUTS.services);
 
 function canRun() {
   try {
@@ -42,7 +51,13 @@ function canRun() {
 }
 
 async function boot() {
-  const hosts = [...document.querySelectorAll("[data-h3d]")].filter((h) => h.clientWidth >= 760 || (LAYOUTS[h.dataset.h3d] || LAYOUTS.services).narrow.length);
+  // pages built with the flat props get a host next to them automatically (no per-page markup needed)
+  document.querySelectorAll(".cl-objs").forEach((o) => {
+    if (!o.parentElement || o.parentElement.querySelector("[data-h3d]")) return;
+    const h = document.createElement("div"); h.className = "h3d"; h.dataset.h3d = "page"; h.dataset.variant = o.dataset.props || "lenses";
+    o.after(h);
+  });
+  const hosts = [...document.querySelectorAll("[data-h3d]")].filter((h) => h.clientWidth >= 760 || presetFor(h).narrow.length);
   if (!hosts.length || !canRun()) return;
   const [THREE, { RoundedBoxGeometry }, { RoomEnvironment }] = await Promise.all([
     import("three"),
@@ -79,6 +94,26 @@ function makeProps(THREE, RoundedBoxGeometry) {
       const hub = new THREE.Mesh(new THREE.CylinderGeometry(0.13, 0.13, 0.15, 32), M.terra); hub.rotation.x = Math.PI / 2; g.add(hub);
       return g;
     },
+    // the coin: the disc with an embossed «$» on both faces (drawn once to a canvas texture)
+    coin() {
+      const g = this.disc();
+      const c = document.createElement("canvas"); c.width = c.height = 256; const x = c.getContext("2d");
+      x.font = "900 170px 'Bricolage Grotesque', Arial, sans-serif"; x.textAlign = "center"; x.textBaseline = "middle";
+      x.fillStyle = "rgba(15,27,51,.35)"; x.fillText("$", 134, 138); x.fillStyle = "#c9ced8"; x.fillText("$", 128, 130);
+      const tex = new THREE.CanvasTexture(c); tex.colorSpace = THREE.SRGBColorSpace;
+      const m = new THREE.MeshStandardMaterial({ map: tex, transparent: true, metalness: 0.6, roughness: 0.25 });
+      const f = new THREE.Mesh(new THREE.PlaneGeometry(0.42, 0.42), m); f.position.z = 0.0625; g.add(f);
+      const b = f.clone(); b.position.z = -0.0625; b.rotation.y = Math.PI; g.add(b);
+      return g;
+    },
+    // the navy key with the gold slash bar
+    keySlash() {
+      const g = new THREE.Group();
+      g.add(new THREE.Mesh(new RoundedBoxGeometry(1, 1, 0.5, 6, 0.16), M.navyGloss));
+      const top = new THREE.Mesh(new RoundedBoxGeometry(0.78, 0.78, 0.06, 4, 0.1), M.navyTop); top.position.z = 0.25; g.add(top);
+      const bar = new THREE.Mesh(new RoundedBoxGeometry(0.075, 0.46, 0.06, 2, 0.015), M.gold); bar.rotation.z = -0.55; bar.position.z = 0.3; g.add(bar);
+      return g;
+    },
     // the navy key with a lighter top and the gold enter arrow (unit width ≈ 1)
     key() {
       const g = new THREE.Group();
@@ -95,7 +130,7 @@ function makeProps(THREE, RoundedBoxGeometry) {
 }
 
 function mount(THREE, RoundedBoxGeometry, RoomEnvironment, host) {
-  const preset = LAYOUTS[host.dataset.h3d] || LAYOUTS.services;
+  const preset = presetFor(host);
   const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: "low-power" });
   renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.05;
   renderer.outputColorSpace = THREE.SRGBColorSpace;
