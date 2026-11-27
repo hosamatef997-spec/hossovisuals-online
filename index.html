@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hossam Atef — Cinematic Reels Creator · HOSSO Visuals · Dubai</title>
+  <link rel="preload" as="image" href="posters/hero-poster.jpg" fetchpriority="high" />
 
   <!-- ===== SEO / Social share ===== -->
   <meta name="description" content="Meet Hossam Atef — Egyptian filmmaker and cinematic reels creator behind HOSSO Visuals, based in Dubai. Since 2021: 111+ published works, brand films, wedding films and scroll-stopping short-form for the UAE." />
@@ -548,8 +549,8 @@ nav:not(.solid) .lang-toggle button+button{border-left-color:rgba(245,239,226,.2
   <!-- HERO -->
   <header class="hero" id="home">
     <div class="hero-media">
-      <video id="heroVidA" class="hero-vid" autoplay muted playsinline></video>
-      <video id="heroVidB" class="hero-vid" muted playsinline></video>
+      <video id="heroVidA" class="hero-vid" autoplay muted playsinline poster="posters/hero-poster.jpg"></video>
+      <video id="heroVidB" class="hero-vid" muted playsinline preload="none"></video>
     </div>
     <div class="hero-grain"></div>
     <div class="hero-inner">
@@ -632,7 +633,7 @@ nav:not(.solid) .lang-toggle button+button{border-left-color:rgba(245,239,226,.2
   </section>
 
   <!-- AI & TECHNOLOGY -->
-  <section class="block" id="ai"><div class="ai-bg"><video id="aiVid" muted loop autoplay playsinline poster="posters/ai-poster.jpg"><source src="hero-opt/ai-bg.mp4" type="video/mp4"></video></div>
+  <section class="block" id="ai"><div class="ai-bg"><video id="aiVid" muted loop playsinline preload="none" poster="posters/ai-poster.jpg"><source src="hero-opt/ai-bg.mp4" type="video/mp4"></video></div>
     <div class="wrap">
       <div class="head-wrap center reveal">
         <div class="eyebrow"><span data-en>AI · Technology</span><span data-ar>الذكاء الاصطناعي · التقنية</span></div>
@@ -691,7 +692,7 @@ nav:not(.solid) .lang-toggle button+button{border-left-color:rgba(245,239,226,.2
   </section>
 
   <!-- SKILLS / GEAR -->
-  <section class="block" id="gear"><div class="gear-bg"><video id="gearVid" muted loop autoplay playsinline poster="posters/gear-poster.jpg"><source src="gear-bg.mp4" type="video/mp4"></video></div>
+  <section class="block" id="gear"><div class="gear-bg"><video id="gearVid" muted loop playsinline preload="none" poster="posters/gear-poster.jpg"><source src="gear-bg.mp4" type="video/mp4"></video></div>
     <div class="wrap">
       <div class="head-wrap center reveal">
         <div class="eyebrow"><span data-en>The Arsenal</span><span data-ar>أدواتي</span></div>
@@ -881,7 +882,7 @@ nav:not(.solid) .lang-toggle button+button{border-left-color:rgba(245,239,226,.2
         hcur.src=hsrc(0); hcur.style.opacity='1'; hplay(hcur);
         if(hlist.length===1||hreduce){ hcur.loop=true; }
         else{
-          hnxt.src=hsrc(1); if(hnxt.load)hnxt.load();
+          setTimeout(function(){ if(!hnxt.src){ hnxt.src=hsrc(1); if(hnxt.load)hnxt.load(); } },1500);
           var hadv=function(){
             if(hswap)return; hswap=true;
             hplay(hnxt);
