@@ -537,6 +537,7 @@
   .cg-l,.cg-r{position:absolute;top:14px;z-index:4;font:500 9.5px var(--mono);letter-spacing:.16em;padding:5px 8px;border-radius:6px;background:rgba(0,0,0,.55);color:#fff}
   .cg-l{left:12px}.cg-r{right:12px;color:#120d04;background:var(--gold)}
   .cg-l.live{color:#120d04;background:var(--gold)}
+  .cg-row2{margin-top:7vh}.cg-row2 .cg-card:nth-child(2){transform:rotateY(-10deg) translateZ(-40px)}
   .cg-card figcaption{margin-top:14px;font:500 10px var(--mono);letter-spacing:.16em;color:var(--muted)}
   @media (max-width:900px){.cg-row{flex-direction:column;align-items:center}.cg-card{width:78vw;transform:none!important}}
   /* story: the finished film of that shoot, picture-in-picture */
@@ -659,23 +660,6 @@
   <span class="tech"><b>DEPTH 04B</b> · FINAL CUT + BTS STACK IN DEPTH</span>
 </section>
 
-<!-- ===== 04B2 · THE MAKING OF (2): a lounge shoot, two vertical final cuts + the BTS takes ===== -->
-<section class="making mk-vert" id="making2">
-  <div class="mk-title"><span class="scene">المشهد 04 · ب · ورا الكواليس 02</span><h2>لاونج واحد. <span class="g">نسختين نهائيين، وإزاي اتصوّروا.</span></h2></div>
-  <div class="mk-final">
-    <div class="mk-duo"><div class="mk-frame"><video data-src="../assets/making2/final1.mp4" poster="../assets/making2/final1.jpg" muted loop playsinline preload="none"></video>
-      <span class="mk-tag">النسخة النهائية · 01</span>
-      <button class="mk-snd" onclick="const v=this.parentNode.querySelector('video');v.muted=!v.muted;v.play();this.textContent=v.muted?'🔇 Tap for sound':'🔊 Sound on'">🔇 دوس للصوت</button></div><div class="mk-frame"><video data-src="../assets/making2/final2.mp4" poster="../assets/making2/final2.jpg" muted loop playsinline preload="none"></video>
-      <span class="mk-tag">النسخة النهائية · 02</span>
-      <button class="mk-snd" onclick="const v=this.parentNode.querySelector('video');v.muted=!v.muted;v.play();this.textContent=v.muted?'🔇 Tap for sound':'🔊 Sound on'">🔇 دوس للصوت</button></div></div>
-    <div class="mk-facts"><div><b>2</b><span>نسخ نهائية</span></div><div><b>2</b><span>لقطات كواليس</span></div><div><b>1</b><span>كاميرا · جيمبال واحد</span></div>
-      <p>تصوير وإخراج ومونتاج: <b>حسام عاطف</b></p></div>
-  </div>
-  <div class="mk-bts"><div class="mk-stack"><figure class="mk-b"><video data-v="../assets/making2/b1.mp4" poster="../assets/making2/b1.jpg" muted loop playsinline preload="none"></video><figcaption>كواليس 01 · لقطة الكنبة</figcaption></figure><figure class="mk-b"><video data-v="../assets/making2/b2.mp4" poster="../assets/making2/b2.jpg" muted loop playsinline preload="none"></video><figcaption>كواليس 02 · مشية بالجيمبال</figcaption></figure></div>
-    <div class="mk-btsbar"><span class="lbl">الكواليس</span><div class="ticks"><span>01</span><span>02</span></div></div></div>
-  <span class="tech"><b>DEPTH 04B</b> · FINAL CUTS + BTS STACK IN DEPTH</span>
-</section>
-
 <!-- ===== 04C · COLOR: S-Log 3 → final look, revealed by a scroll-driven divider ===== -->
 <section class="color" id="color">
   <div class="cg-head"><span class="scene">المشهد 04 · ج · التلوين</span>
@@ -684,6 +668,7 @@
   <div class="cg-row"><figure class="cg-card"><div class="cg-frame"><video class="cg-log" data-src="../assets/color/c1-log.mp4" poster="../assets/color/c1-log.jpg" muted loop playsinline preload="none"></video><div class="cg-top"><video data-src="../assets/color/c1-fin.mp4" poster="../assets/color/c1-fin.jpg" muted loop playsinline preload="none"></video></div><i class="cg-line"></i><span class="cg-l">S-LOG 3</span><span class="cg-r">الشكل النهائي</span></div><figcaption>كافيه · لاتيه آرت</figcaption></figure><figure class="cg-card"><div class="cg-frame"><video class="cg-log" data-src="../assets/color/c2-log.mp4" poster="../assets/color/c2-log.jpg" muted loop playsinline preload="none"></video><div class="cg-top"><video data-src="../assets/color/c2-fin.mp4" poster="../assets/color/c2-fin.jpg" muted loop playsinline preload="none"></video></div><i class="cg-line"></i><span class="cg-l">S-LOG 3</span><span class="cg-r">الشكل النهائي</span></div><figcaption>فيديو كلام · م. محمد</figcaption></figure>
     <figure class="cg-card"><div class="cg-frame"><video data-src="../assets/color/c3.mp4" poster="../assets/color/c3.jpg" muted loop playsinline preload="none"></video><span class="cg-l live">تلوين مباشر</span></div><figcaption>فيديو كلام · م. نور</figcaption></figure>
   </div>
+  <div class="cg-row cg-row2"><figure class="cg-card"><div class="cg-frame"><video data-src="../assets/making2/final1.mp4" poster="../assets/making2/final1.jpg" muted loop playsinline preload="none"></video><span class="cg-l live">تلوين مباشر</span></div><figcaption>لاونج · النسخة النهائية 01</figcaption></figure><figure class="cg-card"><div class="cg-frame"><video data-src="../assets/making2/final2.mp4" poster="../assets/making2/final2.jpg" muted loop playsinline preload="none"></video><span class="cg-l live">تلوين مباشر</span></div><figcaption>لاونج · النسخة النهائية 02</figcaption></figure></div>
   <span class="tech"><b>DEPTH 04C</b> · S-LOG 3 → FINAL LOOK · SCROLL WIPE</span>
 </section>
 
@@ -957,7 +942,7 @@ ScrollTrigger.matchMedia({
   placeDeck(0);
   ScrollTrigger.create({ trigger: '#work', start: 'top top', end: '+=' + N * 70 + '%', pin: true, scrub: true, onUpdate: s => placeDeck(s.progress * (N - 1)) });
 
-  initMaking('making'); initMaking('making2'); // 04B · the making of (created here so pins stay in page order)
+  initMaking('making'); // 04B · the making of (created here so pins stay in page order)
 
   // 05 · AI LAB
   //  0 → .38  the gold line wipes RAW into AI + CRAFT (the v2 slider), HUD labels light up
@@ -1017,7 +1002,7 @@ ScrollTrigger.matchMedia({
     .to('#core', { scale: 9, ease: 'power2.in', duration: .8 }, 0)
     .to('#end', { opacity: 1, duration: .15 }, .82);
  },
- '(max-width: 900px)': function () { words.forEach(w => w.classList.add('lit')); initMaking('making'); initMaking('making2'); }
+ '(max-width: 900px)': function () { words.forEach(w => w.classList.add('lit')); initMaking('making'); }
 });
 
 
