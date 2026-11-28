@@ -245,6 +245,26 @@
   .journey .soc svg{width:15px;height:15px}
   .journey .nums span{font:500 10.5px var(--mono);letter-spacing:.16em;color:var(--muted)}
 
+  /* ========== 04W WEDDINGS · the stack slides into the big frame ========== */
+  .wed{position:relative;height:100vh;overflow:hidden;background:radial-gradient(ellipse at 35% 55%,#141a33,#05080f 70%);perspective:1200px}
+  .wd-main{position:absolute;left:max(40px,calc((100vw - var(--wrap))/2 + 40px));top:56%;transform:translateY(-50%);width:min(58vw,1000px);aspect-ratio:16/9;pointer-events:none}
+  .wd-side{position:absolute;left:calc(max(40px,calc((100vw - var(--wrap))/2 + 40px)) + min(58vw,1000px) + 5vw);top:54%;transform:translateY(-50%);width:min(16vw,260px);aspect-ratio:9/16;pointer-events:none}
+  .wd-c{position:absolute;margin:0;border-radius:16px;overflow:hidden;background:#000;box-shadow:0 40px 90px rgba(0,0,0,.65),0 0 0 1px rgba(217,180,106,.3);will-change:left,top,width,height,transform,filter,opacity}
+  .wd-c.main{box-shadow:0 50px 110px rgba(0,0,0,.65),0 0 0 1px rgba(217,180,106,.45),0 0 70px rgba(217,180,106,.12)}
+  .wd-c video{width:100%;height:100%;object-fit:cover;display:block}
+  .wd-c figcaption{position:absolute;left:12px;bottom:12px;display:grid;gap:2px;font:600 13px var(--en);color:#fff;background:rgba(0,0,0,.55);padding:6px 10px;border-radius:8px;backdrop-filter:blur(6px)}
+  .wd-c figcaption small{font:500 9px var(--mono);letter-spacing:.16em;color:var(--gold)}
+  .wd-c.main figcaption{opacity:0}
+  .wd-info{position:absolute;z-index:40;left:max(40px,calc((100vw - var(--wrap))/2 + 40px));width:min(58vw,1000px);top:calc(56% + min(58vw,1000px)*.28125 + 18px);display:flex;align-items:center;gap:22px}
+  .wd-n{font:500 13px var(--mono);color:var(--muted)}.wd-n b{font:700 34px var(--en);color:var(--gold);margin-right:6px}
+  .wd-t{font:700 22px var(--en);letter-spacing:-.01em}
+  .wd-snd{position:static;margin-left:auto}
+  .wd-bar{position:absolute;left:calc(max(40px,calc((100vw - var(--wrap))/2 + 40px)) + min(58vw,1000px) + 5vw);width:min(16vw,260px);top:calc(54% + min(16vw,260px)*.889 + 24px);text-align:center}
+  .wd-bar .lbl{font:500 10px var(--mono);letter-spacing:.22em;color:var(--gold)}
+  @media (max-width:900px){.wed{height:auto;padding:14vh var(--pad) 10vh;display:flex;flex-direction:column;gap:14px}
+    .wed .mk-title{position:relative;top:auto;margin-bottom:10px}.wd-main,.wd-side,.wd-bar,.wd-info{display:none}
+    .wd-c{position:relative;width:100%;aspect-ratio:16/9}.wd-c.main figcaption{opacity:1}}
+
   /* ========== 07 REELS · tilted infinite wall ========== */
   .wall{perspective:1200px;background:#05080f}
   .wall .grid{position:absolute;left:50%;top:50%;width:1700px;margin:-900px 0 0 -850px;display:grid;grid-template-columns:repeat(7,1fr);gap:22px;transform:rotateX(32deg) rotateZ(-14deg);transform-origin:center;will-change:transform}
@@ -670,6 +690,16 @@
   <span class="tech"><b>DEPTH 04B</b> · FINAL CUT + BTS STACK IN DEPTH</span>
 </section>
 
+<!-- ===== 04W · WEDDINGS: a big wide frame + a stack of cards; each scroll step the front card slides left into the frame ===== -->
+<section class="wed" id="weddings">
+  <div class="mk-title"><span class="scene">Scene 04 · W · Weddings</span><h2>Weddings. <span class="g">Every film cut like a movie.</span></h2></div>
+  <div class="wd-main"></div><div class="wd-side"></div>
+  <figure class="wd-c"><video data-v="assets/wed/w1.mp4" poster="assets/wed/w1.jpg" muted loop playsinline preload="none"></video><figcaption><small>WEDDING 01</small><span>Hosam &amp; Abeer</span></figcaption></figure><figure class="wd-c"><video data-v="assets/wed/w2.mp4" poster="assets/wed/w2.jpg" muted loop playsinline preload="none"></video><figcaption><small>WEDDING 02</small><span>Golden arches</span></figcaption></figure><figure class="wd-c"><video data-v="assets/wed/w3.mp4" poster="assets/wed/w3.jpg" muted loop playsinline preload="none"></video><figcaption><small>WEDDING 03</small><span>The Citadel</span></figcaption></figure><figure class="wd-c"><video data-v="assets/wed/w4.mp4" poster="assets/wed/w4.jpg" muted loop playsinline preload="none"></video><figcaption><small>WEDDING 04</small><span>Wadi El Qamar</span></figcaption></figure><figure class="wd-c"><video data-v="assets/wed/w5.mp4" poster="assets/wed/w5.jpg" muted loop playsinline preload="none"></video><figcaption><small>WEDDING 05</small><span>Black &amp; white</span></figcaption></figure><figure class="wd-c"><video data-v="assets/wed/w6.mp4" poster="assets/wed/w6.jpg" muted loop playsinline preload="none"></video><figcaption><small>WEDDING 06</small><span>Groom details</span></figcaption></figure><figure class="wd-c"><video data-v="assets/wed/w7.mp4" poster="assets/wed/w7.jpg" muted loop playsinline preload="none"></video><figcaption><small>WEDDING 07</small><span>Diqa El Abd</span></figcaption></figure>
+  <div class="wd-info"><div class="wd-n"><b id="wdN">01</b> / 07</div><div class="wd-t" id="wdT">Hosam &amp; Abeer</div><button class="mk-snd wd-snd" id="wdSnd">🔇 Tap for sound</button></div>
+  <div class="wd-bar"><span class="lbl">NEXT FILMS</span></div>
+  <span class="tech"><b>DEPTH 04W</b> · CARD STACK → SLIDES INTO THE FRAME</span>
+</section>
+
 <!-- ===== 04C · COLOR: S-Log 3 → final look, revealed by a scroll-driven divider ===== -->
 <section class="color" id="color">
   <div class="cg-head"><span class="scene">Scene 04 · C · Color</span>
@@ -947,7 +977,7 @@ ScrollTrigger.matchMedia({
   placeDeck(0);
   ScrollTrigger.create({ trigger: '#work', start: 'top top', end: '+=' + N * 70 + '%', pin: true, scrub: true, onUpdate: s => placeDeck(s.progress * (N - 1)) });
 
-  initMaking('making'); // 04B · the making of (created here so pins stay in page order)
+  initMaking('making'); initWeddings(true); // 04B · the making of (created here so pins stay in page order)
 
   // 05 · AI LAB
   //  0 → .38  the gold line wipes RAW into AI + CRAFT (the v2 slider), HUD labels light up
@@ -1006,12 +1036,49 @@ ScrollTrigger.matchMedia({
     .to('#core', { scale: 9, ease: 'power2.in', duration: .8 }, 0)
     .to('#end', { opacity: 1, duration: .15 }, .82);
  },
- '(max-width: 900px)': function () { words.forEach(w => w.classList.add('lit')); initMaking('making'); }
+ '(max-width: 900px)': function () { words.forEach(w => w.classList.add('lit')); initMaking('making'); initWeddings(false); }
 });
 
 
 
 
+
+// 04W · WEDDINGS: k = card index − scroll position. k ≥ 1 sits in the stack on the right,
+// 0 < k < 1 is sliding left and growing into the big frame, k ≤ 0 is the film in the frame.
+function initWeddings(desktop) {
+  const root = document.getElementById('weddings'); if (!root) return;
+  const C = [...root.querySelectorAll('.wd-c')], V = C.map(c => c.querySelector('video')), N = C.length;
+  const load = v => { if (!v.src) v.src = v.dataset.v; };
+  if (!desktop) { const o = new IntersectionObserver(es => es.forEach(e => { const v = e.target; if (e.isIntersecting) { load(v); v.play().catch(() => {}); } else v.pause(); }), { threshold: .35 });
+    V.forEach(v => o.observe(v)); return; }
+  const mainEl = root.querySelector('.wd-main'), sideEl = root.querySelector('.wd-side');
+  let cur = -1, sound = false, inView = false;
+  const sndBtn = $('#wdSnd');
+  const play = () => V.forEach((v, i) => { if (inView && (i === cur || i === cur + 1)) { load(v); v.muted = !(sound && i === cur); v.play().catch(() => {}); } else v.pause(); });
+  const sndOff = sndBtn.textContent, sndOn = document.documentElement.lang === 'ar' ? '🔊 الصوت شغال' : '🔊 Sound on';
+  sndBtn.addEventListener('click', () => { sound = !sound; sndBtn.textContent = sound ? sndOn : sndOff; play(); });
+  const ease = t => t * t * (3 - 2 * t);
+  const place = p => {
+    const host = root.getBoundingClientRect(), mr = mainEl.getBoundingClientRect(), sr = sideEl.getBoundingClientRect();
+    const m = { x: mr.left - host.left, y: mr.top - host.top, w: mr.width, h: mr.height }, sd = { x: sr.left - host.left, y: sr.top - host.top, w: sr.width, h: sr.height };
+    const f = clamp((p - .04) / .9, 0, 1) * (N - 1);
+    C.forEach((el, i) => { const k = i - f; let r = m;
+      if (k <= -1) { el.style.opacity = 0; el.classList.remove('main'); return; }
+      if (k <= 0) { el.style.transform = 'none'; el.style.filter = 'none'; el.style.opacity = 1; el.style.zIndex = 10 + i; el.classList.add('main'); }
+      else if (k < 1) { const t = ease(k); r = { x: m.x + (sd.x - m.x) * t, y: m.y + (sd.y - m.y) * t, w: m.w + (sd.w - m.w) * t, h: m.h + (sd.h - m.h) * t };
+        el.style.transform = `rotateY(${(-t * 10).toFixed(2)}deg)`; el.style.filter = 'none'; el.style.opacity = 1; el.style.zIndex = 30; el.classList.toggle('main', t < .5); }
+      else { const d = k - 1; r = sd; el.classList.remove('main');
+        el.style.transform = `translate3d(${d * 46}px,${-d * 30}px,${-d * 240}px) rotateY(${-d * 9}deg) rotateZ(${d * 3}deg)`;
+        el.style.filter = `blur(${(d * 2.2).toFixed(1)}px) brightness(${clamp(1 - d * .25, .3, 1).toFixed(2)})`;
+        el.style.opacity = clamp(1 - (d - 2.2) * 1.2, 0, 1); el.style.zIndex = 20 - Math.round(d * 2); }
+      el.style.left = r.x + 'px'; el.style.top = r.y + 'px'; el.style.width = r.w + 'px'; el.style.height = r.h + 'px'; });
+    const i = clamp(Math.round(f), 0, N - 1);
+    if (i !== cur) { cur = i; $('#wdN').textContent = String(i + 1).padStart(2, '0'); $('#wdT').textContent = C[i].querySelector('figcaption span').textContent; play(); } };
+  new IntersectionObserver(es => es.forEach(e => { inView = e.isIntersecting; play(); }), { threshold: .2 }).observe(root);
+  place(0);
+  ScrollTrigger.create({ trigger: root, start: 'top top', end: '+=' + N * 55 + '%', pin: true, scrub: true, onUpdate: s => place(s.progress), onRefresh: s => place(s.progress) });
+  addEventListener('resize', () => place(0));
+}
 
 // 04B · THE MAKING OF: BTS clips stack into depth like the story photos; the front clip plays
 function initMaking(id) {
