@@ -171,12 +171,13 @@
   .deck .left{position:absolute;z-index:5;left:max(40px,calc((100vw - var(--wrap))/2 + 40px));top:50%;transform:translateY(-50%);max-width:380px}
   .deck .left p{color:var(--muted);margin-top:18px;line-height:1.6}
   .deck .count{font:500 13px var(--mono);color:var(--muted);margin-top:30px}.deck .count b{color:var(--gold);font-size:34px;font-family:var(--en);font-weight:700;margin-right:6px}
-  .stack{position:absolute;left:62%;top:52%;width:0;height:0;transform-style:preserve-3d}
+  .stack{position:absolute;left:66%;top:52%;width:0;height:0;transform-style:preserve-3d}
   .card{--cw:min(24vw,41vh,400px);position:absolute;width:var(--cw);aspect-ratio:9/16;left:calc(var(--cw)/-2);top:calc(var(--cw)*-.8889);border-radius:22px;overflow:hidden;background:#111;box-shadow:0 50px 100px rgba(0,0,0,.65),0 0 0 1px rgba(255,255,255,.07);will-change:transform,opacity}
   .card video{width:100%;height:100%;object-fit:cover}
   .card .meta{position:absolute;left:0;right:0;bottom:0;padding:26px;background:linear-gradient(transparent,rgba(0,0,0,.88))}
   .card .meta small{font:500 11px var(--mono);color:var(--gold);letter-spacing:.14em}
   .card .meta h3{font-size:30px;margin-top:6px;letter-spacing:-.02em}.card .meta p{font-size:14px;color:#c9cdd8;margin-top:6px}
+  .card.on{box-shadow:0 50px 100px rgba(0,0,0,.65),0 0 0 2px var(--gold),0 0 70px rgba(217,180,106,.3)}
   .card.gold{box-shadow:0 0 0 2px var(--gold),0 0 80px rgba(217,180,106,.45),0 50px 100px rgba(0,0,0,.65)}
 
   /* ========== 05 AI LAB · before/after (from v2) that pulls back into a 3D row of AI reels ========== */
@@ -934,12 +935,15 @@ ScrollTrigger.matchMedia({
 
   // 04 · deck: the front card flies toward the camera, the next steps forward
   const cards = $$('#stack .card'), N = cards.length;
-  const placeDeck = f => { cards.forEach((c, i) => { const k = i - f; c.style.zIndex = 100 - i;
-    if (k <= -1) { c.style.opacity = 0; return; }
-    if (k < 0) { const t = -k; c.style.transform = `translate3d(${t * -120}px,${t * 140}px,${t * 900}px) rotateX(${t * -16}deg) rotateZ(${t * -6}deg)`; c.style.opacity = 1 - t; c.style.filter = 'none'; return; }
-    c.style.transform = `translate3d(${k * 64}px,${k * -34}px,${k * -170}px) rotateZ(${k * 3.5}deg) rotateY(${k * -6}deg)`; c.style.opacity = clamp(1 - (k - 3) * 1.5, 0, 1); c.style.filter = `blur(${(k * 1.1).toFixed(1)}px) brightness(${clamp(1 - k * .24, .22, 1).toFixed(2)})`; });
+  // a row of reels like the AI scene: the one in the middle is sharp and lit, the rest recede to both sides
+  const placeDeck = f => { const W = cards[0].offsetWidth || 340;
+    cards.forEach((c, i) => { const k = i - f, ak = Math.abs(k);
+      c.style.transform = `translate3d(${k * W * .78}px,${ak * 18}px,${-ak * 260}px) rotateY(${-k * 22}deg)`;
+      c.style.filter = `blur(${Math.min(ak * 2.2, 8).toFixed(1)}px) brightness(${Math.max(1 - ak * .22, .35).toFixed(2)})`;
+      c.style.opacity = k < 0 ? clamp(1.5 + k * .95, 0, 1) : clamp(3.4 - k * .8, 0, 1);
+      c.style.zIndex = 50 - Math.round(ak * 10); c.classList.toggle('on', ak < .5); });
     $('#deckN').textContent = String(clamp(Math.round(f) + 1, 1, N)).padStart(2, '0');
-    cards.forEach((c, i) => { const v = c.querySelector('video'), k = i - f; if (!v || !v.src) return; if (k > -1 && k < 2) v.play().catch(() => {}); else v.pause(); }); };
+    cards.forEach((c, i) => { const v = c.querySelector('video'), ak = Math.abs(i - f); if (!v || !v.src) return; if (ak < .6) v.play().catch(() => {}); else v.pause(); }); };
   placeDeck(0);
   ScrollTrigger.create({ trigger: '#work', start: 'top top', end: '+=' + N * 70 + '%', pin: true, scrub: true, onUpdate: s => placeDeck(s.progress * (N - 1)) });
 
