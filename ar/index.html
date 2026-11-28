@@ -221,7 +221,7 @@
   .gps-hud{position:absolute;z-index:8;left:max(40px,calc((100vw - var(--wrap))/2 + 40px));top:30vh;display:grid;gap:4px;padding:12px 16px;border-radius:14px;background:rgba(10,16,32,.85);border:1px solid rgba(217,180,106,.3);backdrop-filter:blur(10px);font:500 10px var(--mono);letter-spacing:.16em;color:var(--muted)}
   .gps-hud b{font:700 26px var(--en);letter-spacing:-.02em;color:var(--text)}.gps-hud b em{font-style:normal;font-size:14px;color:var(--gold);margin-left:4px}
   .gps-hud .bar{height:3px;border-radius:3px;background:rgba(217,180,106,.18);overflow:hidden;margin-top:4px}.gps-hud .bar i{display:block;height:100%;width:0;background:var(--gold)}
-  @media (max-width:900px){.gps-hud{display:none}}
+
   .map svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
   .bill{position:absolute;z-index:6;transform:translate(-50%,-100%);text-align:center;opacity:0;transition:opacity .4s,translate .4s}
   .bill .yr{display:inline-block;font:700 22px var(--en);color:var(--gold);padding:6px 14px;border-radius:12px;border:1px solid rgba(217,180,106,.55);background:rgba(10,16,32,.9)}
@@ -348,7 +348,9 @@
     .tunnel .mob img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:12px}
     .deck{padding:14vh 0}.deck .left{position:relative;left:auto;top:auto;transform:none;padding:0 var(--pad);max-width:none}
     .stack{position:relative;left:auto;top:auto;width:auto;height:auto;display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:30px var(--pad);transform-style:flat}
-    .card{position:relative;left:auto;top:auto;flex:none;width:64vw;scroll-snap-align:center}
+    .card{position:relative;left:auto;top:auto;flex:none;width:56vw;scroll-snap-align:center;transition:none}
+    .card.on{box-shadow:0 30px 60px rgba(0,0,0,.6),0 0 0 2px var(--gold),0 0 40px rgba(217,180,106,.3)}
+    .card .meta{padding:16px}.card .meta h3{font-size:19px}.card .meta p{font-size:12px;line-height:1.4}
     .ailab{padding:14vh 0;display:flex;flex-direction:column}.ailab .copy{order:-1}
     .ba{position:relative;height:60vh;margin-top:20px}.ba .hud,.ba .lab{display:none}
     .ba .pro{clip-path:inset(0 0 0 50%)!important}.ba .cut,.ba .scan{left:50%!important}
@@ -356,7 +358,9 @@
     .ailab .beatA,.ailab .beatB{position:relative;top:auto;transform:none;opacity:1;margin-bottom:30px}
     .reelrow{position:relative;left:auto;top:auto;width:auto;height:auto;display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:20px var(--pad);transform-style:flat}
     .aireel{position:relative;left:auto;top:auto;flex:none;width:62vw;height:110vw;opacity:1;scroll-snap-align:center}
-    .journey{padding:14vh 0}.journey .head{position:relative;top:0}.map,.lm{display:none}
+    .journey{padding:14vh 0;overflow:hidden}.journey .head{position:relative;top:0}.lm{display:none}
+    .journey .map{display:block;position:relative;left:0;top:0;margin:26px 0 0;transform-origin:0 0;-webkit-mask-image:radial-gradient(ellipse 80% 70% at 50% 50%,#000 50%,transparent 90%);mask-image:radial-gradient(ellipse 80% 70% at 50% 50%,#000 50%,transparent 90%)}
+    .journey .gps-hud{display:grid;position:relative;left:auto;top:auto;margin:22px var(--pad) 0;width:max-content}
     .bill{position:relative;left:auto!important;top:auto!important;transform:none;opacity:1;margin:28px auto 0}
     .bill::after{display:none}
     .journey .nums{position:relative;bottom:auto;margin-top:40px;gap:18px;flex-wrap:wrap}.journey .nums b{font-size:30px}
@@ -1070,7 +1074,7 @@ ScrollTrigger.matchMedia({
     .to('#core', { scale: 9, ease: 'power2.in', duration: .8 }, 0)
     .to('#end', { opacity: 1, duration: .15 }, .82);
  },
- '(max-width: 900px)': function () { words.forEach(w => w.classList.add('lit')); initMaking('making'); initWeddings(false); }
+ '(max-width: 900px)': function () { words.forEach(w => w.classList.add('lit')); initMaking('making'); initWeddings(false); initPhoneMotion(); }
 });
 
 
@@ -1173,6 +1177,49 @@ function dockToasts(t) {
 (() => { const v = $('#deskVid'), b = $('#swSnd'); if (!v) return; const off = b.textContent, on = document.documentElement.lang === 'ar' ? '🔊 الصوت شغال' : '🔊 Sound on';
   new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { if (!v.src) v.src = v.dataset.v; v.play().catch(() => {}); } else v.pause(); }), { threshold: .3 }).observe(v);
   b.addEventListener('click', () => { v.muted = !v.muted; b.textContent = v.muted ? off : on; if (!v.src) v.src = v.dataset.v; v.play().catch(() => {}); }); })();
+
+// PHONE · light scroll motion: short pins only where it matters, everything else reveals as it comes in
+function initPhoneMotion() {
+  if (reduce) return;
+  ScrollTrigger.config({ ignoreMobileResize: true });
+  // 01 · hero: a soft zoom as you start scrolling
+  gsap.to('#hPerson', { scale: 1.16, yPercent: 5, ease: 'none', scrollTrigger: { trigger: '#hero', start: 'top top', end: 'bottom top', scrub: true } });
+  gsap.to('#hWord', { scale: 1.14, opacity: .35, ease: 'none', scrollTrigger: { trigger: '#hero', start: 'top top', end: 'bottom top', scrub: true } });
+  // 02 · CINEMA: a short pin, the word flies open into the film
+  gsap.set('#tMask', { transformOrigin: '46.5% 50%' });
+  gsap.timeline({ scrollTrigger: { trigger: '#through', start: 'center center', end: '+=90%', pin: true, scrub: true } })
+    .fromTo('#tMask', { scale: 1 }, { scale: 30, ease: 'power2.in', duration: 1 }, 0)
+    .to('#tMask', { opacity: 0, ease: 'none', duration: .2 }, .74)
+    .to('#tAfter', { opacity: 1, duration: .25 }, .78);
+  // a horizontal strip that moves with the vertical scroll; the card in the middle is sharp, lit and playing
+  const strip = (el, cards, play) => { const rtl = getComputedStyle(el).direction === 'rtl'; el.style.scrollSnapType = 'none';
+    const focus = () => { const c = el.getBoundingClientRect(), mid = c.left + c.width / 2;
+      const D = cards.map(card => { const r = card.getBoundingClientRect(); return Math.min(Math.abs(r.left + r.width / 2 - mid) / r.width, 1.5); }), best = D.indexOf(Math.min(...D));
+      cards.forEach((card, i) => { const d = D[i];
+        card.style.transform = `scale(${(1 - d * .1).toFixed(3)})`; card.style.filter = `brightness(${(1 - d * .4).toFixed(2)})`; card.classList.toggle('on', i === best);
+        const v = card.querySelector('video'); if (play && v) { if (i === best) { if (!v.getAttribute('src')) v.src = v.dataset.src || v.dataset.v; v.play().catch(() => {}); } else v.pause(); } }); };
+    return p => { el.scrollLeft = (rtl ? -1 : 1) * p * (el.scrollWidth - el.clientWidth); focus(); const i = cards.findIndex(c => c.classList.contains('on')); if (el.id === 'stack' && i >= 0) $('#deckN').textContent = String(i + 1).padStart(2, '0'); }; };
+  // 04 · my work: pinned, the 14 cards slide past as you scroll
+  const deck = strip($('#stack'), $$('#stack .card'), true);
+  ScrollTrigger.create({ trigger: '#work', start: 'bottom bottom', end: '+=' + $$('#stack .card').length * 26 + '%', pin: true, scrub: true, onUpdate: s => deck(s.progress), onRefresh: s => deck(s.progress) });
+  // 05 · reels made with AI: the strip drifts with the scroll (no pin)
+  const ai = strip($('#reelrow'), $$('#reelrow .aireel'), false);
+  ScrollTrigger.create({ trigger: '#reelrow', start: 'top 85%', end: 'bottom 15%', scrub: true, onUpdate: s => ai(s.progress) });
+  // 04W · weddings: each film slides in from the side
+  $$('#weddings .wd-c').forEach((el, i) => gsap.fromTo(el, { xPercent: i % 2 ? -45 : 45, opacity: 0, rotateY: i % 2 ? 14 : -14 },
+    { xPercent: 0, opacity: 1, rotateY: 0, ease: 'power2.out', scrollTrigger: { trigger: el, start: 'top 95%', end: 'top 55%', scrub: true } }));
+  // 06 · journey: the GPS map fits the phone, the route draws and the km count down as you scroll
+  const mp = $('#map'), fit = () => { const sc = innerWidth / 1400 * 1.3; mp.style.transform = `translateX(${-(1400 * sc - innerWidth) / 2}px) scale(${sc})`; mp.style.marginBottom = (900 * sc - 900) + 'px'; };
+  fit(); addEventListener('resize', fit);
+  jPath.style.strokeDasharray = jLen; jPath.style.strokeDashoffset = jLen;
+  ScrollTrigger.create({ trigger: mp, start: 'top 85%', end: 'bottom 45%', scrub: true, onUpdate: s => { const p = s.progress;
+    jPath.style.strokeDashoffset = jLen * (1 - p); const pt = jPath.getPointAtLength(jLen * p); $('#jDot').setAttribute('cx', pt.x); $('#jDot').setAttribute('cy', pt.y);
+    $('#gpsKm').firstChild.textContent = Math.round(2420 * (1 - p)).toLocaleString('en-US'); $('#gpsBar').style.width = (p * 100) + '%'; } });
+  // everything else: titles, numbers and cards rise in as they arrive
+  const rise = $$('.scene, h2.big, .tb-nums > div, .cg-card, .mk-final, .mk-b, .journey .nums > div, .bill, .igh, .ailab .beatC, .light .wrap > *').filter(el => el.getBoundingClientRect().top > innerHeight);
+  gsap.set(rise, { opacity: 0, y: 40 });
+  ScrollTrigger.batch(rise, { start: 'top 92%', once: true, onEnter: els => gsap.to(els, { opacity: 1, y: 0, stagger: .08, duration: .7, ease: 'power2.out' }) });
+}
 
 // 02 · CINEMA: two ultra-wide films play one after the other (food, then the Ferrari)
 (() => { const v = document.getElementById('cineVid'), list = ['../assets/cinema-wide.mp4', '../assets/cinema-wide2.mp4']; let k = 0;
