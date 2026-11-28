@@ -889,6 +889,8 @@ ScrollTrigger.matchMedia({
   gsap.set('#tMask', { transformOrigin: '46.5% 50%' });
   gsap.timeline({ scrollTrigger: { trigger: '#through', start: 'top top', end: '+=150%', pin: true, scrub: true } })
     .fromTo('#tMask', { scale: 1 }, { scale: 60, ease: 'power2.in', duration: 1 }, 0)
+    // fade the mask away at the end, so no edge of a letter is left on screen (phone sizes land on a letter edge)
+    .to('#tMask', { opacity: 0, ease: 'none', duration: .2 }, .72)
     .to('#tAfter', { opacity: 1, duration: .25 }, .78);
 
   // 03 · story: 4 chapters (photo stacks into depth, copy swaps, number counts up), then the closing line
