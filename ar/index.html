@@ -203,7 +203,9 @@
   .chip b{display:block;font-size:14.5px}.chip span{font-size:12px;color:var(--muted)}
   .ailab .count{display:flex;gap:30px;margin-top:26px}.ailab .count b{display:block;font-size:40px;font-weight:700}.ailab .count b em{font-style:normal;color:var(--gold)}
   .ailab .count span{font:500 10.5px var(--mono);letter-spacing:.16em;color:var(--muted)}
-  .reelrow{position:absolute;left:68%;top:52%;width:0;height:0;transform-style:preserve-3d}
+  .reelrow{position:absolute;left:68%;top:52%;width:0;height:0;transform-style:preserve-3d;transform-origin:0 0}
+  .ai-dive{position:absolute;inset:0;z-index:80;pointer-events:none;opacity:0;background:radial-gradient(ellipse at 50% 20%,#0e1730,#05080f 70%)}
+  @media (max-width:900px){.ai-dive{display:none}}
   .aireel{position:absolute;width:250px;height:444px;left:-125px;top:-222px;border-radius:28px;padding:9px;background:#0b0c10;opacity:0;will-change:transform,opacity,filter;
     box-shadow:0 40px 90px rgba(0,0,0,.65),0 0 0 1px rgba(255,255,255,.08)}
   .aireel video{width:100%;height:100%;object-fit:cover;border-radius:20px;background:#111}
@@ -215,8 +217,11 @@
   .journey{perspective:1100px;background:radial-gradient(ellipse at 50% 20%,#0e1730,#05080f 70%)}
   .journey .head{position:absolute;z-index:5;top:12vh;left:0;right:0;text-align:center}
   .map{position:absolute;left:50%;top:60%;width:1400px;height:900px;margin:-450px 0 0 -700px;transform:rotateX(62deg) rotateZ(-6deg);
-    background-image:linear-gradient(rgba(217,180,106,.09) 1px,transparent 1px),linear-gradient(90deg,rgba(217,180,106,.09) 1px,transparent 1px);background-size:70px 70px;
-    -webkit-mask-image:radial-gradient(ellipse 50% 50%,#000 40%,transparent 75%);mask-image:radial-gradient(ellipse 50% 50%,#000 40%,transparent 75%)}
+    -webkit-mask-image:radial-gradient(ellipse 95% 90% at 50% 50%,#000 55%,transparent 92%);mask-image:radial-gradient(ellipse 95% 90% at 50% 50%,#000 55%,transparent 92%)}
+  .gps-hud{position:absolute;z-index:8;left:max(40px,calc((100vw - var(--wrap))/2 + 40px));top:30vh;display:grid;gap:4px;padding:12px 16px;border-radius:14px;background:rgba(10,16,32,.85);border:1px solid rgba(217,180,106,.3);backdrop-filter:blur(10px);font:500 10px var(--mono);letter-spacing:.16em;color:var(--muted)}
+  .gps-hud b{font:700 26px var(--en);letter-spacing:-.02em;color:var(--text)}.gps-hud b em{font-style:normal;font-size:14px;color:var(--gold);margin-left:4px}
+  .gps-hud .bar{height:3px;border-radius:3px;background:rgba(217,180,106,.18);overflow:hidden;margin-top:4px}.gps-hud .bar i{display:block;height:100%;width:0;background:var(--gold)}
+  @media (max-width:900px){.gps-hud{display:none}}
   .map svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
   .bill{position:absolute;z-index:6;transform:translate(-50%,-100%);text-align:center;opacity:0;transition:opacity .4s,translate .4s}
   .bill .yr{display:inline-block;font:700 22px var(--en);color:var(--gold);padding:6px 14px;border-radius:12px;border:1px solid rgba(217,180,106,.55);background:rgba(10,16,32,.9)}
@@ -267,7 +272,7 @@
 
   /* ========== 07 REELS · tilted infinite wall ========== */
   .wall{perspective:1200px;background:#05080f}
-  .wall .grid{position:absolute;left:50%;top:50%;width:1700px;margin:-900px 0 0 -850px;display:grid;grid-template-columns:repeat(7,1fr);gap:22px;transform:rotateX(32deg) rotateZ(-14deg);transform-origin:center;will-change:transform}
+  .wall .grid{position:absolute;left:50%;top:50%;width:2500px;margin:-1350px 0 0 -1250px;display:grid;grid-template-columns:repeat(9,1fr);gap:22px;transform:rotateX(32deg) rotateZ(-14deg);transform-origin:center;will-change:transform}
   .wall .col{display:grid;gap:22px;will-change:transform}
   .wall .col img,.wall .col video{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:16px;box-shadow:0 30px 60px rgba(0,0,0,.6);background:#111}
   .wall .col video.ai{box-shadow:0 0 0 2px rgba(217,180,106,.85),0 0 40px rgba(217,180,106,.35),0 30px 60px rgba(0,0,0,.6)}
@@ -344,7 +349,7 @@
     .bill{position:relative;left:auto!important;top:auto!important;transform:none;opacity:1;margin:28px auto 0}
     .bill::after{display:none}
     .journey .nums{position:relative;bottom:auto;margin-top:40px;gap:18px;flex-wrap:wrap}.journey .nums b{font-size:30px}
-    .wall .grid{width:1100px;margin:-700px 0 0 -550px}
+    .wall .grid{width:1500px;margin:-950px 0 0 -750px}
     .qfield{height:auto;display:grid;gap:14px}.q,.q.far,.q.mid{position:relative;left:auto!important;top:auto!important;width:auto;scale:1;filter:none;opacity:1}
     .end{opacity:1}.light{background:radial-gradient(circle at 50% 45%,#fff6e0 0%,#f3d79a 40%,#d9b46a 100%)}.light .core,.rings{display:none}
   }
@@ -432,6 +437,7 @@
   .st-photos{position:absolute;left:max(40px,calc((100vw - var(--wrap))/2 + 40px));top:50%;width:min(26vw,390px);aspect-ratio:4/5;transform:translateY(-50%);transform-style:preserve-3d}
   .stp{position:absolute;inset:0;margin:0;border-radius:18px;overflow:hidden;box-shadow:0 50px 100px rgba(0,0,0,.65),0 0 0 1px rgba(217,180,106,.25);will-change:transform,opacity,filter;opacity:0}
   .stp img{width:100%;height:100%;object-fit:cover}
+  #story .stp.on{box-shadow:0 50px 100px rgba(0,0,0,.65),0 0 0 2px var(--gold),0 0 70px rgba(217,180,106,.3)}
   .stp figcaption{position:absolute;left:14px;bottom:14px;font:500 10px var(--mono);letter-spacing:.18em;color:#fff;background:rgba(0,0,0,.55);padding:5px 9px;border-radius:6px;backdrop-filter:blur(6px)}
   .st-copy{position:absolute;left:calc(max(40px,calc((100vw - var(--wrap))/2 + 40px)) + min(26vw,390px) + 7vw);right:max(40px,calc((100vw - var(--wrap))/2 + 40px));top:50%;height:0}
   .stc{position:absolute;left:0;right:0;top:0;transform:translateY(-50%);opacity:0;max-width:600px}
@@ -549,8 +555,8 @@
     .mk-facts{gap:20px}.mk-facts p{margin-left:0;width:100%}}
 
   /* story = on-camera videos (9:16) */
-  #story .st-photos{width:min(17vw,280px);aspect-ratio:9/16;left:calc(max(40px,calc((100vw - var(--wrap))/2 + 40px)) + 40px)}
-  #story .st-copy{left:calc(max(40px,calc((100vw - var(--wrap))/2 + 40px)) + min(17vw,280px) + 10vw)}
+  #story .st-photos{width:min(17vw,280px);aspect-ratio:9/16;left:calc(max(40px,calc((100vw - var(--wrap))/2 + 40px)) + 13vw)}
+  #story .st-copy{left:calc(max(40px,calc((100vw - var(--wrap))/2 + 40px)) + min(17vw,280px) + 19vw)}
   #story .st-snd{right:auto;left:50%;bottom:-46px;transform:translateX(-50%);background:rgba(217,180,106,.1);color:var(--gold);border:1px solid rgba(217,180,106,.5);white-space:nowrap;z-index:40}
   #story .stat.oncam{align-items:center;gap:10px}#story .stat.oncam span{max-width:none}
   #story .stat.oncam .dot{width:9px;height:9px;border-radius:50%;background:#ff3b30;animation:recBlink 1.2s infinite}
@@ -622,15 +628,15 @@
   <div class="layer bokeh" id="hBokeh" data-z="1.4"><i style="left:6%;top:14%;width:140px;height:140px"></i><i style="left:86%;top:68%;width:220px;height:220px"></i><i style="left:44%;top:84%;width:90px;height:90px"></i><i style="left:74%;top:8%;width:60px;height:60px"></i></div>
   <div class="h-copy" id="hCopy">
     <span class="eyebrow">صانع ريلز سينمائية · دبي</span>
-    <h1>أفلام بتخلّي<br><span class="g">البراند</span> <span class="thin">ينبض.</span></h1>
-    <p>أنا حسام عاطف. بحوّل البراندات والأفراح واللحظات لأفلام قصيرة سينمائية بتوقّف الاسكرول.</p>
-    <div class="ctas"><a href="#contact" class="btn-gold">احجز تصوير ↗</a><a href="#reels" class="btn-line">▶ شوريل</a></div>
+    <h1>أفلام بتخلّي<br><span class="g">البراند</span> <span class="thin">عايش.</span></h1>
+    <p>أنا حسام. بحوّل البراند والفرح واللحظة لفيلم قصير يوقّف الاسكرول.</p>
+    <div class="ctas"><a href="#contact" class="btn-gold">احجز تصويرك ↗</a><a href="#reels" class="btn-line">▶ شوريل</a></div>
   </div>
   <div class="h-end" id="hEnd">
     <span class="scene">من 2021 · القاهرة ← دبي</span>
-    <h2>ورا كل كادر<br><span class="g">حكاية</span> <span class="thin">تستاهل تتحس.</span></h2>
+    <h2>ورا كل كادر<br><span class="g">حكاية</span> <span class="thin">تتحس.</span></h2>
     <div class="stats"><div><b>111<em>+</em></b><span>فيلم</span></div><div><b>10<em>+</em></b><span>براند</span></div><div><b>4</b><span>سنين في الإمارات</span></div></div>
-    <span class="next">كمّل اسكرول · ادخل الكادر</span>
+    <span class="next">كمّل · ادخل الكادر</span>
   </div>
   <span class="tech"><b>DEPTH 01</b> · SANDWICH LAYERS + CAMERA DOLLY</span>
 </section>
@@ -639,17 +645,17 @@
 <section class="through" id="through">
   <video class="wide" id="cineVid" data-src="../assets/cinema-wide.mp4" poster="../assets/cinema-wide.jpg" muted playsinline preload="none"></video>
   <div class="mask" id="tMask"><span>CINEMA</span></div>
-  <div class="after" id="tAfter"><p>كل كادر مقصود.<br><span class="g">وكل قطع بإحساس.</span></p></div>
+  <div class="after" id="tAfter"><p>كل كادر مقصود.<br><span class="g">وكل قطعة بإحساس.</span></p></div>
   <span class="tech"><b>DEPTH 02</b> · VIDEO INSIDE TEXT → FLY THROUGH</span>
 </section>
 
 <!-- ===== 03 · Z-TUNNEL: you fly forward through your own shots, the story lights word by word ===== -->
 <section class="story" id="story">
   <div class="st-photos" id="stPhotos"><figure class="stp"><video data-v="../assets/talk/s1.mp4" poster="../assets/talk/s1.jpg" muted loop playsinline preload="none"></video><figcaption>البداية</figcaption></figure><figure class="stp"><video data-v="../assets/talk/s2.mp4" poster="../assets/talk/s2.jpg" muted loop playsinline preload="none"></video><figcaption>دبي</figcaption></figure><figure class="stp"><video data-v="../assets/talk/s3.mp4" poster="../assets/talk/s3.jpg" muted loop playsinline preload="none"></video><figcaption>في اللوكيشن</figcaption></figure><figure class="stp"><video data-v="../assets/talk/x1.mp4" poster="../assets/talk/x1.jpg" muted loop playsinline preload="none"></video><figcaption>الورشة</figcaption></figure><figure class="stp"><video data-v="../assets/talk/x2.mp4" poster="../assets/talk/x2.jpg" muted loop playsinline preload="none"></video><figcaption>الكافيه</figcaption></figure><figure class="stp"><video data-v="../assets/talk/s4.mp4" poster="../assets/talk/s4.jpg" muted loop playsinline preload="none"></video><figcaption>المساحات</figcaption></figure><figure class="stp"><video data-v="../assets/talk/x3.mp4" poster="../assets/talk/x3.jpg" muted loop playsinline preload="none"></video><figcaption>الإضاءة</figcaption></figure><figure class="stp"><video data-v="../assets/talk/s5.mp4" poster="../assets/talk/s5.jpg" muted loop playsinline preload="none"></video><figcaption>الدروس</figcaption></figure><figure class="stp"><video data-v="../assets/talk/desk.mp4" poster="../assets/talk/desk.jpg" muted loop playsinline preload="none"></video><figcaption>المكتب</figcaption></figure><figure class="stp"><video data-v="../assets/talk/t1.mp4" poster="../assets/talk/t1.jpg" muted loop playsinline preload="none"></video><figcaption>النهارده</figcaption></figure><button class="st-snd" id="stSnd">🔇 دوس للصوت</button></div>
-  <div class="st-copy" id="stCopy"><div class="stc"><span class="scene">الفصل 01 / 10</span><h3>منين بدأت</h3><p>أول فيديو ليا قدام الكاميرا. كاميرا واحدة، وفضول كتير، وقرار إني أبدأ.</p><div class="stat"><b><span class="num" data-to="1">1</span><em></em></b><span>كاميرا · أول يوم</span></div></div><div class="stc"><span class="scene">الفصل 02 / 10</span><h3>دبي بقت البيت</h3><p>عربيات خارقة، وصالات عرض، ومدينة ما بتنامش. هنا بنيت HOSSO Visuals، عميل ورا عميل.</p><div class="stat"><b><span class="num" data-to="4">4</span><em></em></b><span>سنين في الإمارات</span></div></div><div class="stc"><span class="scene">الفصل 03 / 10</span><h3>مطاعم وبراندات ولحظات حقيقية</h3><p>بوجّه الفريق والموديل والإضاءة في تصوير مطعم.</p><div class="stat"><b><span class="num" data-to="111">111</span><em>+</em></b><span>شغل</span></div></div><div class="stc"><span class="scene">الفصل 04 / 10</span><h3>الصنعة قدام الكاميرا</h3><p>ورشة نجارة اتحولت لحكاية سينمائية: خشب وعدّة وإيدين بتشتغل.</p><div class="stat"><b><span class="num" data-to="10">10</span><em>+</em></b><span>براند</span></div></div><div class="stc"><span class="scene">الفصل 05 / 10</span><h3>كل كوباية مشهد</h3><p>تصوير كافيه من أول تجهيزة لحد آخر لاتيه آرت، مع الفريق ورا كل كادر.</p><div class="stat oncam"><span class="dot"></span><span>قدام الكاميرا · حسام عاطف</span></div></div><div class="stc"><span class="scene">الفصل 06 / 10</span><h3>أماكن ليها حكاية</h3><p>ديكور وعقارات، متصوّرة بحيث تحس بالمكان قبل ما تدخله.</p><div class="stat oncam"><span class="dot"></span><span>قدام الكاميرا · حسام عاطف</span></div></div><div class="stc"><span class="scene">الفصل 07 / 10</span><h3>الإضاءة هي الحكاية</h3><p>صالة عربيات منوّرة كأنها موقع تصوير فيلم. الإضاءة هي اللي بتحدد إحساسك.</p><div class="stat oncam"><span class="dot"></span><span>قدام الكاميرا · حسام عاطف</span></div></div><div class="stc"><span class="scene">الفصل 08 / 10</span><h3>بعلّم اللي بتعلّمه</h3><p>ليه الإضاءة مهمة، بشرحها قدام الكاميرا. نفس الدروس اللي بستخدمها في كل تصوير.</p><div class="stat"><b><span class="num" data-to="42">42</span><em></em></b><span>حلقة · كل يوم 9 الصبح</span></div></div><div class="stc"><span class="scene">الفصل 09 / 10</span><h3>الشغل اللي ورا الشغل</h3><p>قهوة، تايملاين، تلوين، وتاني من الأول. معظم الفيلم بيتعمل على المكتب ده، بعد التصوير بكتير.</p><div class="stat oncam"><span class="dot"></span><span>مونتاج · تلوين · صوت</span></div></div><div class="stc"><span class="scene">الفصل 10 / 10</span><h3>دلوقتي الجمهور بييجي لي</h3><p>بكتب وبخرج وبقدّم حلقاتي بنفسي، بالمصري، عن Claude وأدوات الذكاء الاصطناعي لصنّاع المحتوى.</p><div class="stat"><b><span class="num" data-to="240.7">240.7</span><em>K</em></b><span>مشاهدة على فيسبوك · آخر 30 يوم</span></div><div class="stat2"><b>6,030</b> متابع على إنستجرام · <b>42</b> حلقة</div></div></div>
+  <div class="st-copy" id="stCopy"><div class="stc"><span class="scene">الفصل 01 / 10</span><h3>البداية</h3><p>أول فيديو ليا. كاميرا واحدة وفضول كتير.</p><div class="stat"><b><span class="num" data-to="1">1</span><em></em></b><span>كاميرا · أول يوم</span></div></div><div class="stc"><span class="scene">الفصل 02 / 10</span><h3>دبي بقت بيتي</h3><p>مدينة ما بتقفش. هنا بنيت HOSSO عميل ورا عميل.</p><div class="stat"><b><span class="num" data-to="4">4</span><em></em></b><span>سنين في الإمارات</span></div></div><div class="stc"><span class="scene">الفصل 03 / 10</span><h3>مطاعم وبراندات</h3><p>بوجّه الفريق والإضاءة في تصوير مطعم.</p><div class="stat"><b><span class="num" data-to="111">111</span><em>+</em></b><span>شغل</span></div></div><div class="stc"><span class="scene">الفصل 04 / 10</span><h3>صنعة قدام الكاميرا</h3><p>ورشة نجارة بقت فيلم: خشب وإيدين بتشتغل.</p><div class="stat"><b><span class="num" data-to="10">10</span><em>+</em></b><span>براند</span></div></div><div class="stc"><span class="scene">الفصل 05 / 10</span><h3>كل كوباية مشهد</h3><p>من أول تجهيزة لآخر لاتيه آرت.</p><div class="stat oncam"><span class="dot"></span><span>قدام الكاميرا · حسام عاطف</span></div></div><div class="stc"><span class="scene">الفصل 06 / 10</span><h3>أماكن ليها روح</h3><p>تحس بالمكان قبل ما تدخله.</p><div class="stat oncam"><span class="dot"></span><span>قدام الكاميرا · حسام عاطف</span></div></div><div class="stc"><span class="scene">الفصل 07 / 10</span><h3>الإضاءة هي الحكاية</h3><p>معرض عربيات منوّر زي السينما.</p><div class="stat oncam"><span class="dot"></span><span>قدام الكاميرا · حسام عاطف</span></div></div><div class="stc"><span class="scene">الفصل 08 / 10</span><h3>بعلّم اللي بتعلّمه</h3><p>نفس الدروس اللي بستخدمها في كل تصوير.</p><div class="stat"><b><span class="num" data-to="42">42</span><em></em></b><span>حلقة · كل يوم 9 الصبح</span></div></div><div class="stc"><span class="scene">الفصل 09 / 10</span><h3>الشغل اللي ورا الشغل</h3><p>قهوة، مونتاج، تلوين. الفيلم بيتعمل هنا.</p><div class="stat oncam"><span class="dot"></span><span>مونتاج · تلوين · صوت</span></div></div><div class="stc"><span class="scene">الفصل 10 / 10</span><h3>والجمهور بقى بييجي لي</h3><p>حلقات بالمصري عن Claude وأدوات الـ AI.</p><div class="stat"><b><span class="num" data-to="240.7">240.7</span><em>K</em></b><span>مشاهدة على فيسبوك · آخر 30 يوم</span></div><div class="stat2"><b>6,030</b> متابع على إنستجرام · <b>42</b> حلقة</div></div></div>
   <div class="st-final" id="stFinal">
-    <span class="scene">المشهد 03 · اللي ورا العدسة</span>
-    <p class="say" id="say">أنا مش بصوّر منتجات ولا أماكن. بصوّر الإحساس اللي <span class="gold">بيدّيهولك.</span></p>
+    <span class="scene">المشهد 03 · اللي ورا الكاميرا</span>
+    <p class="say" id="say">مش بصوّر منتج ولا مكان. بصوّر <span class="gold">الإحساس.</span></p>
   </div>
   <div class="st-bar"><div class="track"><i id="stFill"></i></div><div class="ticks"><span>البداية</span><span>دبي</span><span>في اللوكيشن</span><span>الورشة</span><span>الكافيه</span><span>المساحات</span><span>الإضاءة</span><span>الدروس</span><span>المكتب</span><span>النهارده</span></div></div>
   <span class="tech"><b>DEPTH 03</b> · STORY CHAPTERS · ON-CAMERA VIDEOS STACK INTO DEPTH</span>
@@ -659,25 +665,24 @@
 <section class="deck" id="work">
   <div class="left">
     <span class="scene">المشهد 04 · أكل وقهوة</span>
-    <h2 class="big">بصنع <span class="g">حكايات</span> سينمائية</h2>
-    <p>مطاعم وكافيهات، متصوّرة عشان تجوّعك. اعمل اسكرول وكل واحد هيعدّي قدام العدسة.</p>
-    <div class="count"><b id="deckN">01</b>/ 06</div>
-    <a href="../khadamat/" class="btn-line" style="margin-top:26px">كل الخدمات والأسعار ↗</a>
+    <h2 class="big">بصنع <span class="g">حكايات</span> تتاكل</h2>
+    <p>مطاعم وكافيهات. متصوّرة عشان تجوع.</p>
+    <div class="count"><b id="deckN">01</b>/ 05</div>
+    <a href="../khadamat/" class="btn-line" style="margin-top:26px">الخدمات والأسعار ↗</a>
   </div>
   <div class="stack" id="stack">
-    <article class="card"><video data-src="../assets/more/cafe.mp4" poster="../assets/more/cafe.jpg" muted playsinline preload="none" data-list="../assets/more/cafe.mp4,../assets/more/cod1.mp4,../assets/more/cod2.mp4,../assets/more/cod3.mp4,../assets/more/cod4.mp4,../assets/more/cod5.mp4"></video><div class="meta"><small>01 · كافيه</small><h3>COD Coffee</h3><p>ست أفلام من كافيه واحد: اللاتيه آرت، والبار، والضيوف.</p></div></article>
-    <article class="card"><video data-src="../assets/deck/fb-codbts.mp4" poster="../assets/deck/fb-codbts.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>02 · ورا الكواليس</small><h3>COD · في اللوكيشن</h3><p>بوجّه الباريستا والإضاءة وكل صبّة.</p></div></article>
-    <article class="card"><video data-src="../assets/deck/fb-cafe.mp4" poster="../assets/deck/fb-cafe.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>03 · كافيه</small><h3>قهوة وحلو</h3><p>صبّ هادي، إضاءة ناعمة، وترابيزة نفسك تقعد عليها.</p></div></article>
-    <article class="card"><video data-src="../assets/deck/fb-espresso.mp4" poster="../assets/deck/fb-espresso.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>04 · قهوة</small><h3>إسبريسو ولاتيه آرت</h3><p>الشوت، والكريما، والقلب اللي فوق.</p></div></article>
-    <article class="card"><video data-src="../assets/deck/fb-kitchen.mp4" poster="../assets/deck/fb-kitchen.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>05 · مطعم</small><h3>جوه المطبخ</h3><p>من الطاسة للطبق، زي ما الشيف شايفه.</p></div></article>
-    <article class="card"><video data-src="../assets/deck/reels.mp4" poster="../assets/deck/reels.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>06 · مشروبات</small><h3>بار عصاير فريش</h3><p>ألوان وتلج وصبّة بتبيع نفسها.</p></div></article>
+    <article class="card"><video data-src="../assets/more/cafe.mp4" poster="../assets/more/cafe.jpg" muted playsinline preload="none" data-list="../assets/more/cafe.mp4,../assets/more/cod1.mp4,../assets/more/cod2.mp4,../assets/more/cod3.mp4,../assets/more/cod4.mp4,../assets/more/cod5.mp4"></video><div class="meta"><small>01 · كافيه</small><h3>COD Coffee</h3><p>ست أفلام من كافيه واحد.</p></div></article>
+    <article class="card"><video data-src="../assets/deck/fb-cafe.mp4" poster="../assets/deck/fb-cafe.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>02 · كافيه</small><h3>قهوة وحلو</h3><p>ترابيزة نفسك تقعد عليها.</p></div></article>
+    <article class="card"><video data-src="../assets/deck/fb-espresso.mp4" poster="../assets/deck/fb-espresso.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>03 · قهوة</small><h3>إسبريسو ولاتيه</h3><p>الشوت، والكريما، والقلب.</p></div></article>
+    <article class="card"><video data-src="../assets/deck/fb-kitchen.mp4" poster="../assets/deck/fb-kitchen.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>04 · مطعم</small><h3>جوه المطبخ</h3><p>من الطاسة للطبق.</p></div></article>
+    <article class="card"><video data-src="../assets/deck/reels.mp4" poster="../assets/deck/reels.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>05 · مشروبات</small><h3>عصير فريش</h3><p>لون وتلج وصبّة بتبيع لوحدها.</p></div></article>
   </div>
   <span class="tech"><b>DEPTH 04</b> · CARD DECK IN Z-SPACE</span>
 </section>
 
 <!-- ===== 04B · THE MAKING OF: final villa film + behind-the-scenes clips stacking in depth ===== -->
 <section class="making" id="making">
-  <div class="mk-title"><span class="scene">المشهد 04 · ب · ورا الكواليس</span><h2>فيلا واحدة. <span class="g">الفيلم النهائي، وإزاي اتصوّر.</span></h2></div>
+  <div class="mk-title"><span class="scene">المشهد 04 · ب · ورا الكواليس</span><h2>فيلا واحدة. <span class="g">الفيلم، وإزاي اتصوّر.</span></h2></div>
   <div class="mk-final">
     <div class="mk-frame"><video data-src="../assets/making/final.mp4" poster="../assets/making/final.jpg" muted loop playsinline preload="none"></video>
       <span class="mk-tag">النسخة النهائية</span>
@@ -692,7 +697,7 @@
 
 <!-- ===== 04W · WEDDINGS: a big wide frame + a stack of cards; each scroll step the front card slides left into the frame ===== -->
 <section class="wed" id="weddings">
-  <div class="mk-title"><span class="scene">المشهد 04 · أفراح</span><h2>أفراح. <span class="g">كل فيلم متقطّع زي السينما.</span></h2></div>
+  <div class="mk-title"><span class="scene">المشهد 04 · أفراح</span><h2>أفراح. <span class="g">كل فرح فيلم.</span></h2></div>
   <div class="wd-main"></div><div class="wd-side"></div>
   <figure class="wd-c"><video data-v="../assets/wed/w2.mp4" poster="../assets/wed/w2.jpg" muted loop playsinline preload="none"></video><figcaption><small>فرح 01</small><span>أقواس دهبي</span></figcaption></figure><figure class="wd-c"><video data-v="../assets/wed/w3.mp4" poster="../assets/wed/w3.jpg" muted loop playsinline preload="none"></video><figcaption><small>فرح 02</small><span>القلعة</span></figcaption></figure><figure class="wd-c"><video data-v="../assets/wed/w4.mp4" poster="../assets/wed/w4.jpg" muted loop playsinline preload="none"></video><figcaption><small>فرح 03</small><span>وادي القمر</span></figcaption></figure><figure class="wd-c"><video data-v="../assets/wed/w5.mp4" poster="../assets/wed/w5.jpg" muted loop playsinline preload="none"></video><figcaption><small>فرح 04</small><span>أبيض وأسود</span></figcaption></figure><figure class="wd-c"><video data-v="../assets/wed/w6.mp4" poster="../assets/wed/w6.jpg" muted loop playsinline preload="none"></video><figcaption><small>فرح 05</small><span>تفاصيل العريس</span></figcaption></figure><figure class="wd-c"><video data-v="../assets/wed/w7.mp4" poster="../assets/wed/w7.jpg" muted loop playsinline preload="none"></video><figcaption><small>فرح 06</small><span>فرح ديقا العبد</span></figcaption></figure>
   <div class="wd-info"><div class="wd-n"><b id="wdN">01</b> / 06</div><div class="wd-t" id="wdT">أقواس دهبي</div><button class="mk-snd wd-snd" id="wdSnd">🔇 دوس للصوت</button></div>
@@ -703,8 +708,8 @@
 <!-- ===== 04C · COLOR: S-Log 3 → final look, revealed by a scroll-driven divider ===== -->
 <section class="color" id="color">
   <div class="cg-head"><span class="scene">المشهد 04 · ج · التلوين</span>
-    <h2 class="big">متصوّر باهت. <span class="g">ومتلوّن عشان يتحس.</span></h2>
-    <p>كل حاجة بتتصوّر S-Log 3 عشان أحافظ على كل التفاصيل، وبعدين بلوّنها بإيدي على DaVinci Resolve. اعمل اسكرول وشوف الفرق.</p></div>
+    <h2 class="big">متصوّر خام. <span class="g">ومتلوّن بإحساس.</span></h2>
+    <p>بصوّر S-Log وبلوّن بإيدي. اسحب وشوف الفرق.</p></div>
   <div class="cg-row cg-fan"><figure class="cg-card"><div class="cg-frame"><video data-src="../assets/color/c3.mp4" poster="../assets/color/c3.jpg" muted loop playsinline preload="none"></video><span class="cg-l live">تلوين مباشر</span></div><figcaption>فيديو كلام · م. نور</figcaption></figure><figure class="cg-card"><div class="cg-frame"><video data-src="../assets/making2/final1.mp4" poster="../assets/making2/final1.jpg" muted loop playsinline preload="none"></video><span class="cg-l live">تلوين مباشر</span></div><figcaption>لاونج · النسخة النهائية 01</figcaption></figure><figure class="cg-card hero"><div class="cg-frame"><video class="cg-log" data-src="../assets/color/c1-log.mp4" poster="../assets/color/c1-log.jpg" muted loop playsinline preload="none"></video><div class="cg-top"><video data-src="../assets/color/c1-fin.mp4" poster="../assets/color/c1-fin.jpg" muted loop playsinline preload="none"></video></div><i class="cg-line"></i><span class="cg-l">S-LOG 3</span><span class="cg-r">الشكل النهائي</span></div><figcaption>كافيه · لاتيه آرت</figcaption></figure><figure class="cg-card"><div class="cg-frame"><video data-src="../assets/making2/final2.mp4" poster="../assets/making2/final2.jpg" muted loop playsinline preload="none"></video><span class="cg-l live">تلوين مباشر</span></div><figcaption>لاونج · النسخة النهائية 02</figcaption></figure><figure class="cg-card"><div class="cg-frame"><video class="cg-log" data-src="../assets/color/c2-log.mp4" poster="../assets/color/c2-log.jpg" muted loop playsinline preload="none"></video><div class="cg-top"><video data-src="../assets/color/c2-fin.mp4" poster="../assets/color/c2-fin.jpg" muted loop playsinline preload="none"></video></div><i class="cg-line"></i><span class="cg-l">S-LOG 3</span><span class="cg-r">الشكل النهائي</span></div><figcaption>فيديو كلام · م. محمد</figcaption></figure></div>
   <span class="tech"><b>DEPTH 04C</b> · S-LOG 3 → FINAL LOOK · SCROLL WIPE</span>
 </section>
@@ -720,6 +725,7 @@
     <span class="hud" style="left:72%;top:58%">⚡ رفع الجودة · 4K</span>
     <span class="hud" style="left:62%;top:76%">◎ سكريبت · صوت · مونتاج</span>
   </div>
+  <div class="ai-dive" id="aiDive"></div>
   <div class="reelrow" id="reelrow">
     <div class="aireel"><video data-src="../assets/ai-reels/hosso-studio.mp4" poster="../assets/ai-reels/hosso-studio.jpg" muted loop playsinline preload="none"></video><span class="badge">معمول بالـ AI</span></div>
     <div class="aireel"><video data-src="../assets/ai-reels/omni.mp4" poster="../assets/ai-reels/omni.jpg" muted loop playsinline preload="none"></video><span class="badge">أخبار AI</span></div>
@@ -739,30 +745,30 @@
       <span class="ln pill"><span class="live"></span><svg viewBox="0 0 24 24"><path fill="#d97757" d="M12 2.5l1.6 6.1 5.6-3-3 5.6 6.1 1.6-6.1 1.6 3 5.6-5.6-3L12 22.5l-1.6-6.1-5.6 3 3-5.6-6.1-1.6 6.1-1.6-3-5.6 5.6 3z"/></svg>بيديره Claude · مباشر</span>
     </div>
   </div>
-  <div class="toast tA"><i><svg viewBox="0 0 24 24"><path fill="#fff" d="M12 2.5l1.6 6.1 5.6-3-3 5.6 6.1 1.6-6.1 1.6 3 5.6-5.6-3L12 22.5l-1.6-6.1-5.6 3 3-5.6-6.1-1.6 6.1-1.6-3-5.6 5.6 3z"/></svg></i><div><small>CLAUDE · كابشن</small>كابشن مكتوب بأسلوب HOSSO</div></div>
+  <div class="toast tA"><i><svg viewBox="0 0 24 24"><path fill="#fff" d="M12 2.5l1.6 6.1 5.6-3-3 5.6 6.1 1.6-6.1 1.6 3 5.6-5.6-3L12 22.5l-1.6-6.1-5.6 3 3-5.6-6.1-1.6 6.1-1.6-3-5.6 5.6 3z"/></svg></i><div><small>CLAUDE · كابشن</small>كابشن بأسلوب HOSSO</div></div>
   <div class="toast tB"><i style="background:#1877f2"><svg viewBox="0 0 24 24"><path fill="#fff" d="M13.5 21v-7.6h2.6l.4-3h-3V8.5c0-.9.3-1.5 1.5-1.5h1.6V4.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.8v3h2.6V21h3.1z"/></svg></i><div><small>فيسبوك · آخر 30 يوم</small>240.7K مشاهدة · 6.4K تفاعل</div></div>
   <div class="toast tC"><i><svg viewBox="0 0 24 24"><path fill="#fff" d="M12 2.5l1.6 6.1 5.6-3-3 5.6 6.1 1.6-6.1 1.6 3 5.6-5.6-3L12 22.5l-1.6-6.1-5.6 3 3-5.6-6.1-1.6 6.1-1.6-3-5.6 5.6 3z"/></svg></i><div><small>CLAUDE · الرسايل</small>103 محادثة جديدة الشهر ده</div></div>
   <div class="copy">
     <div class="beatA" id="aiA">
       <span class="scene">المشهد 05 · تكنولوجيا الذكاء الاصطناعي</span>
-      <h2 class="big">شغّال بالـ <span class="g">AI،</span><br><span class="thin">ومتحرّك بالصنعة.</span></h2>
+      <h2 class="big">بالـ <span class="g">AI،</span><br><span class="thin">وبإيد صنايعي.</span></h2>
       <div class="chips">
-        <div class="chip glass"><i>✦</i><div><b>فيديو وصور بالـ AI</b><span>أحدث الموديلات، بمستوى احترافي.</span></div></div>
-        <div class="chip glass"><i>⚡</i><div><b>مشاريع كاملة جاهزة</b><span>سكريبت وصوت وتصميم ومونتاج، بتستلمها كاملة.</span></div></div>
-        <div class="chip glass"><i>◎</i><div><b>شخص تكنولوجي بجد</b><span>بتعلّم الأدوات الجديدة بسرعة وبستخدمها في شغل حقيقي.</span></div></div>
+        <div class="chip glass"><i>✦</i><div><b>فيديو وصور بالـ AI</b><span>أحدث الأدوات بمستوى احترافي.</span></div></div>
+        <div class="chip glass"><i>⚡</i><div><b>مشروع كامل جاهز</b><span>سكريبت وصوت ومونتاج، تستلمه كامل.</span></div></div>
+        <div class="chip glass"><i>◎</i><div><b>فاهم تكنولوجيا بجد</b><span>أي أداة جديدة بتعلّمها وبشتغل بيها.</span></div></div>
       </div>
     </div>
     <div class="beatB" id="aiB">
       <span class="scene">معمول بالـ AI · HOSSO</span>
       <h2 class="big">ريلز عملتها<br><span class="g">بالـ AI.</span></h2>
-      <p>كل ريل هنا اتكتب واتصمم واتسجّل صوته واتمنتج بأدوات الـ AI، بستايل HOSSO. نفس السيستم اللي بستخدمه مع البراندات.</p>
+      <p>كل ريل هنا معمول بالـ AI بستايل HOSSO.</p>
       <div class="count"><div><b>25<em>+</em></b><span>حلقة</span></div><div><b>1</b><span>سيستم استوديو</span></div></div>
       <a href="../claude/" class="btn-line" style="margin-top:26px">اتعلّم Claude معايا ↗</a>
     </div>
     <div class="beatC" id="aiC">
       <span class="scene">بيديره Claude · HOSSO</span>
       <h2 class="big">الأكونت ده<br>بيديره <span class="g">Claude.</span></h2>
-      <p>أنا بخرج الحكاية، وClaude بيدير الباقي: الأفكار، والسكريبتات، والكابشن، والنشر، والردود، كله بستايل HOSSO.</p>
+      <p>أنا بخرج، وClaude بيعمل الباقي: فكرة، كابشن، نشر، وردود.</p>
       <ul class="steps"><li><i>01</i>فكرة وسكريبت</li><li><i>02</i>تصميم وصوت ومونتاج</li><li><i>03</i>كابشن وهاشتاجات وجدولة</li><li><i>04</i>ردود على الكومنتات والرسايل</li></ul>
     </div>
   </div>
@@ -773,9 +779,12 @@
 <!-- ===== 06 · 3D MAP: the journey drawn on a tilted plane, years stand up like signs ===== -->
 <section class="journey" id="journey">
   <div class="head"><span class="scene">المشهد 06 · الرحلة</span><h2 class="big">من القاهرة <span class="g">لدبي.</span></h2></div>
+  <div class="gps-hud" aria-hidden="true"><span>في الطريق · القاهرة ← دبي</span><b id="gpsKm">2,420<em>كم فاضل</em></b><div class="bar"><i id="gpsBar"></i></div></div>
   <div class="map" id="map">
     <svg viewBox="0 0 1400 900" aria-hidden="true">
-      <path d="M200 700 C 420 300, 700 360, 820 520 S 1100 640, 1220 260" fill="none" stroke="rgba(217,180,106,.18)" stroke-width="3" stroke-dasharray="6 12"/>
+      <g id="city"></g>
+      <path d="M200 700 C 420 300, 700 360, 820 520 S 1100 640, 1220 260" fill="none" stroke="#05080f" stroke-width="16" stroke-linecap="round" opacity=".9"/>
+      <path d="M200 700 C 420 300, 700 360, 820 520 S 1100 640, 1220 260" fill="none" stroke="rgba(217,180,106,.28)" stroke-width="10" stroke-linecap="round"/>
       <path id="jPath" d="M200 700 C 420 300, 700 360, 820 520 S 1100 640, 1220 260" fill="none" stroke="#e8c47c" stroke-width="5" stroke-linecap="round" style="filter:drop-shadow(0 0 10px #d9b46a)"/>
       <circle cx="200" cy="700" r="12" fill="#d9b46a"/><circle cx="1220" cy="260" r="12" fill="#d9b46a"/>
       <circle id="jDot" cx="200" cy="700" r="10" fill="#fff" style="filter:drop-shadow(0 0 12px #f3d79a)"/>
@@ -804,8 +813,8 @@
       </svg></div><div class="tx"><b>دبي</b><span>الإمارات · الاستوديو النهارده</span><em>برج خليفة · متحف المستقبل</em></div></div>
     <div class="pin"><span class="pulse"></span><svg class="drop" viewBox="0 0 24 32"><path d="M12 31s10-11.3 10-19A10 10 0 0 0 2 12c0 7.7 10 19 10 19z" fill="#d9b46a"/><circle cx="12" cy="12" r="4" fill="#0a1020"/></svg></div>
   </div>
-  <div class="bill" data-at=".3" data-p=".3"><span class="yr">2021</span><b>البداية</b><p>HOSSO Visuals اتولدت، كادر ورا كادر.</p></div>
-  <div class="bill" data-at=".6" data-p=".62"><span class="yr">2023</span><b>بنيت اسم</b><p>براندات وأفراح ومحتوى قصير في كل الإمارات.</p></div>
+  <div class="bill" data-at=".3" data-p=".3"><span class="yr">2021</span><b>البداية</b><p>HOSSO اتولدت، كادر ورا كادر.</p></div>
+  <div class="bill" data-at=".6" data-p=".62"><span class="yr">2023</span><b>بنيت اسم</b><p>براندات وأفراح في كل الإمارات.</p></div>
   <div class="nums"><div><b>4</b><span>سنين في الإمارات</span></div><div><b>111<em>+</em></b><span>شغل</span></div><div class="fol"><b>10K<em>+</em></b><span>متابع · كل المنصات</span><div class="soc"><a href="https://www.instagram.com/hossovisuals.ai/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor"/></svg></a><a href="https://www.tiktok.com/@hosso.visuals.ai" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M16.6 3c.4 2.3 1.9 3.8 4.1 4v3.1c-1.5 0-2.9-.4-4.1-1.2v6.2c0 3.3-2.6 5.9-5.9 5.9S4.8 18.4 4.8 15.1s2.7-5.9 6-5.9c.3 0 .6 0 .9.1v3.2a2.8 2.8 0 1 0 1.9 2.6V3h3z"/></svg></a><a href="https://www.facebook.com/profile.php?id=61589055242568" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M13.5 21v-7.6h2.6l.4-3h-3V8.5c0-.9.3-1.5 1.5-1.5h1.6V4.3c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.8v3h2.6V21h3.1z"/></svg></a><a href="https://www.youtube.com/@hossovisuals/videos" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2 26 26 0 0 0 2 12a26 26 0 0 0 .4 4.8 2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8A26 26 0 0 0 22 12a26 26 0 0 0-.4-4.8zM10 15V9l5.2 3L10 15z"/></svg></a></div></div><div><b>10<em>+</em></b><span>براند</span></div></div>
   <span class="tech"><b>DEPTH 06</b> · TILTED 3D MAP + STANDING SIGNS</span>
 </section>
@@ -814,7 +823,7 @@
 <section class="wall" id="reels">
   <div class="grid" id="wallGrid"></div>
   <div class="fog"></div>
-  <div class="title"><span class="scene">المشهد 07 · مختارات</span><h2 class="big"><span class="g">ريلز</span><br>مختارة</h2><a class="btn-line" style="margin-top:26px" href="https://instagram.com/hossovisuals.ai" target="_blank">اتفرج على إنستجرام ↗</a></div>
+  <div class="title"><span class="scene">المشهد 07 · مختارات</span><h2 class="big"><span class="g">ريلز</span><br>مختارة</h2><a class="btn-line" style="margin-top:26px" href="https://instagram.com/hossovisuals.ai" target="_blank">شوف على إنستجرام ↗</a></div>
   <span class="tech"><b>DEPTH 07</b> · TILTED WALL + COLUMN PARALLAX + FOG</span>
 </section>
 
@@ -835,8 +844,8 @@
   <div class="core" id="core"></div>
   <div class="end" id="end">
     <small>النهاية · أو البداية</small>
-    <h2>حكايتك<br>بتبدأ من هنا.</h2>
-    <p>كل فيلم حلو بيبدأ بكلمة. احكيلي عن البراند بتاعك، أو الإطلاق، أو يوم فرحك.</p>
+    <h2>حكايتك<br>تبدأ هنا.</h2>
+    <p>كل فيلم بيبدأ بكلمة. احكيلي.</p>
     <div class="acts"><a class="wa-big" href="https://wa.me/971556226197" target="_blank">💬 كلّمني واتساب</a><a class="btn-line" href="mailto:hosamatef997@gmail.com?subject=Project%20enquiry%20%E2%80%94%20HOSSO%20Visuals">ابعت إيميل</a></div>
     <div class="socials"><a href="https://instagram.com/hossovisuals.ai" target="_blank">إنستجرام</a><a href="https://tiktok.com/@hosso.visuals.ai" target="_blank">تيك توك</a><a href="../links/">كل اللينكات</a></div>
   </div>
@@ -884,9 +893,9 @@ const words = $$('#say .w');
 // filmed reels mixed with reels made with AI (the ai-* ones get a thin gold frame)
 const clips = ['reel-n1','ai-studio','reel-royal','reel-n3','ai-omni','reel-golden','reel-n4','ai-motionsites','bts-studio','reel-n5','ai-motion','reel-camera','reel-n2','ai-picsart','bts-product','bts-setup','ai-skills','bts-lens','reel-handwork','cod-latte','reel-build','cod-cheers','bts-hotel','cod-shaker'];
 const wg = $('#wallGrid');
-for (let c = 0; c < 7; c++) { const col = document.createElement('div'); col.className = 'col';
-  for (let r = 0; r < 5; r++) { const n = clips[(c * 5 + r * 3) % clips.length];
-    if (c === 0 || c === 6) { const img = document.createElement('img'); img.loading = 'lazy'; img.alt = ''; img.src = `../assets/wall/${n}.jpg`; col.appendChild(img); continue; }
+for (let c = 0; c < 9; c++) { const col = document.createElement('div'); col.className = 'col';
+  for (let r = 0; r < 7; r++) { const n = clips[(c * 7 + r * 3) % clips.length];
+    if (c === 0 || c === 8) { const img = document.createElement('img'); img.loading = 'lazy'; img.alt = ''; img.src = `../assets/wall/${n}.jpg`; col.appendChild(img); continue; }
     const v = document.createElement('video'); v.muted = true; v.loop = true; v.playsInline = true; v.preload = 'none';
     v.setAttribute('muted', ''); v.setAttribute('playsinline', ''); v.poster = `../assets/wall/${n}.jpg`; v.dataset.src = `../assets/wall/${n}.mp4`;
     if (n.startsWith('ai-')) v.className = 'ai';
@@ -898,6 +907,37 @@ const rings = $('#rings'); for (let i = 0; i < 9; i++) rings.appendChild(documen
 const ringEls = $$('#rings i');
 function placeRings(cam) { ringEls.forEach((r, i) => { const z = -i * 500 + cam; r.style.transform = `translateZ(${z}px)`; r.style.opacity = z > 600 ? 0 : clamp(1 + z / 4000, 0, 1); }); }
 placeRings(0);
+
+/* journey · a dark GPS city map drawn once under the route: blocks, streets, avenues, the Nile, the Gulf, parks, district names */
+(() => { const g = document.getElementById('city'); if (!g) return; const NS = 'http://www.w3.org/2000/svg';
+  const el = (t, a) => { const e = document.createElementNS(NS, t); for (const k in a) e.setAttribute(k, a[k]); g.appendChild(e); return e; };
+  let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+  el('rect', { x: -900, y: -900, width: 3200, height: 2700, fill: '#0b1222' });
+  // water: the Nile on the Cairo side, the Gulf on the Dubai side
+  el('path', { d: 'M-900 -900 L60 -900 C 40 -500, 120 -200, 60 120 S 20 520, 110 760 S 60 1300, 120 1800 L-900 1800 Z', fill: '#0a1c33' });
+  el('path', { d: 'M60 -900 C 40 -500, 120 -200, 60 120 S 20 520, 110 760 S 60 1300, 120 1800', fill: 'none', stroke: '#16365a', 'stroke-width': 4 });
+  el('path', { d: 'M1500 -900 L2300 -900 L2300 1800 L1900 1800 C 1820 1300, 1700 900, 1560 600 S 1380 120, 1500 -900 Z', fill: '#0a1c33' });
+  el('path', { d: 'M1900 1800 C 1820 1300, 1700 900, 1560 600 S 1380 120, 1500 -900', fill: 'none', stroke: '#16365a', 'stroke-width': 4 });
+  // parks
+  [[330, 120, 160, 90], [980, 700, 140, 110], [560, 760, 120, 70], [1180, -60, 150, 100], [-200, 300, 140, 160]].forEach(([x, y, w, h]) => el('rect', { x, y, width: w, height: h, rx: 18, fill: '#0e2420' }));
+  // minor streets: a slightly irregular grid with gaps
+  for (let x = -880; x < 2280; x += 46) { if (rnd() < .18) continue; const j = (rnd() - .5) * 10; el('line', { x1: x + j, y1: -880, x2: x - j, y2: 1780, stroke: '#16213a', 'stroke-width': 2 }); }
+  for (let y = -880; y < 1780; y += 42) { if (rnd() < .18) continue; const j = (rnd() - .5) * 10; el('line', { x1: -880, y1: y + j, x2: 2280, y2: y - j, stroke: '#16213a', 'stroke-width': 2 }); }
+  // avenues and highways (casing + fill)
+  const road = (d, w) => { el('path', { d, fill: 'none', stroke: '#0b1222', 'stroke-width': w + 4, 'stroke-linecap': 'round' }); el('path', { d, fill: 'none', stroke: '#24324f', 'stroke-width': w, 'stroke-linecap': 'round' }); };
+  road('M-880 430 C 200 380, 600 470, 1100 420 S 1800 380, 2280 460', 9);
+  road('M480 -880 C 520 -200, 430 300, 520 900 S 560 1500, 520 1780', 8);
+  road('M1020 -880 C 980 -100, 1100 500, 1020 1100 S 1080 1600, 1040 1780', 8);
+  road('M-880 1020 C 300 960, 900 1080, 2280 980', 7);
+  road('M-880 -120 C 200 -80, 900 -160, 2280 -60', 7);
+  road('M-500 -880 L 2000 1780', 6); road('M2100 -880 L -400 1780', 5);
+  // district labels (flat on the ground, like a real nav map)
+  const lab = (x, y, t, sz = 18, op = .28) => { const e = el('text', { x, y, fill: `rgba(220,226,240,${op})`, 'font-size': sz, 'font-family': 'JetBrains Mono, monospace', 'letter-spacing': 6, 'text-anchor': 'middle' }); e.textContent = t; };
+  lab(200, 800, 'CAIRO', 30, .45); lab(1220, 190, 'DUBAI', 30, .45);
+  lab(40, -300, 'NILE', 16, .3); lab(1760, 300, 'ARABIAN GULF', 16, .3);
+  lab(330, 560, 'ZAMALEK'); lab(660, 260, 'DOWNTOWN'); lab(820, 640, 'BUSINESS BAY'); lab(1240, 520, 'JUMEIRAH'); lab(1330, 860, 'DUBAI MARINA'); lab(560, 1080, 'NEW CAIRO');
+  lab(1060, 360, 'SHEIKH ZAYED RD', 11, .22); lab(-300, 410, 'CORNICHE', 11, .22);
+})();
 
 /* journey signs: pinned to screen points along the tilted path */
 const jPath = $('#jPath'), jLen = jPath.getTotalLength(), map = $('#map');
@@ -944,13 +984,12 @@ ScrollTrigger.matchMedia({
   const placeStory = p => {
     const fin = clamp((p - .8) / .12, 0, 1);            // 0 → 1 the finale
     const f = clamp(p / .8, 0, 1) * NC - .5;             // chapter position (−.5 → 3.5)
-    stP.forEach((el, i) => { const k = f - i;           // k > 0: this photo is behind (older); k < 0: still to come
-      if (k < -1) { el.style.opacity = 0; return; }
-      if (k < 0) { const t = -k; el.style.transform = `translate3d(${t * 60}px,${t * 220}px,${t * 200}px) rotateZ(${t * 6}deg)`; el.style.opacity = 1 - t; el.style.filter = 'none'; el.style.zIndex = 20; return; }
-      const d = Math.min(k, 3.2);
-      el.style.transform = `translate3d(${-d * 70}px,${-d * 34}px,${-d * 260}px) rotateY(${d * 9}deg) rotateZ(${-d * 3}deg)`;
-      el.style.filter = `blur(${(d * 2.4).toFixed(1)}px) brightness(${clamp(1 - d * .25, .3, 1).toFixed(2)})`;
-      el.style.opacity = clamp(1 - d * .28, 0, 1) * (1 - fin * .75); el.style.zIndex = 10 - Math.round(d * 2); });
+    const SW = stP[0].offsetWidth || 260;
+    stP.forEach((el, i) => { const k = i - f, ak = Math.abs(k);     // k > 0: still to come (waits on the left), k < 0: done (leaves to the right)
+      el.style.transform = `translate3d(${-k * SW * .78}px,${ak * 16}px,${-ak * 240}px) rotateY(${k * 22}deg)`;
+      el.style.filter = `blur(${Math.min(ak * 2.2, 8).toFixed(1)}px) brightness(${Math.max(1 - ak * .22, .35).toFixed(2)})`;
+      el.style.opacity = (k < 0 ? clamp(1 + k * 1.6, 0, 1) : clamp(3 - k * .9, 0, 1)) * (1 - fin * .75);
+      el.style.zIndex = 50 - Math.round(ak * 10); el.classList.toggle('on', ak < .5); });
     stC.forEach((el, i) => { const k = f - i, a = clamp(1.25 - Math.abs(k) * 2.2, 0, 1) * (1 - fin);
       el.style.opacity = a; el.style.transform = `translateY(calc(-50% + ${(-k * 50).toFixed(1)}px))`;
       const n = nums[i], c = clamp((k + .5) * 1.6, 0, 1); if (n) n.el.textContent = (n.to * c).toFixed(n.dec); });
@@ -991,8 +1030,8 @@ ScrollTrigger.matchMedia({
       r.style.filter = `blur(${Math.min(ak * 2.2, 8).toFixed(1)}px) brightness(${Math.max(1 - ak * .22, .35).toFixed(2)})`;
       r.style.zIndex = 50 - Math.round(ak * 10); r.classList.toggle('on', ak < .5); }); };
   placeReels(0);
-  const lab = gsap.timeline({ scrollTrigger: { trigger: '#ai', start: 'top top', end: '+=500%', pin: true, scrub: true,
-      onUpdate: s => { placeReels(gsap.utils.clamp(0, 1, (s.progress * 1.45 - .5) / .9)); dockToasts(s.progress * 1.45); } } })
+  const lab = gsap.timeline({ scrollTrigger: { trigger: '#ai', start: 'top top', end: '+=660%', pin: true, scrub: true,
+      onUpdate: s => { placeReels(gsap.utils.clamp(0, 1, (s.progress * 1.9 - .5) / .9)); dockToasts(s.progress * 1.9); } } })
     .fromTo('#aiPro', { clipPath: 'inset(0 0 0 88%)' }, { clipPath: 'inset(0 0 0 14%)', ease: 'none', duration: .38 }, 0)
     .fromTo(['#aiCut', '#aiScan'], { left: '88%' }, { left: '14%', ease: 'none', duration: .38 }, 0)
     .fromTo('#ba .hud', { opacity: 0, x: 20 }, { opacity: 1, x: 0, stagger: .05, duration: .08 }, .12)
@@ -1009,13 +1048,19 @@ ScrollTrigger.matchMedia({
     .fromTo('#igh .ln', { opacity: 0, x: -24 }, { opacity: 1, x: 0, stagger: .05, duration: .06 }, 1.05)
     .fromTo('#aiC', { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: .07 }, 1.08)
     .fromTo('#aiC .steps li', { opacity: 0, x: -20 }, { opacity: 1, x: 0, stagger: .04, duration: .05 }, 1.14)
-    .fromTo('#ai .toast', { opacity: 0, scale: .8, y: 16 }, { opacity: 1, scale: 1, y: 0, stagger: .07, duration: .05, ease: 'back.out(2)' }, 1.2)
-    .to({}, { duration: .001 }, 1.45); // total length 1.45 = whole pinned scroll
+    .fromTo('#ai .toast', { opacity: 0, scale: .8, y: 16 }, { opacity: 1, scale: 1, y: 0, stagger: .03, duration: .04, ease: 'back.out(2)' }, 1.36)
+    // dive: everything else leaves, the last phone grows until the screen is inside it, then the next scene starts in the dark
+    .to(['#ai .toast', '#igh', '#aiC'], { opacity: 0, duration: .06 }, 1.56)
+    .to('#reelrow .aireel:not(:last-child)', { opacity: 0, duration: .05 }, 1.56)
+    .fromTo('#reelrow', { scale: 1 }, { scale: 9, ease: 'power2.in', duration: .3 }, 1.58)
+    .fromTo('#aiDive', { opacity: 0 }, { opacity: 1, ease: 'power1.in', duration: .1 }, 1.78)
+    .to({}, { duration: .001 }, 1.9); // total length 1.9 = whole pinned scroll
 
   // 06 · 3D map: path draws, the camera glides over the plane, signs stand up
   jPath.style.strokeDasharray = jLen; jPath.style.strokeDashoffset = jLen;
   ScrollTrigger.create({ trigger: '#journey', start: 'top top', end: '+=160%', pin: true, scrub: true, onUpdate: s => {
-    const p = s.progress; jPath.style.strokeDashoffset = jLen * (1 - p); const pt = jPath.getPointAtLength(jLen * p); $('#jDot').setAttribute('cx', pt.x); $('#jDot').setAttribute('cy', pt.y);
+    const p = s.progress; jPath.style.strokeDashoffset = jLen * (1 - p);
+    $('#gpsKm').firstChild.textContent = Math.round(2420 * (1 - p)).toLocaleString('en-US'); $('#gpsBar').style.width = (p * 100) + '%'; const pt = jPath.getPointAtLength(jLen * p); $('#jDot').setAttribute('cx', pt.x); $('#jDot').setAttribute('cy', pt.y);
     map.style.transform = `rotateX(${62 - p * 8}deg) rotateZ(${-6 + p * 12}deg) translateY(${-p * 60}px)`;
     placeBills();
     // Egypt rises at the start and dims as you leave; the UAE rises as the line reaches Dubai
@@ -1127,13 +1172,12 @@ function playToasts() {
 }
 function dockToasts(t) {
   if (innerWidth <= 900 || !toasts.length) return;
-  let ph = null, best = 0;
-  $$('#reelrow .aireel').forEach(r => { const w = r.getBoundingClientRect().width; if (w > best) { best = w; ph = r; } });
+  const all = $$('#reelrow .aireel'), ph = all[all.length - 1];
   if (ph) { const r = ph.getBoundingClientRect(), host = $('#ai').getBoundingClientRect(), edge = r.right - host.left;
     toasts.forEach((el, i) => { const x = Math.max(edge + 14, Math.min(edge + 46, host.width - el.offsetWidth - 28));
       el.style.left = x + 'px'; el.style.right = 'auto'; el.style.top = (r.top - host.top + r.height * (.2 + i * .3) - el.offsetHeight / 2) + 'px'; el.style.setProperty('--wl', (x - edge) + 'px'); }); }
-  if (t >= 1.22 && !tPlayed) { tPlayed = true; playToasts(); }
-  if (t < 1.15 && tPlayed) { tPlayed = false; tTimers.forEach(clearInterval); tText.forEach((n, i) => { if (n) n.textContent = tOrig[i]; }); toasts[0].querySelectorAll('.tw').forEach(x => x.remove()); }
+  if (t >= 1.37 && !tPlayed) { tPlayed = true; playToasts(); }
+  if (t < 1.3 && tPlayed) { tPlayed = false; tTimers.forEach(clearInterval); tText.forEach((n, i) => { if (n) n.textContent = tOrig[i]; }); toasts[0].querySelectorAll('.tw').forEach(x => x.remove()); }
 }
 
 // 02 · CINEMA: two ultra-wide films play one after the other (food, then the Ferrari)

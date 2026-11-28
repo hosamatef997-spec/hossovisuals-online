@@ -203,7 +203,9 @@
   .chip b{display:block;font-size:14.5px}.chip span{font-size:12px;color:var(--muted)}
   .ailab .count{display:flex;gap:30px;margin-top:26px}.ailab .count b{display:block;font-size:40px;font-weight:700}.ailab .count b em{font-style:normal;color:var(--gold)}
   .ailab .count span{font:500 10.5px var(--mono);letter-spacing:.16em;color:var(--muted)}
-  .reelrow{position:absolute;left:68%;top:52%;width:0;height:0;transform-style:preserve-3d}
+  .reelrow{position:absolute;left:68%;top:52%;width:0;height:0;transform-style:preserve-3d;transform-origin:0 0}
+  .ai-dive{position:absolute;inset:0;z-index:80;pointer-events:none;opacity:0;background:radial-gradient(ellipse at 50% 20%,#0e1730,#05080f 70%)}
+  @media (max-width:900px){.ai-dive{display:none}}
   .aireel{position:absolute;width:250px;height:444px;left:-125px;top:-222px;border-radius:28px;padding:9px;background:#0b0c10;opacity:0;will-change:transform,opacity,filter;
     box-shadow:0 40px 90px rgba(0,0,0,.65),0 0 0 1px rgba(255,255,255,.08)}
   .aireel video{width:100%;height:100%;object-fit:cover;border-radius:20px;background:#111}
@@ -215,8 +217,11 @@
   .journey{perspective:1100px;background:radial-gradient(ellipse at 50% 20%,#0e1730,#05080f 70%)}
   .journey .head{position:absolute;z-index:5;top:12vh;left:0;right:0;text-align:center}
   .map{position:absolute;left:50%;top:60%;width:1400px;height:900px;margin:-450px 0 0 -700px;transform:rotateX(62deg) rotateZ(-6deg);
-    background-image:linear-gradient(rgba(217,180,106,.09) 1px,transparent 1px),linear-gradient(90deg,rgba(217,180,106,.09) 1px,transparent 1px);background-size:70px 70px;
-    -webkit-mask-image:radial-gradient(ellipse 50% 50%,#000 40%,transparent 75%);mask-image:radial-gradient(ellipse 50% 50%,#000 40%,transparent 75%)}
+    -webkit-mask-image:radial-gradient(ellipse 95% 90% at 50% 50%,#000 55%,transparent 92%);mask-image:radial-gradient(ellipse 95% 90% at 50% 50%,#000 55%,transparent 92%)}
+  .gps-hud{position:absolute;z-index:8;left:max(40px,calc((100vw - var(--wrap))/2 + 40px));top:30vh;display:grid;gap:4px;padding:12px 16px;border-radius:14px;background:rgba(10,16,32,.85);border:1px solid rgba(217,180,106,.3);backdrop-filter:blur(10px);font:500 10px var(--mono);letter-spacing:.16em;color:var(--muted)}
+  .gps-hud b{font:700 26px var(--en);letter-spacing:-.02em;color:var(--text)}.gps-hud b em{font-style:normal;font-size:14px;color:var(--gold);margin-left:4px}
+  .gps-hud .bar{height:3px;border-radius:3px;background:rgba(217,180,106,.18);overflow:hidden;margin-top:4px}.gps-hud .bar i{display:block;height:100%;width:0;background:var(--gold)}
+  @media (max-width:900px){.gps-hud{display:none}}
   .map svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
   .bill{position:absolute;z-index:6;transform:translate(-50%,-100%);text-align:center;opacity:0;transition:opacity .4s,translate .4s}
   .bill .yr{display:inline-block;font:700 22px var(--en);color:var(--gold);padding:6px 14px;border-radius:12px;border:1px solid rgba(217,180,106,.55);background:rgba(10,16,32,.9)}
@@ -267,7 +272,7 @@
 
   /* ========== 07 REELS · tilted infinite wall ========== */
   .wall{perspective:1200px;background:#05080f}
-  .wall .grid{position:absolute;left:50%;top:50%;width:1700px;margin:-900px 0 0 -850px;display:grid;grid-template-columns:repeat(7,1fr);gap:22px;transform:rotateX(32deg) rotateZ(-14deg);transform-origin:center;will-change:transform}
+  .wall .grid{position:absolute;left:50%;top:50%;width:2500px;margin:-1350px 0 0 -1250px;display:grid;grid-template-columns:repeat(9,1fr);gap:22px;transform:rotateX(32deg) rotateZ(-14deg);transform-origin:center;will-change:transform}
   .wall .col{display:grid;gap:22px;will-change:transform}
   .wall .col img,.wall .col video{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:16px;box-shadow:0 30px 60px rgba(0,0,0,.6);background:#111}
   .wall .col video.ai{box-shadow:0 0 0 2px rgba(217,180,106,.85),0 0 40px rgba(217,180,106,.35),0 30px 60px rgba(0,0,0,.6)}
@@ -344,7 +349,7 @@
     .bill{position:relative;left:auto!important;top:auto!important;transform:none;opacity:1;margin:28px auto 0}
     .bill::after{display:none}
     .journey .nums{position:relative;bottom:auto;margin-top:40px;gap:18px;flex-wrap:wrap}.journey .nums b{font-size:30px}
-    .wall .grid{width:1100px;margin:-700px 0 0 -550px}
+    .wall .grid{width:1500px;margin:-950px 0 0 -750px}
     .qfield{height:auto;display:grid;gap:14px}.q,.q.far,.q.mid{position:relative;left:auto!important;top:auto!important;width:auto;scale:1;filter:none;opacity:1}
     .end{opacity:1}.light{background:radial-gradient(circle at 50% 45%,#fff6e0 0%,#f3d79a 40%,#d9b46a 100%)}.light .core,.rings{display:none}
   }
@@ -432,6 +437,7 @@
   .st-photos{position:absolute;left:max(40px,calc((100vw - var(--wrap))/2 + 40px));top:50%;width:min(26vw,390px);aspect-ratio:4/5;transform:translateY(-50%);transform-style:preserve-3d}
   .stp{position:absolute;inset:0;margin:0;border-radius:18px;overflow:hidden;box-shadow:0 50px 100px rgba(0,0,0,.65),0 0 0 1px rgba(217,180,106,.25);will-change:transform,opacity,filter;opacity:0}
   .stp img{width:100%;height:100%;object-fit:cover}
+  #story .stp.on{box-shadow:0 50px 100px rgba(0,0,0,.65),0 0 0 2px var(--gold),0 0 70px rgba(217,180,106,.3)}
   .stp figcaption{position:absolute;left:14px;bottom:14px;font:500 10px var(--mono);letter-spacing:.18em;color:#fff;background:rgba(0,0,0,.55);padding:5px 9px;border-radius:6px;backdrop-filter:blur(6px)}
   .st-copy{position:absolute;left:calc(max(40px,calc((100vw - var(--wrap))/2 + 40px)) + min(26vw,390px) + 7vw);right:max(40px,calc((100vw - var(--wrap))/2 + 40px));top:50%;height:0}
   .stc{position:absolute;left:0;right:0;top:0;transform:translateY(-50%);opacity:0;max-width:600px}
@@ -549,8 +555,8 @@
     .mk-facts{gap:20px}.mk-facts p{margin-left:0;width:100%}}
 
   /* story = on-camera videos (9:16) */
-  #story .st-photos{width:min(17vw,280px);aspect-ratio:9/16;left:calc(max(40px,calc((100vw - var(--wrap))/2 + 40px)) + 40px)}
-  #story .st-copy{left:calc(max(40px,calc((100vw - var(--wrap))/2 + 40px)) + min(17vw,280px) + 10vw)}
+  #story .st-photos{width:min(17vw,280px);aspect-ratio:9/16;left:calc(max(40px,calc((100vw - var(--wrap))/2 + 40px)) + 13vw)}
+  #story .st-copy{left:calc(max(40px,calc((100vw - var(--wrap))/2 + 40px)) + min(17vw,280px) + 19vw)}
   #story .st-snd{right:auto;left:50%;bottom:-46px;transform:translateX(-50%);background:rgba(217,180,106,.1);color:var(--gold);border:1px solid rgba(217,180,106,.5);white-space:nowrap;z-index:40}
   #story .stat.oncam{align-items:center;gap:10px}#story .stat.oncam span{max-width:none}
   #story .stat.oncam .dot{width:9px;height:9px;border-radius:50%;background:#ff3b30;animation:recBlink 1.2s infinite}
@@ -653,16 +659,15 @@
     <span class="scene">Scene 04 · Food &amp; coffee</span>
     <h2 class="big">Crafting <span class="g">cinematic</span> stories</h2>
     <p>Restaurants and cafés, shot to make you hungry. Scroll and each one flies past the lens.</p>
-    <div class="count"><b id="deckN">01</b>/ 06</div>
+    <div class="count"><b id="deckN">01</b>/ 05</div>
     <a href="khadamat/" class="btn-line" style="margin-top:26px">All services &amp; prices ↗</a>
   </div>
   <div class="stack" id="stack">
     <article class="card"><video data-src="assets/more/cafe.mp4" poster="assets/more/cafe.jpg" muted playsinline preload="none" data-list="assets/more/cafe.mp4,assets/more/cod1.mp4,assets/more/cod2.mp4,assets/more/cod3.mp4,assets/more/cod4.mp4,assets/more/cod5.mp4"></video><div class="meta"><small>01 · CAFÉ</small><h3>COD Coffee</h3><p>Six films from one café: latte art, the bar, the guests.</p></div></article>
-    <article class="card"><video data-src="assets/deck/fb-codbts.mp4" poster="assets/deck/fb-codbts.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>02 · BEHIND THE SCENES</small><h3>COD · On set</h3><p>Directing the barista, the light and every pour.</p></div></article>
-    <article class="card"><video data-src="assets/deck/fb-cafe.mp4" poster="assets/deck/fb-cafe.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>03 · CAFÉ</small><h3>Coffee &amp; Dessert</h3><p>Slow pours, soft light, a table you want to sit at.</p></div></article>
-    <article class="card"><video data-src="assets/deck/fb-espresso.mp4" poster="assets/deck/fb-espresso.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>04 · COFFEE</small><h3>Espresso &amp; Latte Art</h3><p>The shot, the crema, the heart on top.</p></div></article>
-    <article class="card"><video data-src="assets/deck/fb-kitchen.mp4" poster="assets/deck/fb-kitchen.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>05 · RESTAURANT</small><h3>Inside the Kitchen</h3><p>From the pan to the plate, the way chefs see it.</p></div></article>
-    <article class="card"><video data-src="assets/deck/reels.mp4" poster="assets/deck/reels.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>06 · DRINKS</small><h3>Fresh Juice Bar</h3><p>Color, ice and a pour that sells itself.</p></div></article>
+    <article class="card"><video data-src="assets/deck/fb-cafe.mp4" poster="assets/deck/fb-cafe.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>02 · CAFÉ</small><h3>Coffee &amp; Dessert</h3><p>Slow pours, soft light, a table you want to sit at.</p></div></article>
+    <article class="card"><video data-src="assets/deck/fb-espresso.mp4" poster="assets/deck/fb-espresso.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>03 · COFFEE</small><h3>Espresso &amp; Latte Art</h3><p>The shot, the crema, the heart on top.</p></div></article>
+    <article class="card"><video data-src="assets/deck/fb-kitchen.mp4" poster="assets/deck/fb-kitchen.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>04 · RESTAURANT</small><h3>Inside the Kitchen</h3><p>From the pan to the plate, the way chefs see it.</p></div></article>
+    <article class="card"><video data-src="assets/deck/reels.mp4" poster="assets/deck/reels.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>05 · DRINKS</small><h3>Fresh Juice Bar</h3><p>Color, ice and a pour that sells itself.</p></div></article>
   </div>
   <span class="tech"><b>DEPTH 04</b> · CARD DECK IN Z-SPACE</span>
 </section>
@@ -712,6 +717,7 @@
     <span class="hud" style="left:72%;top:58%">⚡ UPSCALE · 4K</span>
     <span class="hud" style="left:62%;top:76%">◎ SCRIPT · VOICE · EDIT</span>
   </div>
+  <div class="ai-dive" id="aiDive"></div>
   <div class="reelrow" id="reelrow">
     <div class="aireel"><video data-src="assets/ai-reels/hosso-studio.mp4" poster="assets/ai-reels/hosso-studio.jpg" muted loop playsinline preload="none"></video><span class="badge">MADE WITH AI</span></div>
     <div class="aireel"><video data-src="assets/ai-reels/omni.mp4" poster="assets/ai-reels/omni.jpg" muted loop playsinline preload="none"></video><span class="badge">AI NEWS</span></div>
@@ -765,9 +771,12 @@
 <!-- ===== 06 · 3D MAP: the journey drawn on a tilted plane, years stand up like signs ===== -->
 <section class="journey" id="journey">
   <div class="head"><span class="scene">Scene 06 · The journey</span><h2 class="big">From Cairo to <span class="g">Dubai.</span></h2></div>
+  <div class="gps-hud" aria-hidden="true"><span>NAVIGATING · CAIRO → DUBAI</span><b id="gpsKm">2,420<em>km left</em></b><div class="bar"><i id="gpsBar"></i></div></div>
   <div class="map" id="map">
     <svg viewBox="0 0 1400 900" aria-hidden="true">
-      <path d="M200 700 C 420 300, 700 360, 820 520 S 1100 640, 1220 260" fill="none" stroke="rgba(217,180,106,.18)" stroke-width="3" stroke-dasharray="6 12"/>
+      <g id="city"></g>
+      <path d="M200 700 C 420 300, 700 360, 820 520 S 1100 640, 1220 260" fill="none" stroke="#05080f" stroke-width="16" stroke-linecap="round" opacity=".9"/>
+      <path d="M200 700 C 420 300, 700 360, 820 520 S 1100 640, 1220 260" fill="none" stroke="rgba(217,180,106,.28)" stroke-width="10" stroke-linecap="round"/>
       <path id="jPath" d="M200 700 C 420 300, 700 360, 820 520 S 1100 640, 1220 260" fill="none" stroke="#e8c47c" stroke-width="5" stroke-linecap="round" style="filter:drop-shadow(0 0 10px #d9b46a)"/>
       <circle cx="200" cy="700" r="12" fill="#d9b46a"/><circle cx="1220" cy="260" r="12" fill="#d9b46a"/>
       <circle id="jDot" cx="200" cy="700" r="10" fill="#fff" style="filter:drop-shadow(0 0 12px #f3d79a)"/>
@@ -876,9 +885,9 @@ const words = $$('#say .w');
 // filmed reels mixed with reels made with AI (the ai-* ones get a thin gold frame)
 const clips = ['reel-n1','ai-studio','reel-royal','reel-n3','ai-omni','reel-golden','reel-n4','ai-motionsites','bts-studio','reel-n5','ai-motion','reel-camera','reel-n2','ai-picsart','bts-product','bts-setup','ai-skills','bts-lens','reel-handwork','cod-latte','reel-build','cod-cheers','bts-hotel','cod-shaker'];
 const wg = $('#wallGrid');
-for (let c = 0; c < 7; c++) { const col = document.createElement('div'); col.className = 'col';
-  for (let r = 0; r < 5; r++) { const n = clips[(c * 5 + r * 3) % clips.length];
-    if (c === 0 || c === 6) { const img = document.createElement('img'); img.loading = 'lazy'; img.alt = ''; img.src = `assets/wall/${n}.jpg`; col.appendChild(img); continue; }
+for (let c = 0; c < 9; c++) { const col = document.createElement('div'); col.className = 'col';
+  for (let r = 0; r < 7; r++) { const n = clips[(c * 7 + r * 3) % clips.length];
+    if (c === 0 || c === 8) { const img = document.createElement('img'); img.loading = 'lazy'; img.alt = ''; img.src = `assets/wall/${n}.jpg`; col.appendChild(img); continue; }
     const v = document.createElement('video'); v.muted = true; v.loop = true; v.playsInline = true; v.preload = 'none';
     v.setAttribute('muted', ''); v.setAttribute('playsinline', ''); v.poster = `assets/wall/${n}.jpg`; v.dataset.src = `assets/wall/${n}.mp4`;
     if (n.startsWith('ai-')) v.className = 'ai';
@@ -890,6 +899,37 @@ const rings = $('#rings'); for (let i = 0; i < 9; i++) rings.appendChild(documen
 const ringEls = $$('#rings i');
 function placeRings(cam) { ringEls.forEach((r, i) => { const z = -i * 500 + cam; r.style.transform = `translateZ(${z}px)`; r.style.opacity = z > 600 ? 0 : clamp(1 + z / 4000, 0, 1); }); }
 placeRings(0);
+
+/* journey · a dark GPS city map drawn once under the route: blocks, streets, avenues, the Nile, the Gulf, parks, district names */
+(() => { const g = document.getElementById('city'); if (!g) return; const NS = 'http://www.w3.org/2000/svg';
+  const el = (t, a) => { const e = document.createElementNS(NS, t); for (const k in a) e.setAttribute(k, a[k]); g.appendChild(e); return e; };
+  let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+  el('rect', { x: -900, y: -900, width: 3200, height: 2700, fill: '#0b1222' });
+  // water: the Nile on the Cairo side, the Gulf on the Dubai side
+  el('path', { d: 'M-900 -900 L60 -900 C 40 -500, 120 -200, 60 120 S 20 520, 110 760 S 60 1300, 120 1800 L-900 1800 Z', fill: '#0a1c33' });
+  el('path', { d: 'M60 -900 C 40 -500, 120 -200, 60 120 S 20 520, 110 760 S 60 1300, 120 1800', fill: 'none', stroke: '#16365a', 'stroke-width': 4 });
+  el('path', { d: 'M1500 -900 L2300 -900 L2300 1800 L1900 1800 C 1820 1300, 1700 900, 1560 600 S 1380 120, 1500 -900 Z', fill: '#0a1c33' });
+  el('path', { d: 'M1900 1800 C 1820 1300, 1700 900, 1560 600 S 1380 120, 1500 -900', fill: 'none', stroke: '#16365a', 'stroke-width': 4 });
+  // parks
+  [[330, 120, 160, 90], [980, 700, 140, 110], [560, 760, 120, 70], [1180, -60, 150, 100], [-200, 300, 140, 160]].forEach(([x, y, w, h]) => el('rect', { x, y, width: w, height: h, rx: 18, fill: '#0e2420' }));
+  // minor streets: a slightly irregular grid with gaps
+  for (let x = -880; x < 2280; x += 46) { if (rnd() < .18) continue; const j = (rnd() - .5) * 10; el('line', { x1: x + j, y1: -880, x2: x - j, y2: 1780, stroke: '#16213a', 'stroke-width': 2 }); }
+  for (let y = -880; y < 1780; y += 42) { if (rnd() < .18) continue; const j = (rnd() - .5) * 10; el('line', { x1: -880, y1: y + j, x2: 2280, y2: y - j, stroke: '#16213a', 'stroke-width': 2 }); }
+  // avenues and highways (casing + fill)
+  const road = (d, w) => { el('path', { d, fill: 'none', stroke: '#0b1222', 'stroke-width': w + 4, 'stroke-linecap': 'round' }); el('path', { d, fill: 'none', stroke: '#24324f', 'stroke-width': w, 'stroke-linecap': 'round' }); };
+  road('M-880 430 C 200 380, 600 470, 1100 420 S 1800 380, 2280 460', 9);
+  road('M480 -880 C 520 -200, 430 300, 520 900 S 560 1500, 520 1780', 8);
+  road('M1020 -880 C 980 -100, 1100 500, 1020 1100 S 1080 1600, 1040 1780', 8);
+  road('M-880 1020 C 300 960, 900 1080, 2280 980', 7);
+  road('M-880 -120 C 200 -80, 900 -160, 2280 -60', 7);
+  road('M-500 -880 L 2000 1780', 6); road('M2100 -880 L -400 1780', 5);
+  // district labels (flat on the ground, like a real nav map)
+  const lab = (x, y, t, sz = 18, op = .28) => { const e = el('text', { x, y, fill: `rgba(220,226,240,${op})`, 'font-size': sz, 'font-family': 'JetBrains Mono, monospace', 'letter-spacing': 6, 'text-anchor': 'middle' }); e.textContent = t; };
+  lab(200, 800, 'CAIRO', 30, .45); lab(1220, 190, 'DUBAI', 30, .45);
+  lab(40, -300, 'NILE', 16, .3); lab(1760, 300, 'ARABIAN GULF', 16, .3);
+  lab(330, 560, 'ZAMALEK'); lab(660, 260, 'DOWNTOWN'); lab(820, 640, 'BUSINESS BAY'); lab(1240, 520, 'JUMEIRAH'); lab(1330, 860, 'DUBAI MARINA'); lab(560, 1080, 'NEW CAIRO');
+  lab(1060, 360, 'SHEIKH ZAYED RD', 11, .22); lab(-300, 410, 'CORNICHE', 11, .22);
+})();
 
 /* journey signs: pinned to screen points along the tilted path */
 const jPath = $('#jPath'), jLen = jPath.getTotalLength(), map = $('#map');
@@ -936,13 +976,12 @@ ScrollTrigger.matchMedia({
   const placeStory = p => {
     const fin = clamp((p - .8) / .12, 0, 1);            // 0 → 1 the finale
     const f = clamp(p / .8, 0, 1) * NC - .5;             // chapter position (−.5 → 3.5)
-    stP.forEach((el, i) => { const k = f - i;           // k > 0: this photo is behind (older); k < 0: still to come
-      if (k < -1) { el.style.opacity = 0; return; }
-      if (k < 0) { const t = -k; el.style.transform = `translate3d(${t * 60}px,${t * 220}px,${t * 200}px) rotateZ(${t * 6}deg)`; el.style.opacity = 1 - t; el.style.filter = 'none'; el.style.zIndex = 20; return; }
-      const d = Math.min(k, 3.2);
-      el.style.transform = `translate3d(${-d * 70}px,${-d * 34}px,${-d * 260}px) rotateY(${d * 9}deg) rotateZ(${-d * 3}deg)`;
-      el.style.filter = `blur(${(d * 2.4).toFixed(1)}px) brightness(${clamp(1 - d * .25, .3, 1).toFixed(2)})`;
-      el.style.opacity = clamp(1 - d * .28, 0, 1) * (1 - fin * .75); el.style.zIndex = 10 - Math.round(d * 2); });
+    const SW = stP[0].offsetWidth || 260;
+    stP.forEach((el, i) => { const k = i - f, ak = Math.abs(k);     // k > 0: still to come (waits on the left), k < 0: done (leaves to the right)
+      el.style.transform = `translate3d(${-k * SW * .78}px,${ak * 16}px,${-ak * 240}px) rotateY(${k * 22}deg)`;
+      el.style.filter = `blur(${Math.min(ak * 2.2, 8).toFixed(1)}px) brightness(${Math.max(1 - ak * .22, .35).toFixed(2)})`;
+      el.style.opacity = (k < 0 ? clamp(1 + k * 1.6, 0, 1) : clamp(3 - k * .9, 0, 1)) * (1 - fin * .75);
+      el.style.zIndex = 50 - Math.round(ak * 10); el.classList.toggle('on', ak < .5); });
     stC.forEach((el, i) => { const k = f - i, a = clamp(1.25 - Math.abs(k) * 2.2, 0, 1) * (1 - fin);
       el.style.opacity = a; el.style.transform = `translateY(calc(-50% + ${(-k * 50).toFixed(1)}px))`;
       const n = nums[i], c = clamp((k + .5) * 1.6, 0, 1); if (n) n.el.textContent = (n.to * c).toFixed(n.dec); });
@@ -983,8 +1022,8 @@ ScrollTrigger.matchMedia({
       r.style.filter = `blur(${Math.min(ak * 2.2, 8).toFixed(1)}px) brightness(${Math.max(1 - ak * .22, .35).toFixed(2)})`;
       r.style.zIndex = 50 - Math.round(ak * 10); r.classList.toggle('on', ak < .5); }); };
   placeReels(0);
-  const lab = gsap.timeline({ scrollTrigger: { trigger: '#ai', start: 'top top', end: '+=500%', pin: true, scrub: true,
-      onUpdate: s => { placeReels(gsap.utils.clamp(0, 1, (s.progress * 1.45 - .5) / .9)); dockToasts(s.progress * 1.45); } } })
+  const lab = gsap.timeline({ scrollTrigger: { trigger: '#ai', start: 'top top', end: '+=660%', pin: true, scrub: true,
+      onUpdate: s => { placeReels(gsap.utils.clamp(0, 1, (s.progress * 1.9 - .5) / .9)); dockToasts(s.progress * 1.9); } } })
     .fromTo('#aiPro', { clipPath: 'inset(0 0 0 88%)' }, { clipPath: 'inset(0 0 0 14%)', ease: 'none', duration: .38 }, 0)
     .fromTo(['#aiCut', '#aiScan'], { left: '88%' }, { left: '14%', ease: 'none', duration: .38 }, 0)
     .fromTo('#ba .hud', { opacity: 0, x: 20 }, { opacity: 1, x: 0, stagger: .05, duration: .08 }, .12)
@@ -1001,13 +1040,19 @@ ScrollTrigger.matchMedia({
     .fromTo('#igh .ln', { opacity: 0, x: -24 }, { opacity: 1, x: 0, stagger: .05, duration: .06 }, 1.05)
     .fromTo('#aiC', { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: .07 }, 1.08)
     .fromTo('#aiC .steps li', { opacity: 0, x: -20 }, { opacity: 1, x: 0, stagger: .04, duration: .05 }, 1.14)
-    .fromTo('#ai .toast', { opacity: 0, scale: .8, y: 16 }, { opacity: 1, scale: 1, y: 0, stagger: .07, duration: .05, ease: 'back.out(2)' }, 1.2)
-    .to({}, { duration: .001 }, 1.45); // total length 1.45 = whole pinned scroll
+    .fromTo('#ai .toast', { opacity: 0, scale: .8, y: 16 }, { opacity: 1, scale: 1, y: 0, stagger: .03, duration: .04, ease: 'back.out(2)' }, 1.36)
+    // dive: everything else leaves, the last phone grows until the screen is inside it, then the next scene starts in the dark
+    .to(['#ai .toast', '#igh', '#aiC'], { opacity: 0, duration: .06 }, 1.56)
+    .to('#reelrow .aireel:not(:last-child)', { opacity: 0, duration: .05 }, 1.56)
+    .fromTo('#reelrow', { scale: 1 }, { scale: 9, ease: 'power2.in', duration: .3 }, 1.58)
+    .fromTo('#aiDive', { opacity: 0 }, { opacity: 1, ease: 'power1.in', duration: .1 }, 1.78)
+    .to({}, { duration: .001 }, 1.9); // total length 1.9 = whole pinned scroll
 
   // 06 · 3D map: path draws, the camera glides over the plane, signs stand up
   jPath.style.strokeDasharray = jLen; jPath.style.strokeDashoffset = jLen;
   ScrollTrigger.create({ trigger: '#journey', start: 'top top', end: '+=160%', pin: true, scrub: true, onUpdate: s => {
-    const p = s.progress; jPath.style.strokeDashoffset = jLen * (1 - p); const pt = jPath.getPointAtLength(jLen * p); $('#jDot').setAttribute('cx', pt.x); $('#jDot').setAttribute('cy', pt.y);
+    const p = s.progress; jPath.style.strokeDashoffset = jLen * (1 - p);
+    $('#gpsKm').firstChild.textContent = Math.round(2420 * (1 - p)).toLocaleString('en-US'); $('#gpsBar').style.width = (p * 100) + '%'; const pt = jPath.getPointAtLength(jLen * p); $('#jDot').setAttribute('cx', pt.x); $('#jDot').setAttribute('cy', pt.y);
     map.style.transform = `rotateX(${62 - p * 8}deg) rotateZ(${-6 + p * 12}deg) translateY(${-p * 60}px)`;
     placeBills();
     // Egypt rises at the start and dims as you leave; the UAE rises as the line reaches Dubai
@@ -1119,13 +1164,12 @@ function playToasts() {
 }
 function dockToasts(t) {
   if (innerWidth <= 900 || !toasts.length) return;
-  let ph = null, best = 0;
-  $$('#reelrow .aireel').forEach(r => { const w = r.getBoundingClientRect().width; if (w > best) { best = w; ph = r; } });
+  const all = $$('#reelrow .aireel'), ph = all[all.length - 1];
   if (ph) { const r = ph.getBoundingClientRect(), host = $('#ai').getBoundingClientRect(), edge = r.right - host.left;
     toasts.forEach((el, i) => { const x = Math.max(edge + 14, Math.min(edge + 46, host.width - el.offsetWidth - 28));
       el.style.left = x + 'px'; el.style.right = 'auto'; el.style.top = (r.top - host.top + r.height * (.2 + i * .3) - el.offsetHeight / 2) + 'px'; el.style.setProperty('--wl', (x - edge) + 'px'); }); }
-  if (t >= 1.22 && !tPlayed) { tPlayed = true; playToasts(); }
-  if (t < 1.15 && tPlayed) { tPlayed = false; tTimers.forEach(clearInterval); tText.forEach((n, i) => { if (n) n.textContent = tOrig[i]; }); toasts[0].querySelectorAll('.tw').forEach(x => x.remove()); }
+  if (t >= 1.37 && !tPlayed) { tPlayed = true; playToasts(); }
+  if (t < 1.3 && tPlayed) { tPlayed = false; tTimers.forEach(clearInterval); tText.forEach((n, i) => { if (n) n.textContent = tOrig[i]; }); toasts[0].querySelectorAll('.tw').forEach(x => x.remove()); }
 }
 
 // 02 · CINEMA: two ultra-wide films play one after the other (food, then the Ferrari)
