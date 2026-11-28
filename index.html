@@ -270,6 +270,17 @@
     .wed .mk-title{position:relative;top:auto;margin-bottom:10px}.wd-main,.wd-side,.wd-bar,.wd-info{display:none}
     .wd-c{position:relative;width:100%;aspect-ratio:16/9}.wd-c.main figcaption{opacity:1}}
 
+  /* ========== 03 · one wide film ========== */
+  .story-wide{position:relative;height:100vh;min-height:560px;overflow:hidden;background:#000}
+  .story-wide video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .story-wide .tech{display:none}
+  .sw-shade{position:absolute;inset:0;background:linear-gradient(180deg,#05080f 0%,rgba(5,8,15,0) 18%,rgba(5,8,15,0) 52%,rgba(5,8,15,.88) 100%);pointer-events:none}
+  .sw-copy{position:absolute;z-index:3;left:max(40px,calc((100vw - var(--wrap))/2 + 40px));top:14vh}.sw-copy .say{display:none}
+  .sw-copy .say{max-width:900px;margin:16px 0 0;font-weight:700;font-size:clamp(30px,3.6vw,58px);line-height:1.1;letter-spacing:-.03em;text-shadow:0 6px 40px rgba(0,0,0,.8)}
+  .story-wide .sw-snd{position:absolute;z-index:4;right:max(40px,calc((100vw - var(--wrap))/2 + 40px));top:14vh;bottom:auto}
+  @media (max-width:900px){.story-wide{height:auto;min-height:0;aspect-ratio:auto;padding-bottom:0}.story-wide video{position:relative;aspect-ratio:16/9;height:auto}
+    .sw-shade{display:none}.sw-copy{position:relative;left:auto;top:auto;padding:22px var(--pad) 0}.story-wide .sw-snd{position:relative;right:auto;top:auto;margin:16px var(--pad) 40px;width:auto;align-self:flex-start;display:inline-block}}
+
   /* ========== 07 REELS · tilted infinite wall ========== */
   .wall{perspective:1200px;background:#05080f}
   .wall .grid{position:absolute;left:50%;top:50%;width:2500px;margin:-1350px 0 0 -1250px;display:grid;grid-template-columns:repeat(9,1fr);gap:22px;transform:rotateX(32deg) rotateZ(-14deg);transform-origin:center;will-change:transform}
@@ -641,25 +652,22 @@
   <span class="tech"><b>DEPTH 02</b> · VIDEO INSIDE TEXT → FLY THROUGH</span>
 </section>
 
-<!-- ===== 03 · Z-TUNNEL: you fly forward through your own shots, the story lights word by word ===== -->
-<section class="story" id="story">
-  <div class="st-photos" id="stPhotos"><figure class="stp"><video data-v="assets/talk/s1.mp4" poster="assets/talk/s1.jpg" muted loop playsinline preload="none"></video><figcaption>FIRST</figcaption></figure><figure class="stp"><video data-v="assets/talk/s2.mp4" poster="assets/talk/s2.jpg" muted loop playsinline preload="none"></video><figcaption>DUBAI</figcaption></figure><figure class="stp"><video data-v="assets/talk/s3.mp4" poster="assets/talk/s3.jpg" muted loop playsinline preload="none"></video><figcaption>ON SET</figcaption></figure><figure class="stp"><video data-v="assets/talk/x1.mp4" poster="assets/talk/x1.jpg" muted loop playsinline preload="none"></video><figcaption>WORKSHOP</figcaption></figure><figure class="stp"><video data-v="assets/talk/x2.mp4" poster="assets/talk/x2.jpg" muted loop playsinline preload="none"></video><figcaption>CAFÉ</figcaption></figure><figure class="stp"><video data-v="assets/talk/s4.mp4" poster="assets/talk/s4.jpg" muted loop playsinline preload="none"></video><figcaption>SPACES</figcaption></figure><figure class="stp"><video data-v="assets/talk/x3.mp4" poster="assets/talk/x3.jpg" muted loop playsinline preload="none"></video><figcaption>LIGHT</figcaption></figure><figure class="stp"><video data-v="assets/talk/s5.mp4" poster="assets/talk/s5.jpg" muted loop playsinline preload="none"></video><figcaption>LESSONS</figcaption></figure><figure class="stp"><video data-v="assets/talk/desk.mp4" poster="assets/talk/desk.jpg" muted loop playsinline preload="none"></video><figcaption>THE DESK</figcaption></figure><figure class="stp"><video data-v="assets/talk/t1.mp4" poster="assets/talk/t1.jpg" muted loop playsinline preload="none"></video><figcaption>TODAY</figcaption></figure><button class="st-snd" id="stSnd">🔇 Tap for sound</button></div>
-  <div class="st-copy" id="stCopy"><div class="stc"><span class="scene">Chapter 01 / 10</span><h3>Where it started</h3><p>My very first video on camera. One camera, a lot of curiosity, and the decision to start.</p><div class="stat"><b><span class="num" data-to="1">1</span><em></em></b><span>CAMERA · DAY ONE</span></div></div><div class="stc"><span class="scene">Chapter 02 / 10</span><h3>Dubai became home</h3><p>Supercars, showrooms and a city that never stops. I built HOSSO Visuals here, one client at a time.</p><div class="stat"><b><span class="num" data-to="4">4</span><em></em></b><span>YEARS IN THE UAE</span></div></div><div class="stc"><span class="scene">Chapter 03 / 10</span><h3>Restaurants, brands, real moments</h3><p>Directing the crew, the talent and the light on a restaurant shoot.</p><div class="stat"><b><span class="num" data-to="111">111</span><em>+</em></b><span>WORKS</span></div></div><div class="stc"><span class="scene">Chapter 04 / 10</span><h3>Craft meets camera</h3><p>A carpentry workshop turned into a cinematic story: wood, tools and hands at work.</p><div class="stat"><b><span class="num" data-to="10">10</span><em>+</em></b><span>BRANDS</span></div></div><div class="stc"><span class="scene">Chapter 05 / 10</span><h3>Every cup is a scene</h3><p>A café shoot from the first setup to the last latte art, with the team behind every frame.</p><div class="stat oncam"><span class="dot"></span><span>ON CAMERA · HOSSAM ATEF</span></div></div><div class="stc"><span class="scene">Chapter 06 / 10</span><h3>Spaces with a story</h3><p>Interiors and real estate, shot so you can feel the room before you walk in.</p><div class="stat oncam"><span class="dot"></span><span>ON CAMERA · HOSSAM ATEF</span></div></div><div class="stc"><span class="scene">Chapter 07 / 10</span><h3>Light is the story</h3><p>A car showroom lit like a film set. The light decides what you feel.</p><div class="stat oncam"><span class="dot"></span><span>ON CAMERA · HOSSAM ATEF</span></div></div><div class="stc"><span class="scene">Chapter 08 / 10</span><h3>Teaching what I learn</h3><p>Why lighting matters, explained on camera. The same lessons I use on every paid shoot.</p><div class="stat"><b><span class="num" data-to="42">42</span><em></em></b><span>EPISODES · DAILY AT 9 AM</span></div></div><div class="stc"><span class="scene">Chapter 09 / 10</span><h3>The work behind the work</h3><p>Coffee, timeline, grade, repeat. Most of a film is made at this desk, long after the shoot.</p><div class="stat oncam"><span class="dot"></span><span>EDIT · COLOR · SOUND</span></div></div><div class="stc"><span class="scene">Chapter 10 / 10</span><h3>Now the audience comes to me</h3><p>I write, direct and present my own episodes, in Egyptian Arabic, about Claude and AI tools for creators.</p><div class="stat"><b><span class="num" data-to="240.7">240.7</span><em>K</em></b><span>VIEWS ON FACEBOOK · LAST 30 DAYS</span></div><div class="stat2"><b>6,030</b> Instagram followers · <b>42</b> episodes</div></div></div>
-  <div class="st-final" id="stFinal">
-    <span class="scene">Scene 03 · The person behind the lens</span>
-    <p class="say" id="say">I don't film products or places. I film how they make you <span class="gold">feel.</span></p>
-  </div>
-  <div class="st-bar"><div class="track"><i id="stFill"></i></div><div class="ticks"><span>FIRST</span><span>DUBAI</span><span>ON SET</span><span>WORKSHOP</span><span>CAFÉ</span><span>SPACES</span><span>LIGHT</span><span>LESSONS</span><span>DESK</span><span>TODAY</span></div></div>
-  <span class="tech"><b>DEPTH 03</b> · STORY CHAPTERS · ON-CAMERA VIDEOS STACK INTO DEPTH</span>
+<!-- ===== 03 · THE PERSON BEHIND THE LENS: one wide film, full width ===== -->
+<section class="story-wide" id="story">
+  <video id="deskVid" data-v="assets/talk/desk-wide.mp4" poster="assets/talk/desk-wide.jpg" muted loop playsinline preload="none"></video>
+  <div class="sw-shade"></div>
+  <div class="sw-copy"><span class="scene">Scene 03 · The person behind the lens</span><p class="say" id="say">I don't film products or places. I film how they make you <span class="gold">feel.</span></p></div>
+  <button class="mk-snd sw-snd" id="swSnd">🔇 Tap for sound</button>
+  <span class="tech"><b>DEPTH 03</b> · ONE WIDE FILM · THE DESK</span>
 </section>
 
 <!-- ===== 04 · DECK: services stacked in depth, the front card flies past the camera ===== -->
 <section class="deck" id="work">
   <div class="left">
-    <span class="scene">Scene 04 · Food &amp; coffee</span>
+    <span class="scene">Scene 04 · My work</span>
     <h2 class="big">Crafting <span class="g">cinematic</span> stories</h2>
-    <p>Restaurants and cafés, shot to make you hungry. Scroll and each one flies past the lens.</p>
-    <div class="count"><b id="deckN">01</b>/ 05</div>
+    <p>Restaurants, cafés and the road that got me here. Scroll and each one flies past the lens.</p>
+    <div class="count"><b id="deckN">01</b>/ 14</div>
     <a href="khadamat/" class="btn-line" style="margin-top:26px">All services &amp; prices ↗</a>
   </div>
   <div class="stack" id="stack">
@@ -668,6 +676,15 @@
     <article class="card"><video data-src="assets/deck/fb-espresso.mp4" poster="assets/deck/fb-espresso.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>03 · COFFEE</small><h3>Espresso &amp; Latte Art</h3><p>The shot, the crema, the heart on top.</p></div></article>
     <article class="card"><video data-src="assets/deck/fb-kitchen.mp4" poster="assets/deck/fb-kitchen.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>04 · RESTAURANT</small><h3>Inside the Kitchen</h3><p>From the pan to the plate, the way chefs see it.</p></div></article>
     <article class="card"><video data-src="assets/deck/reels.mp4" poster="assets/deck/reels.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>05 · DRINKS</small><h3>Fresh Juice Bar</h3><p>Color, ice and a pour that sells itself.</p></div></article>
+    <article class="card"><video data-src="assets/talk/s1.mp4" poster="assets/talk/s1.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>06 · FIRST</small><h3>Where it started</h3><p>My very first video on camera. One camera, a lot of curiosity, and the decision to start.</p></div></article>
+    <article class="card"><video data-src="assets/talk/s2.mp4" poster="assets/talk/s2.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>07 · DUBAI</small><h3>Dubai became home</h3><p>Supercars, showrooms and a city that never stops. I built HOSSO Visuals here, one client at a time.</p></div></article>
+    <article class="card"><video data-src="assets/talk/s3.mp4" poster="assets/talk/s3.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>08 · ON SET</small><h3>Restaurants, brands, real moments</h3><p>Directing the crew, the talent and the light on a restaurant shoot.</p></div></article>
+    <article class="card"><video data-src="assets/talk/x1.mp4" poster="assets/talk/x1.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>09 · WORKSHOP</small><h3>Craft meets camera</h3><p>A carpentry workshop turned into a cinematic story: wood, tools and hands at work.</p></div></article>
+    <article class="card"><video data-src="assets/talk/x2.mp4" poster="assets/talk/x2.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>10 · CAFÉ</small><h3>Every cup is a scene</h3><p>A café shoot from the first setup to the last latte art, with the team behind every frame.</p></div></article>
+    <article class="card"><video data-src="assets/talk/s4.mp4" poster="assets/talk/s4.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>11 · SPACES</small><h3>Spaces with a story</h3><p>Interiors and real estate, shot so you can feel the room before you walk in.</p></div></article>
+    <article class="card"><video data-src="assets/talk/x3.mp4" poster="assets/talk/x3.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>12 · LIGHT</small><h3>Light is the story</h3><p>A car showroom lit like a film set. The light decides what you feel.</p></div></article>
+    <article class="card"><video data-src="assets/talk/s5.mp4" poster="assets/talk/s5.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>13 · LESSONS</small><h3>Teaching what I learn</h3><p>Why lighting matters, explained on camera. The same lessons I use on every paid shoot.</p></div></article>
+    <article class="card"><video data-src="assets/talk/t1.mp4" poster="assets/talk/t1.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>14 · TODAY</small><h3>Now the audience comes to me</h3><p>I write, direct and present my own episodes, in Egyptian Arabic, about Claude and AI tools for creators.</p></div></article>
   </div>
   <span class="tech"><b>DEPTH 04</b> · CARD DECK IN Z-SPACE</span>
 </section>
@@ -875,7 +892,7 @@ $('#hero').addEventListener('mousemove', e => { mx = e.clientX / innerWidth - .5
 /* story sentence → words */
 const say = $('#say');
 say.innerHTML = say.innerHTML.replace(/(<span class="gold">)?([^\s<]+)(<\/span>)?/g, (m, a, w) => `<span class="w${a ? ' gold' : ''}">${w}</span>`);
-const words = $$('#say .w');
+const words = $$('#say .w'); words.forEach(w => w.classList.add('lit'));
 
 /* 03 story chapters: see the ScrollTrigger below */
 
@@ -965,34 +982,6 @@ ScrollTrigger.matchMedia({
     // fade the mask away at the end, so no edge of a letter is left on screen (phone sizes land on a letter edge)
     .to('#tMask', { opacity: 0, ease: 'none', duration: .2 }, .72)
     .to('#tAfter', { opacity: 1, duration: .25 }, .78);
-
-  // 03 · story: 4 chapters (photo stacks into depth, copy swaps, number counts up), then the closing line
-  const stP = $$('#stPhotos .stp'), stC = $$('#stCopy .stc'), ticksEl = $$('.st-bar .ticks span'), NC = stP.length;
-  const nums = stC.map(c => { const n = c.querySelector('.num'); return n ? { el: n, to: parseFloat(n.dataset.to), dec: n.dataset.to.includes('.') ? 1 : 0 } : null; });
-  const stV = stP.map(f => f.querySelector(':scope > video')), stR = stP.map(f => f.querySelector('.st-res video')); let stCur = -1, stSound = false;
-  const stPlay = i => { stV.forEach((v, k) => { if (k === i) { if (!v.src) v.src = v.dataset.v; v.muted = !stSound; v.play().catch(() => {}); } else v.pause(); });
-    stR.forEach((v, k) => { if (!v) return; if (k === i) { if (!v.src) v.src = v.dataset.v; v.play().catch(() => {}); } else v.pause(); }); };
-  $('#stSnd').addEventListener('click', () => { stSound = !stSound; $('#stSnd').textContent = stSound ? '🔊 Sound on' : '🔇 Tap for sound'; stPlay(stCur); });
-  const placeStory = p => {
-    const fin = clamp((p - .8) / .12, 0, 1);            // 0 → 1 the finale
-    const f = clamp(p / .8, 0, 1) * NC - .5;             // chapter position (−.5 → 3.5)
-    const SW = stP[0].offsetWidth || 260;
-    stP.forEach((el, i) => { const k = i - f, ak = Math.abs(k);     // k > 0: still to come (waits on the left), k < 0: done (leaves to the right)
-      el.style.transform = `translate3d(${-k * SW * .78}px,${ak * 16}px,${-ak * 240}px) rotateY(${k * 22}deg)`;
-      el.style.filter = `blur(${Math.min(ak * 2.2, 8).toFixed(1)}px) brightness(${Math.max(1 - ak * .22, .35).toFixed(2)})`;
-      el.style.opacity = (k < 0 ? clamp(1 + k * 1.6, 0, 1) : clamp(3 - k * .9, 0, 1)) * (1 - fin * .75);
-      el.style.zIndex = 50 - Math.round(ak * 10); el.classList.toggle('on', ak < .5); });
-    stC.forEach((el, i) => { const k = f - i, a = clamp(1.25 - Math.abs(k) * 2.2, 0, 1) * (1 - fin);
-      el.style.opacity = a; el.style.transform = `translateY(calc(-50% + ${(-k * 50).toFixed(1)}px))`;
-      const n = nums[i], c = clamp((k + .5) * 1.6, 0, 1); if (n) n.el.textContent = (n.to * c).toFixed(n.dec); });
-    ticksEl.forEach((t, i) => t.classList.toggle('on', Math.round(clamp(f, 0, NC - 1)) === i && fin < .5));
-    const ai = fin > .6 || p <= 0 ? -1 : Math.round(clamp(f, 0, NC - 1)); if (ai !== stCur) { stCur = ai; stPlay(ai); }
-    $('#stFill').style.width = (clamp(p / .8, 0, 1) * 100) + '%';
-    $('#stFinal').style.opacity = fin; $('#stFinal').style.transform = `translateY(calc(-50% + ${(1 - fin) * 30}px))`;
-    words.forEach((w, i) => w.classList.toggle('lit', clamp((p - .84) / .14, 0, 1) >= (i + 1) / words.length));
-  };
-  placeStory(0);
-  ScrollTrigger.create({ trigger: '#story', start: 'top top', end: '+=910%', pin: true, scrub: true, onUpdate: s => placeStory(s.progress) });
 
   // 04 · deck: the front card flies toward the camera, the next steps forward
   const cards = $$('#stack .card'), N = cards.length;
@@ -1171,6 +1160,11 @@ function dockToasts(t) {
   if (t >= 1.37 && !tPlayed) { tPlayed = true; playToasts(); }
   if (t < 1.3 && tPlayed) { tPlayed = false; tTimers.forEach(clearInterval); tText.forEach((n, i) => { if (n) n.textContent = tOrig[i]; }); toasts[0].querySelectorAll('.tw').forEach(x => x.remove()); }
 }
+
+// 03 · the wide desk film plays when it is on screen; one tap for sound
+(() => { const v = $('#deskVid'), b = $('#swSnd'); if (!v) return; const off = b.textContent, on = document.documentElement.lang === 'ar' ? '🔊 الصوت شغال' : '🔊 Sound on';
+  new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { if (!v.src) v.src = v.dataset.v; v.play().catch(() => {}); } else v.pause(); }), { threshold: .3 }).observe(v);
+  b.addEventListener('click', () => { v.muted = !v.muted; b.textContent = v.muted ? off : on; if (!v.src) v.src = v.dataset.v; v.play().catch(() => {}); }); })();
 
 // 02 · CINEMA: two ultra-wide films play one after the other (food, then the Ferrari)
 (() => { const v = document.getElementById('cineVid'), list = ['assets/cinema-wide.mp4', 'assets/cinema-wide2.mp4']; let k = 0;
