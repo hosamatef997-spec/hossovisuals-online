@@ -1009,7 +1009,7 @@ ScrollTrigger.matchMedia({
     .to('#core', { scale: 9, ease: 'power2.in', duration: .8 }, 0)
     .to('#end', { opacity: 1, duration: .15 }, .82);
  },
- '(max-width: 900px)': function () { words.forEach(w => w.classList.add('lit')); initMaking(); }
+ '(max-width: 900px)': function () { words.forEach(w => w.classList.add('lit')); initMaking('making'); initMaking('making2'); }
 });
 
 
