@@ -499,6 +499,10 @@
   .mk-b{position:absolute;inset:0;margin:0;border-radius:16px;overflow:hidden;background:#000;box-shadow:0 40px 90px rgba(0,0,0,.65),0 0 0 1px rgba(217,180,106,.3);opacity:0;will-change:transform,opacity,filter}
   .mk-b video{width:100%;height:100%;object-fit:cover}
   .mk-b figcaption{position:absolute;left:10px;bottom:10px;font:500 9px var(--mono);letter-spacing:.14em;color:#fff;background:rgba(0,0,0,.55);padding:4px 7px;border-radius:5px}
+  .mk-duo{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .mk-vert .mk-frame{aspect-ratio:9/16}
+  @media (min-width:901px){.mk-vert .mk-final{width:min(30vw,470px)}
+    .mk-vert .mk-bts{left:calc(max(40px,calc((100vw - var(--wrap))/2 + 40px)) + min(30vw,470px) + 7vw)}}
   .mk-btsbar{margin-top:18px;text-align:center}
   .mk-btsbar .lbl{font:500 10px var(--mono);letter-spacing:.22em;color:var(--gold)}
   .mk-btsbar .ticks{display:flex;justify-content:center;gap:10px;margin-top:8px;font:500 9.5px var(--mono);color:var(--muted)}
@@ -594,13 +598,13 @@
 
 <!-- ===== 03 · Z-TUNNEL: you fly forward through your own shots, the story lights word by word ===== -->
 <section class="story" id="story">
-  <div class="st-photos" id="stPhotos"><figure class="stp"><video data-v="assets/talk/s1.mp4" poster="assets/talk/s1.jpg" muted loop playsinline preload="none"></video><figcaption>FIRST</figcaption></figure><figure class="stp"><video data-v="assets/talk/s2.mp4" poster="assets/talk/s2.jpg" muted loop playsinline preload="none"></video><figcaption>DUBAI</figcaption></figure><figure class="stp"><video data-v="assets/talk/s3.mp4" poster="assets/talk/s3.jpg" muted loop playsinline preload="none"></video><figcaption>ON SET</figcaption></figure><figure class="stp"><video data-v="assets/talk/x1.mp4" poster="assets/talk/x1.jpg" muted loop playsinline preload="none"></video><figcaption>WORKSHOP</figcaption></figure><figure class="stp"><video data-v="assets/talk/x2.mp4" poster="assets/talk/x2.jpg" muted loop playsinline preload="none"></video><figcaption>CAFÉ</figcaption></figure><figure class="stp"><video data-v="assets/talk/s4.mp4" poster="assets/talk/s4.jpg" muted loop playsinline preload="none"></video><figcaption>SPACES</figcaption></figure><figure class="stp"><video data-v="assets/talk/x3.mp4" poster="assets/talk/x3.jpg" muted loop playsinline preload="none"></video><figcaption>LIGHT</figcaption></figure><figure class="stp"><video data-v="assets/talk/s5.mp4" poster="assets/talk/s5.jpg" muted loop playsinline preload="none"></video><figcaption>LESSONS</figcaption></figure><figure class="stp"><video data-v="assets/talk/t1.mp4" poster="assets/talk/t1.jpg" muted loop playsinline preload="none"></video><figcaption>TODAY</figcaption></figure><button class="st-snd" id="stSnd">🔇 Tap for sound</button></div>
-  <div class="st-copy" id="stCopy"><div class="stc"><span class="scene">Chapter 01 / 09</span><h3>Where it started</h3><p>My very first video on camera. One camera, a lot of curiosity, and the decision to start.</p><div class="stat"><b><span class="num" data-to="1">1</span><em></em></b><span>CAMERA · DAY ONE</span></div></div><div class="stc"><span class="scene">Chapter 02 / 09</span><h3>Dubai became home</h3><p>Supercars, showrooms and a city that never stops. I built HOSSO Visuals here, one client at a time.</p><div class="stat"><b><span class="num" data-to="4">4</span><em></em></b><span>YEARS IN THE UAE</span></div></div><div class="stc"><span class="scene">Chapter 03 / 09</span><h3>Restaurants, brands, real moments</h3><p>Directing the crew, the talent and the light on a restaurant shoot.</p><div class="stat"><b><span class="num" data-to="111">111</span><em>+</em></b><span>WORKS</span></div></div><div class="stc"><span class="scene">Chapter 04 / 09</span><h3>Craft meets camera</h3><p>A carpentry workshop turned into a cinematic story: wood, tools and hands at work.</p><div class="stat"><b><span class="num" data-to="10">10</span><em>+</em></b><span>BRANDS</span></div></div><div class="stc"><span class="scene">Chapter 05 / 09</span><h3>Every cup is a scene</h3><p>A café shoot from the first setup to the last latte art, with the team behind every frame.</p><div class="stat oncam"><span class="dot"></span><span>ON CAMERA · HOSSAM ATEF</span></div></div><div class="stc"><span class="scene">Chapter 06 / 09</span><h3>Spaces with a story</h3><p>Interiors and real estate, shot so you can feel the room before you walk in.</p><div class="stat oncam"><span class="dot"></span><span>ON CAMERA · HOSSAM ATEF</span></div></div><div class="stc"><span class="scene">Chapter 07 / 09</span><h3>Light is the story</h3><p>A car showroom lit like a film set. The light decides what you feel.</p><div class="stat oncam"><span class="dot"></span><span>ON CAMERA · HOSSAM ATEF</span></div></div><div class="stc"><span class="scene">Chapter 08 / 09</span><h3>Teaching what I learn</h3><p>Why lighting matters, explained on camera. The same lessons I use on every paid shoot.</p><div class="stat"><b><span class="num" data-to="42">42</span><em></em></b><span>EPISODES · DAILY AT 9 AM</span></div></div><div class="stc"><span class="scene">Chapter 09 / 09</span><h3>Now the audience comes to me</h3><p>I write, direct and present my own episodes, in Egyptian Arabic, about Claude and AI tools for creators.</p><div class="stat"><b><span class="num" data-to="240.7">240.7</span><em>K</em></b><span>VIEWS ON FACEBOOK · LAST 30 DAYS</span></div><div class="stat2"><b>6,025</b> Instagram followers · <b>42</b> episodes</div></div></div>
+  <div class="st-photos" id="stPhotos"><figure class="stp"><video data-v="assets/talk/s1.mp4" poster="assets/talk/s1.jpg" muted loop playsinline preload="none"></video><figcaption>FIRST</figcaption></figure><figure class="stp"><video data-v="assets/talk/s2.mp4" poster="assets/talk/s2.jpg" muted loop playsinline preload="none"></video><figcaption>DUBAI</figcaption></figure><figure class="stp"><video data-v="assets/talk/s3.mp4" poster="assets/talk/s3.jpg" muted loop playsinline preload="none"></video><figcaption>ON SET</figcaption></figure><figure class="stp"><video data-v="assets/talk/x1.mp4" poster="assets/talk/x1.jpg" muted loop playsinline preload="none"></video><figcaption>WORKSHOP</figcaption></figure><figure class="stp"><video data-v="assets/talk/x2.mp4" poster="assets/talk/x2.jpg" muted loop playsinline preload="none"></video><figcaption>CAFÉ</figcaption></figure><figure class="stp"><video data-v="assets/talk/s4.mp4" poster="assets/talk/s4.jpg" muted loop playsinline preload="none"></video><figcaption>SPACES</figcaption></figure><figure class="stp"><video data-v="assets/talk/x3.mp4" poster="assets/talk/x3.jpg" muted loop playsinline preload="none"></video><figcaption>LIGHT</figcaption></figure><figure class="stp"><video data-v="assets/talk/s5.mp4" poster="assets/talk/s5.jpg" muted loop playsinline preload="none"></video><figcaption>LESSONS</figcaption></figure><figure class="stp"><video data-v="assets/talk/desk.mp4" poster="assets/talk/desk.jpg" muted loop playsinline preload="none"></video><figcaption>THE DESK</figcaption></figure><figure class="stp"><video data-v="assets/talk/t1.mp4" poster="assets/talk/t1.jpg" muted loop playsinline preload="none"></video><figcaption>TODAY</figcaption></figure><button class="st-snd" id="stSnd">🔇 Tap for sound</button></div>
+  <div class="st-copy" id="stCopy"><div class="stc"><span class="scene">Chapter 01 / 10</span><h3>Where it started</h3><p>My very first video on camera. One camera, a lot of curiosity, and the decision to start.</p><div class="stat"><b><span class="num" data-to="1">1</span><em></em></b><span>CAMERA · DAY ONE</span></div></div><div class="stc"><span class="scene">Chapter 02 / 10</span><h3>Dubai became home</h3><p>Supercars, showrooms and a city that never stops. I built HOSSO Visuals here, one client at a time.</p><div class="stat"><b><span class="num" data-to="4">4</span><em></em></b><span>YEARS IN THE UAE</span></div></div><div class="stc"><span class="scene">Chapter 03 / 10</span><h3>Restaurants, brands, real moments</h3><p>Directing the crew, the talent and the light on a restaurant shoot.</p><div class="stat"><b><span class="num" data-to="111">111</span><em>+</em></b><span>WORKS</span></div></div><div class="stc"><span class="scene">Chapter 04 / 10</span><h3>Craft meets camera</h3><p>A carpentry workshop turned into a cinematic story: wood, tools and hands at work.</p><div class="stat"><b><span class="num" data-to="10">10</span><em>+</em></b><span>BRANDS</span></div></div><div class="stc"><span class="scene">Chapter 05 / 10</span><h3>Every cup is a scene</h3><p>A café shoot from the first setup to the last latte art, with the team behind every frame.</p><div class="stat oncam"><span class="dot"></span><span>ON CAMERA · HOSSAM ATEF</span></div></div><div class="stc"><span class="scene">Chapter 06 / 10</span><h3>Spaces with a story</h3><p>Interiors and real estate, shot so you can feel the room before you walk in.</p><div class="stat oncam"><span class="dot"></span><span>ON CAMERA · HOSSAM ATEF</span></div></div><div class="stc"><span class="scene">Chapter 07 / 10</span><h3>Light is the story</h3><p>A car showroom lit like a film set. The light decides what you feel.</p><div class="stat oncam"><span class="dot"></span><span>ON CAMERA · HOSSAM ATEF</span></div></div><div class="stc"><span class="scene">Chapter 08 / 10</span><h3>Teaching what I learn</h3><p>Why lighting matters, explained on camera. The same lessons I use on every paid shoot.</p><div class="stat"><b><span class="num" data-to="42">42</span><em></em></b><span>EPISODES · DAILY AT 9 AM</span></div></div><div class="stc"><span class="scene">Chapter 09 / 10</span><h3>The work behind the work</h3><p>Coffee, timeline, grade, repeat. Most of a film is made at this desk, long after the shoot.</p><div class="stat oncam"><span class="dot"></span><span>EDIT · COLOR · SOUND</span></div></div><div class="stc"><span class="scene">Chapter 10 / 10</span><h3>Now the audience comes to me</h3><p>I write, direct and present my own episodes, in Egyptian Arabic, about Claude and AI tools for creators.</p><div class="stat"><b><span class="num" data-to="240.7">240.7</span><em>K</em></b><span>VIEWS ON FACEBOOK · LAST 30 DAYS</span></div><div class="stat2"><b>6,025</b> Instagram followers · <b>42</b> episodes</div></div></div>
   <div class="st-final" id="stFinal">
     <span class="scene">Scene 03 · The person behind the lens</span>
     <p class="say" id="say">I don't film products or places. I film how they make you <span class="gold">feel.</span></p>
   </div>
-  <div class="st-bar"><div class="track"><i id="stFill"></i></div><div class="ticks"><span>FIRST</span><span>DUBAI</span><span>ON SET</span><span>WORKSHOP</span><span>CAFÉ</span><span>SPACES</span><span>LIGHT</span><span>LESSONS</span><span>TODAY</span></div></div>
+  <div class="st-bar"><div class="track"><i id="stFill"></i></div><div class="ticks"><span>FIRST</span><span>DUBAI</span><span>ON SET</span><span>WORKSHOP</span><span>CAFÉ</span><span>SPACES</span><span>LIGHT</span><span>LESSONS</span><span>DESK</span><span>TODAY</span></div></div>
   <span class="tech"><b>DEPTH 03</b> · STORY CHAPTERS · ON-CAMERA VIDEOS STACK INTO DEPTH</span>
 </section>
 
@@ -609,23 +613,25 @@
   <div class="left">
     <span class="scene">Scene 04 · What I do</span>
     <h2 class="big">Crafting <span class="g">cinematic</span> stories</h2>
-    <p>Twelve real projects, from reels to weddings to brands. Scroll and each one flies past the lens.</p>
-    <div class="count"><b id="deckN">01</b>/ 12</div>
+    <p>Fourteen real projects, from reels to weddings to brands. Scroll and each one flies past the lens.</p>
+    <div class="count"><b id="deckN">01</b>/ 14</div>
     <a href="khadamat/" class="btn-line" style="margin-top:26px">All services &amp; prices ↗</a>
   </div>
   <div class="stack" id="stack">
     <article class="card"><video data-src="assets/deck/reels.mp4" poster="assets/deck/reels.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>01 · REELS</small><h3>Cinematic Reels</h3><p>Story-driven short films that stop the scroll.</p></div></article>
-    <article class="card"><video data-src="assets/deck/social.mp4" poster="assets/deck/social.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>02 · SOCIAL</small><h3>Short-Form Content</h3><p>Built for Instagram and TikTok.</p></div></article>
-    <article class="card"><video data-src="assets/deck/wedding.mp4" poster="assets/deck/wedding.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>03 · WEDDINGS</small><h3>Wedding Films</h3><p>Every emotion, kept alive forever.</p></div></article>
-    <article class="card"><video data-src="assets/deck/color.mp4" poster="assets/deck/color.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>04 · POST</small><h3>Editing &amp; Color</h3><p>Cinematic grading in DaVinci Resolve.</p></div></article>
-    <article class="card"><video data-src="assets/deck/brand.mp4" poster="assets/deck/brand.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>05 · BRANDS</small><h3>Brand Films</h3><p>Hospitality, fashion and real estate.</p></div></article>
-    <article class="card"><video data-src="assets/more/w1.mp4" poster="assets/more/w1.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>06 · WEDDINGS</small><h3>Cairo Wedding</h3><p>A love story, cut like a film.</p></div></article>
-    <article class="card"><video data-src="assets/more/cafe.mp4" poster="assets/more/cafe.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>07 · CAFÉ</small><h3>COD Coffee</h3><p>From the first shot to the last pour.</p></div></article>
-    <article class="card"><video data-src="assets/more/shop.mp4" poster="assets/more/shop.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>08 · RETAIL</small><h3>The Modern Home Store</h3><p>Product, people and a clear offer.</p></div></article>
-    <article class="card"><video data-src="assets/more/perfume.mp4" poster="assets/more/perfume.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>09 · PERFUME</small><h3>Passion Box</h3><p>Luxury product in a few seconds.</p></div></article>
-    <article class="card"><video data-src="assets/more/kitchen.mp4" poster="assets/more/kitchen.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>10 · INTERIORS</small><h3>Custom Furniture</h3><p>Every detail of the piece, up close.</p></div></article>
-    <article class="card"><video data-src="assets/more/w2.mp4" poster="assets/more/w2.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>11 · WEDDINGS</small><h3>Wadi El Qamar</h3><p>The day, the dress, the dance.</p></div></article>
-    <article class="card"><video data-src="assets/more/w3.mp4" poster="assets/more/w3.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>12 · WEDDINGS</small><h3>Sonbat Wedding</h3><p>Emotion first, then everything else.</p></div></article>
+    <article class="card"><video data-src="assets/deck/handwork.mp4" poster="assets/deck/handwork.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>02 · CRAFT</small><h3>The Art of Hand Work</h3><p>A workshop film: wood, steel, sparks and hands.</p></div></article>
+    <article class="card"><video data-src="assets/deck/social.mp4" poster="assets/deck/social.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>03 · SOCIAL</small><h3>Short-Form Content</h3><p>Built for Instagram and TikTok.</p></div></article>
+    <article class="card"><video data-src="assets/deck/wedding.mp4" poster="assets/deck/wedding.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>04 · WEDDINGS</small><h3>Wedding Films</h3><p>Every emotion, kept alive forever.</p></div></article>
+    <article class="card"><video data-src="assets/deck/color.mp4" poster="assets/deck/color.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>05 · POST</small><h3>Editing &amp; Color</h3><p>Cinematic grading in DaVinci Resolve.</p></div></article>
+    <article class="card"><video data-src="assets/deck/beforeafter.mp4" poster="assets/deck/beforeafter.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>06 · POST</small><h3>Before → After</h3><p>Raw site footage turned into a 3D build story.</p></div></article>
+    <article class="card"><video data-src="assets/deck/brand.mp4" poster="assets/deck/brand.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>07 · BRANDS</small><h3>Brand Films</h3><p>Hospitality, fashion and real estate.</p></div></article>
+    <article class="card"><video data-src="assets/more/w1.mp4" poster="assets/more/w1.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>08 · WEDDINGS</small><h3>Cairo Wedding</h3><p>A love story, cut like a film.</p></div></article>
+    <article class="card"><video data-src="assets/more/cafe.mp4" poster="assets/more/cafe.jpg" muted playsinline preload="none" data-list="assets/more/cafe.mp4,assets/more/cod1.mp4,assets/more/cod2.mp4,assets/more/cod3.mp4,assets/more/cod4.mp4,assets/more/cod5.mp4"></video><div class="meta"><small>09 · CAFÉ</small><h3>COD Coffee</h3><p>Six films from one café: latte art, the bar, the guests.</p></div></article>
+    <article class="card"><video data-src="assets/more/shop.mp4" poster="assets/more/shop.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>10 · RETAIL</small><h3>The Modern Home Store</h3><p>Product, people and a clear offer.</p></div></article>
+    <article class="card"><video data-src="assets/more/perfume.mp4" poster="assets/more/perfume.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>11 · PERFUME</small><h3>Passion Box</h3><p>Luxury product in a few seconds.</p></div></article>
+    <article class="card"><video data-src="assets/more/kitchen.mp4" poster="assets/more/kitchen.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>12 · INTERIORS</small><h3>Custom Furniture</h3><p>Every detail of the piece, up close.</p></div></article>
+    <article class="card"><video data-src="assets/more/w2.mp4" poster="assets/more/w2.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>13 · WEDDINGS</small><h3>Wadi El Qamar</h3><p>The day, the dress, the dance.</p></div></article>
+    <article class="card"><video data-src="assets/more/w3.mp4" poster="assets/more/w3.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>14 · WEDDINGS</small><h3>Sonbat Wedding</h3><p>Emotion first, then everything else.</p></div></article>
   </div>
   <span class="tech"><b>DEPTH 04</b> · CARD DECK IN Z-SPACE</span>
 </section>
@@ -641,8 +647,25 @@
       <p>Camera, direction and edit: <b>Hossam Atef</b></p></div>
   </div>
   <div class="mk-bts"><div class="mk-stack" id="mkStack"><figure class="mk-b"><video data-v="assets/making/b1.mp4" poster="assets/making/b1.jpg" muted loop playsinline preload="none"></video><figcaption>BTS 01 · TERRACE WALK</figcaption></figure><figure class="mk-b"><video data-v="assets/making/b2.mp4" poster="assets/making/b2.jpg" muted loop playsinline preload="none"></video><figcaption>BTS 02 · THE ENTRANCE</figcaption></figure><figure class="mk-b"><video data-v="assets/making/b3.mp4" poster="assets/making/b3.jpg" muted loop playsinline preload="none"></video><figcaption>BTS 03 · CLOSE ON THE RIG</figcaption></figure><figure class="mk-b"><video data-v="assets/making/b4.mp4" poster="assets/making/b4.jpg" muted loop playsinline preload="none"></video><figcaption>BTS 04 · LIVING ROOM</figcaption></figure><figure class="mk-b"><video data-v="assets/making/b5.mp4" poster="assets/making/b5.jpg" muted loop playsinline preload="none"></video><figcaption>BTS 05 · DIRECTING THE TEAM</figcaption></figure><figure class="mk-b"><video data-v="assets/making/b6.mp4" poster="assets/making/b6.jpg" muted loop playsinline preload="none"></video><figcaption>BTS 06 · THE GIMBAL</figcaption></figure></div>
-    <div class="mk-btsbar"><span class="lbl">BEHIND THE SCENES</span><div class="ticks" id="mkTicks"><span>01</span><span>02</span><span>03</span><span>04</span><span>05</span><span>06</span></div></div></div>
+    <div class="mk-btsbar"><span class="lbl">BEHIND THE SCENES</span><div class="ticks"><span>01</span><span>02</span><span>03</span><span>04</span><span>05</span><span>06</span></div></div></div>
   <span class="tech"><b>DEPTH 04B</b> · FINAL CUT + BTS STACK IN DEPTH</span>
+</section>
+
+<!-- ===== 04B2 · THE MAKING OF (2): a lounge shoot, two vertical final cuts + the BTS takes ===== -->
+<section class="making mk-vert" id="making2">
+  <div class="mk-title"><span class="scene">Scene 04 · B · The making of 02</span><h2>One lounge. <span class="g">Two final cuts, and how they were shot.</span></h2></div>
+  <div class="mk-final">
+    <div class="mk-duo"><div class="mk-frame"><video data-src="assets/making2/final1.mp4" poster="assets/making2/final1.jpg" muted loop playsinline preload="none"></video>
+      <span class="mk-tag">FINAL CUT · 01</span>
+      <button class="mk-snd" onclick="const v=this.parentNode.querySelector('video');v.muted=!v.muted;v.play();this.textContent=v.muted?'🔇 Tap for sound':'🔊 Sound on'">🔇 Tap for sound</button></div><div class="mk-frame"><video data-src="assets/making2/final2.mp4" poster="assets/making2/final2.jpg" muted loop playsinline preload="none"></video>
+      <span class="mk-tag">FINAL CUT · 02</span>
+      <button class="mk-snd" onclick="const v=this.parentNode.querySelector('video');v.muted=!v.muted;v.play();this.textContent=v.muted?'🔇 Tap for sound':'🔊 Sound on'">🔇 Tap for sound</button></div></div>
+    <div class="mk-facts"><div><b>2</b><span>FINAL CUTS</span></div><div><b>2</b><span>BTS TAKES</span></div><div><b>1</b><span>CAMERA · 1 GIMBAL</span></div>
+      <p>Camera, direction and edit: <b>Hossam Atef</b></p></div>
+  </div>
+  <div class="mk-bts"><div class="mk-stack"><figure class="mk-b"><video data-v="assets/making2/b1.mp4" poster="assets/making2/b1.jpg" muted loop playsinline preload="none"></video><figcaption>BTS 01 · THE SOFA SHOT</figcaption></figure><figure class="mk-b"><video data-v="assets/making2/b2.mp4" poster="assets/making2/b2.jpg" muted loop playsinline preload="none"></video><figcaption>BTS 02 · GIMBAL WALK</figcaption></figure></div>
+    <div class="mk-btsbar"><span class="lbl">BEHIND THE SCENES</span><div class="ticks"><span>01</span><span>02</span></div></div></div>
+  <span class="tech"><b>DEPTH 04B</b> · FINAL CUTS + BTS STACK IN DEPTH</span>
 </section>
 
 <!-- ===== 04C · COLOR: S-Log 3 → final look, revealed by a scroll-driven divider ===== -->
@@ -834,7 +857,7 @@ const words = $$('#say .w');
 /* every tile is a real reel playing (light 360p, 6-second loops). The two outer columns sit in the fog,
    so they stay as still frames to keep the page light. */
 // filmed reels mixed with reels made with AI (the ai-* ones get a thin gold frame)
-const clips = ['reel-n1','ai-studio','reel-royal','reel-n3','ai-omni','reel-golden','reel-n4','ai-motionsites','bts-studio','reel-n5','ai-motion','reel-camera','reel-n2','ai-picsart','bts-product','bts-setup','ai-skills','bts-lens'];
+const clips = ['reel-n1','ai-studio','reel-royal','reel-n3','ai-omni','reel-golden','reel-n4','ai-motionsites','bts-studio','reel-n5','ai-motion','reel-camera','reel-n2','ai-picsart','bts-product','bts-setup','ai-skills','bts-lens','reel-handwork','cod-latte','reel-build','cod-cheers','bts-hotel','cod-shaker'];
 const wg = $('#wallGrid');
 for (let c = 0; c < 7; c++) { const col = document.createElement('div'); col.className = 'col';
   for (let r = 0; r < 5; r++) { const n = clips[(c * 5 + r * 3) % clips.length];
@@ -913,7 +936,7 @@ ScrollTrigger.matchMedia({
     words.forEach((w, i) => w.classList.toggle('lit', clamp((p - .84) / .14, 0, 1) >= (i + 1) / words.length));
   };
   placeStory(0);
-  ScrollTrigger.create({ trigger: '#story', start: 'top top', end: '+=820%', pin: true, scrub: true, onUpdate: s => placeStory(s.progress) });
+  ScrollTrigger.create({ trigger: '#story', start: 'top top', end: '+=910%', pin: true, scrub: true, onUpdate: s => placeStory(s.progress) });
 
   // 04 · deck: the front card flies toward the camera, the next steps forward
   const cards = $$('#stack .card'), N = cards.length;
@@ -926,7 +949,7 @@ ScrollTrigger.matchMedia({
   placeDeck(0);
   ScrollTrigger.create({ trigger: '#work', start: 'top top', end: '+=' + N * 70 + '%', pin: true, scrub: true, onUpdate: s => placeDeck(s.progress * (N - 1)) });
 
-  initMaking(); // 04B · the making of (created here so pins stay in page order)
+  initMaking('making'); initMaking('making2'); // 04B · the making of (created here so pins stay in page order)
 
   // 05 · AI LAB
   //  0 → .38  the gold line wipes RAW into AI + CRAFT (the v2 slider), HUD labels light up
@@ -994,8 +1017,8 @@ ScrollTrigger.matchMedia({
 
 
 // 04B · THE MAKING OF: BTS clips stack into depth like the story photos; the front clip plays
-function initMaking() {
-  const root = document.getElementById('making'), B = [...root.querySelectorAll('.mk-b')], T = [...root.querySelectorAll('#mkTicks span')];
+function initMaking(id) {
+  const root = document.getElementById(id), B = [...root.querySelectorAll('.mk-b')], T = [...root.querySelectorAll('.mk-btsbar .ticks span')];
   const V = B.map(f => f.querySelector('video')), N = B.length; let inView = false, cur = 0;
   const play = i => V.forEach((v, k) => { if ((k === i || innerWidth <= 900) && inView) { if (!v.src) v.src = v.dataset.v; v.play().catch(() => {}); } else v.pause(); });
   const place = p => {
@@ -1013,11 +1036,15 @@ function initMaking() {
   if (innerWidth > 900) {
     place(0);
     gsap.timeline({ scrollTrigger: { trigger: root, start: 'top top', end: '+=380%', pin: true, scrub: true, onUpdate: st => place(st.progress) } })
-      .fromTo('#making .mk-frame', { scale: .82, rotateY: 12, opacity: .4 }, { scale: 1, rotateY: 0, opacity: 1, duration: .12 }, 0)
-      .fromTo('#making .mk-facts > *', { opacity: 0, y: 20 }, { opacity: 1, y: 0, stagger: .02, duration: .06 }, .06)
+      .fromTo(root.querySelectorAll('.mk-frame'), { scale: .82, rotateY: 12, opacity: .4 }, { scale: 1, rotateY: 0, opacity: 1, duration: .12 }, 0)
+      .fromTo(root.querySelectorAll('.mk-facts > *'), { opacity: 0, y: 20 }, { opacity: 1, y: 0, stagger: .02, duration: .06 }, .06)
       .to({}, { duration: .001 }, 1);
   }
 }
+
+// 04 · deck cards with a playlist (COD: six films from one café) play them one after another
+document.querySelectorAll('video[data-list]').forEach(v => { const L = v.dataset.list.split(','); let k = 0;
+  v.addEventListener('ended', () => { k = (k + 1) % L.length; v.src = L[k]; v.play().catch(() => {}); }); });
 
 // 02 · CINEMA: two ultra-wide films play one after the other (food, then the Ferrari)
 (() => { const v = document.getElementById('cineVid'), list = ['assets/cinema-wide.mp4', 'assets/cinema-wide2.mp4']; let k = 0;
@@ -1029,7 +1056,7 @@ gsap.fromTo('#color', { '--cut': '100%' }, { '--cut': '0%', ease: 'none', scroll
 // phone: story videos play when they scroll into view (desktop drives them from the pinned scene)
 if (innerWidth <= 900) { const vio = new IntersectionObserver(es => es.forEach(e => { const v = e.target;
     if (e.isIntersecting) { if (!v.src) v.src = v.dataset.v; v.play().catch(() => {}); } else v.pause(); }), { threshold: .35 });
-  document.querySelectorAll('#story .stp > video, #making .mk-b video').forEach(v => vio.observe(v)); }
+  document.querySelectorAll('#story .stp > video, .making .mk-b video').forEach(v => vio.observe(v)); }
 addEventListener('load', () => { ScrollTrigger.refresh(); placeBills(); });
 addEventListener('resize', placeBills);
 </script>

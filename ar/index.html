@@ -499,6 +499,10 @@
   .mk-b{position:absolute;inset:0;margin:0;border-radius:16px;overflow:hidden;background:#000;box-shadow:0 40px 90px rgba(0,0,0,.65),0 0 0 1px rgba(217,180,106,.3);opacity:0;will-change:transform,opacity,filter}
   .mk-b video{width:100%;height:100%;object-fit:cover}
   .mk-b figcaption{position:absolute;left:10px;bottom:10px;font:500 9px var(--mono);letter-spacing:.14em;color:#fff;background:rgba(0,0,0,.55);padding:4px 7px;border-radius:5px}
+  .mk-duo{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .mk-vert .mk-frame{aspect-ratio:9/16}
+  @media (min-width:901px){.mk-vert .mk-final{width:min(30vw,470px)}
+    .mk-vert .mk-bts{left:calc(max(40px,calc((100vw - var(--wrap))/2 + 40px)) + min(30vw,470px) + 7vw)}}
   .mk-btsbar{margin-top:18px;text-align:center}
   .mk-btsbar .lbl{font:500 10px var(--mono);letter-spacing:.22em;color:var(--gold)}
   .mk-btsbar .ticks{display:flex;justify-content:center;gap:10px;margin-top:8px;font:500 9.5px var(--mono);color:var(--muted)}
@@ -602,13 +606,13 @@
 
 <!-- ===== 03 · Z-TUNNEL: you fly forward through your own shots, the story lights word by word ===== -->
 <section class="story" id="story">
-  <div class="st-photos" id="stPhotos"><figure class="stp"><video data-v="../assets/talk/s1.mp4" poster="../assets/talk/s1.jpg" muted loop playsinline preload="none"></video><figcaption>البداية</figcaption></figure><figure class="stp"><video data-v="../assets/talk/s2.mp4" poster="../assets/talk/s2.jpg" muted loop playsinline preload="none"></video><figcaption>دبي</figcaption></figure><figure class="stp"><video data-v="../assets/talk/s3.mp4" poster="../assets/talk/s3.jpg" muted loop playsinline preload="none"></video><figcaption>في اللوكيشن</figcaption></figure><figure class="stp"><video data-v="../assets/talk/x1.mp4" poster="../assets/talk/x1.jpg" muted loop playsinline preload="none"></video><figcaption>الورشة</figcaption></figure><figure class="stp"><video data-v="../assets/talk/x2.mp4" poster="../assets/talk/x2.jpg" muted loop playsinline preload="none"></video><figcaption>الكافيه</figcaption></figure><figure class="stp"><video data-v="../assets/talk/s4.mp4" poster="../assets/talk/s4.jpg" muted loop playsinline preload="none"></video><figcaption>المساحات</figcaption></figure><figure class="stp"><video data-v="../assets/talk/x3.mp4" poster="../assets/talk/x3.jpg" muted loop playsinline preload="none"></video><figcaption>الإضاءة</figcaption></figure><figure class="stp"><video data-v="../assets/talk/s5.mp4" poster="../assets/talk/s5.jpg" muted loop playsinline preload="none"></video><figcaption>الدروس</figcaption></figure><figure class="stp"><video data-v="../assets/talk/t1.mp4" poster="../assets/talk/t1.jpg" muted loop playsinline preload="none"></video><figcaption>النهارده</figcaption></figure><button class="st-snd" id="stSnd">🔇 دوس للصوت</button></div>
-  <div class="st-copy" id="stCopy"><div class="stc"><span class="scene">الفصل 01 / 09</span><h3>منين بدأت</h3><p>أول فيديو ليا قدام الكاميرا. كاميرا واحدة، وفضول كتير، وقرار إني أبدأ.</p><div class="stat"><b><span class="num" data-to="1">1</span><em></em></b><span>كاميرا · أول يوم</span></div></div><div class="stc"><span class="scene">الفصل 02 / 09</span><h3>دبي بقت البيت</h3><p>عربيات خارقة، وصالات عرض، ومدينة ما بتنامش. هنا بنيت HOSSO Visuals، عميل ورا عميل.</p><div class="stat"><b><span class="num" data-to="4">4</span><em></em></b><span>سنين في الإمارات</span></div></div><div class="stc"><span class="scene">الفصل 03 / 09</span><h3>مطاعم وبراندات ولحظات حقيقية</h3><p>بوجّه الفريق والموديل والإضاءة في تصوير مطعم.</p><div class="stat"><b><span class="num" data-to="111">111</span><em>+</em></b><span>شغل</span></div></div><div class="stc"><span class="scene">الفصل 04 / 09</span><h3>الصنعة قدام الكاميرا</h3><p>ورشة نجارة اتحولت لحكاية سينمائية: خشب وعدّة وإيدين بتشتغل.</p><div class="stat"><b><span class="num" data-to="10">10</span><em>+</em></b><span>براند</span></div></div><div class="stc"><span class="scene">الفصل 05 / 09</span><h3>كل كوباية مشهد</h3><p>تصوير كافيه من أول تجهيزة لحد آخر لاتيه آرت، مع الفريق ورا كل كادر.</p><div class="stat oncam"><span class="dot"></span><span>قدام الكاميرا · حسام عاطف</span></div></div><div class="stc"><span class="scene">الفصل 06 / 09</span><h3>أماكن ليها حكاية</h3><p>ديكور وعقارات، متصوّرة بحيث تحس بالمكان قبل ما تدخله.</p><div class="stat oncam"><span class="dot"></span><span>قدام الكاميرا · حسام عاطف</span></div></div><div class="stc"><span class="scene">الفصل 07 / 09</span><h3>الإضاءة هي الحكاية</h3><p>صالة عربيات منوّرة كأنها موقع تصوير فيلم. الإضاءة هي اللي بتحدد إحساسك.</p><div class="stat oncam"><span class="dot"></span><span>قدام الكاميرا · حسام عاطف</span></div></div><div class="stc"><span class="scene">الفصل 08 / 09</span><h3>بعلّم اللي بتعلّمه</h3><p>ليه الإضاءة مهمة، بشرحها قدام الكاميرا. نفس الدروس اللي بستخدمها في كل تصوير.</p><div class="stat"><b><span class="num" data-to="42">42</span><em></em></b><span>حلقة · كل يوم 9 الصبح</span></div></div><div class="stc"><span class="scene">الفصل 09 / 09</span><h3>دلوقتي الجمهور بييجي لي</h3><p>بكتب وبخرج وبقدّم حلقاتي بنفسي، بالمصري، عن Claude وأدوات الذكاء الاصطناعي لصنّاع المحتوى.</p><div class="stat"><b><span class="num" data-to="240.7">240.7</span><em>K</em></b><span>مشاهدة على فيسبوك · آخر 30 يوم</span></div><div class="stat2"><b>6,025</b> متابع على إنستجرام · <b>42</b> حلقة</div></div></div>
+  <div class="st-photos" id="stPhotos"><figure class="stp"><video data-v="../assets/talk/s1.mp4" poster="../assets/talk/s1.jpg" muted loop playsinline preload="none"></video><figcaption>البداية</figcaption></figure><figure class="stp"><video data-v="../assets/talk/s2.mp4" poster="../assets/talk/s2.jpg" muted loop playsinline preload="none"></video><figcaption>دبي</figcaption></figure><figure class="stp"><video data-v="../assets/talk/s3.mp4" poster="../assets/talk/s3.jpg" muted loop playsinline preload="none"></video><figcaption>في اللوكيشن</figcaption></figure><figure class="stp"><video data-v="../assets/talk/x1.mp4" poster="../assets/talk/x1.jpg" muted loop playsinline preload="none"></video><figcaption>الورشة</figcaption></figure><figure class="stp"><video data-v="../assets/talk/x2.mp4" poster="../assets/talk/x2.jpg" muted loop playsinline preload="none"></video><figcaption>الكافيه</figcaption></figure><figure class="stp"><video data-v="../assets/talk/s4.mp4" poster="../assets/talk/s4.jpg" muted loop playsinline preload="none"></video><figcaption>المساحات</figcaption></figure><figure class="stp"><video data-v="../assets/talk/x3.mp4" poster="../assets/talk/x3.jpg" muted loop playsinline preload="none"></video><figcaption>الإضاءة</figcaption></figure><figure class="stp"><video data-v="../assets/talk/s5.mp4" poster="../assets/talk/s5.jpg" muted loop playsinline preload="none"></video><figcaption>الدروس</figcaption></figure><figure class="stp"><video data-v="../assets/talk/desk.mp4" poster="../assets/talk/desk.jpg" muted loop playsinline preload="none"></video><figcaption>المكتب</figcaption></figure><figure class="stp"><video data-v="../assets/talk/t1.mp4" poster="../assets/talk/t1.jpg" muted loop playsinline preload="none"></video><figcaption>النهارده</figcaption></figure><button class="st-snd" id="stSnd">🔇 دوس للصوت</button></div>
+  <div class="st-copy" id="stCopy"><div class="stc"><span class="scene">الفصل 01 / 10</span><h3>منين بدأت</h3><p>أول فيديو ليا قدام الكاميرا. كاميرا واحدة، وفضول كتير، وقرار إني أبدأ.</p><div class="stat"><b><span class="num" data-to="1">1</span><em></em></b><span>كاميرا · أول يوم</span></div></div><div class="stc"><span class="scene">الفصل 02 / 10</span><h3>دبي بقت البيت</h3><p>عربيات خارقة، وصالات عرض، ومدينة ما بتنامش. هنا بنيت HOSSO Visuals، عميل ورا عميل.</p><div class="stat"><b><span class="num" data-to="4">4</span><em></em></b><span>سنين في الإمارات</span></div></div><div class="stc"><span class="scene">الفصل 03 / 10</span><h3>مطاعم وبراندات ولحظات حقيقية</h3><p>بوجّه الفريق والموديل والإضاءة في تصوير مطعم.</p><div class="stat"><b><span class="num" data-to="111">111</span><em>+</em></b><span>شغل</span></div></div><div class="stc"><span class="scene">الفصل 04 / 10</span><h3>الصنعة قدام الكاميرا</h3><p>ورشة نجارة اتحولت لحكاية سينمائية: خشب وعدّة وإيدين بتشتغل.</p><div class="stat"><b><span class="num" data-to="10">10</span><em>+</em></b><span>براند</span></div></div><div class="stc"><span class="scene">الفصل 05 / 10</span><h3>كل كوباية مشهد</h3><p>تصوير كافيه من أول تجهيزة لحد آخر لاتيه آرت، مع الفريق ورا كل كادر.</p><div class="stat oncam"><span class="dot"></span><span>قدام الكاميرا · حسام عاطف</span></div></div><div class="stc"><span class="scene">الفصل 06 / 10</span><h3>أماكن ليها حكاية</h3><p>ديكور وعقارات، متصوّرة بحيث تحس بالمكان قبل ما تدخله.</p><div class="stat oncam"><span class="dot"></span><span>قدام الكاميرا · حسام عاطف</span></div></div><div class="stc"><span class="scene">الفصل 07 / 10</span><h3>الإضاءة هي الحكاية</h3><p>صالة عربيات منوّرة كأنها موقع تصوير فيلم. الإضاءة هي اللي بتحدد إحساسك.</p><div class="stat oncam"><span class="dot"></span><span>قدام الكاميرا · حسام عاطف</span></div></div><div class="stc"><span class="scene">الفصل 08 / 10</span><h3>بعلّم اللي بتعلّمه</h3><p>ليه الإضاءة مهمة، بشرحها قدام الكاميرا. نفس الدروس اللي بستخدمها في كل تصوير.</p><div class="stat"><b><span class="num" data-to="42">42</span><em></em></b><span>حلقة · كل يوم 9 الصبح</span></div></div><div class="stc"><span class="scene">الفصل 09 / 10</span><h3>الشغل اللي ورا الشغل</h3><p>قهوة، تايملاين، تلوين، وتاني من الأول. معظم الفيلم بيتعمل على المكتب ده، بعد التصوير بكتير.</p><div class="stat oncam"><span class="dot"></span><span>مونتاج · تلوين · صوت</span></div></div><div class="stc"><span class="scene">الفصل 10 / 10</span><h3>دلوقتي الجمهور بييجي لي</h3><p>بكتب وبخرج وبقدّم حلقاتي بنفسي، بالمصري، عن Claude وأدوات الذكاء الاصطناعي لصنّاع المحتوى.</p><div class="stat"><b><span class="num" data-to="240.7">240.7</span><em>K</em></b><span>مشاهدة على فيسبوك · آخر 30 يوم</span></div><div class="stat2"><b>6,025</b> متابع على إنستجرام · <b>42</b> حلقة</div></div></div>
   <div class="st-final" id="stFinal">
     <span class="scene">المشهد 03 · اللي ورا العدسة</span>
     <p class="say" id="say">أنا مش بصوّر منتجات ولا أماكن. بصوّر الإحساس اللي <span class="gold">بيدّيهولك.</span></p>
   </div>
-  <div class="st-bar"><div class="track"><i id="stFill"></i></div><div class="ticks"><span>البداية</span><span>دبي</span><span>في اللوكيشن</span><span>الورشة</span><span>الكافيه</span><span>المساحات</span><span>الإضاءة</span><span>الدروس</span><span>النهارده</span></div></div>
+  <div class="st-bar"><div class="track"><i id="stFill"></i></div><div class="ticks"><span>البداية</span><span>دبي</span><span>في اللوكيشن</span><span>الورشة</span><span>الكافيه</span><span>المساحات</span><span>الإضاءة</span><span>الدروس</span><span>المكتب</span><span>النهارده</span></div></div>
   <span class="tech"><b>DEPTH 03</b> · STORY CHAPTERS · ON-CAMERA VIDEOS STACK INTO DEPTH</span>
 </section>
 
@@ -617,23 +621,25 @@
   <div class="left">
     <span class="scene">المشهد 04 · بعمل إيه</span>
     <h2 class="big">بصنع <span class="g">حكايات</span> سينمائية</h2>
-    <p>12 مشروع حقيقي، من الريلز للأفراح للبراندات. اعمل اسكرول وكل واحد هيعدّي قدام العدسة.</p>
-    <div class="count"><b id="deckN">01</b>/ 12</div>
+    <p>14 مشروع حقيقي، من الريلز للأفراح للبراندات. اعمل اسكرول وكل واحد هيعدّي قدام العدسة.</p>
+    <div class="count"><b id="deckN">01</b>/ 14</div>
     <a href="../khadamat/" class="btn-line" style="margin-top:26px">كل الخدمات والأسعار ↗</a>
   </div>
   <div class="stack" id="stack">
     <article class="card"><video data-src="../assets/deck/reels.mp4" poster="../assets/deck/reels.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>01 · ريلز</small><h3>ريلز سينمائية</h3><p>أفلام قصيرة بحكاية بتوقّف الاسكرول.</p></div></article>
-    <article class="card"><video data-src="../assets/deck/social.mp4" poster="../assets/deck/social.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>02 · سوشيال</small><h3>محتوى قصير</h3><p>معمول لإنستجرام وتيك توك.</p></div></article>
-    <article class="card"><video data-src="../assets/deck/wedding.mp4" poster="../assets/deck/wedding.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>03 · أفراح</small><h3>أفلام أفراح</h3><p>كل إحساس، محفوظ للأبد.</p></div></article>
-    <article class="card"><video data-src="../assets/deck/color.mp4" poster="../assets/deck/color.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>04 · مونتاج</small><h3>مونتاج وتلوين</h3><p>تلوين سينمائي على DaVinci Resolve.</p></div></article>
-    <article class="card"><video data-src="../assets/deck/brand.mp4" poster="../assets/deck/brand.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>05 · براندات</small><h3>أفلام براندات</h3><p>ضيافة، وموضة، وعقارات.</p></div></article>
-    <article class="card"><video data-src="../assets/more/w1.mp4" poster="../assets/more/w1.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>06 · أفراح</small><h3>فرح في القاهرة</h3><p>قصة حب متقطّعة زي الفيلم.</p></div></article>
-    <article class="card"><video data-src="../assets/more/cafe.mp4" poster="../assets/more/cafe.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>07 · كافيه</small><h3>COD Coffee</h3><p>من أول لقطة لآخر صبّة.</p></div></article>
-    <article class="card"><video data-src="../assets/more/shop.mp4" poster="../assets/more/shop.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>08 · محلات</small><h3>البيت الحديث</h3><p>منتج، وناس، وعرض واضح.</p></div></article>
-    <article class="card"><video data-src="../assets/more/perfume.mp4" poster="../assets/more/perfume.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>09 · عطور</small><h3>Passion Box</h3><p>منتج فخم في ثواني.</p></div></article>
-    <article class="card"><video data-src="../assets/more/kitchen.mp4" poster="../assets/more/kitchen.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>10 · ديكور</small><h3>أثاث تفصيل</h3><p>كل تفصيلة في القطعة، من قريب.</p></div></article>
-    <article class="card"><video data-src="../assets/more/w2.mp4" poster="../assets/more/w2.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>11 · أفراح</small><h3>وادي القمر</h3><p>اليوم، والفستان، والرقصة.</p></div></article>
-    <article class="card"><video data-src="../assets/more/w3.mp4" poster="../assets/more/w3.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>12 · أفراح</small><h3>فرح سنباط</h3><p>الإحساس الأول، وبعدين أي حاجة.</p></div></article>
+    <article class="card"><video data-src="../assets/deck/handwork.mp4" poster="../assets/deck/handwork.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>02 · حِرفة</small><h3>فن الشغل اليدوي</h3><p>فيلم من ورشة: خشب، وحديد، وشرار، وإيدين.</p></div></article>
+    <article class="card"><video data-src="../assets/deck/social.mp4" poster="../assets/deck/social.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>03 · سوشيال</small><h3>محتوى قصير</h3><p>معمول لإنستجرام وتيك توك.</p></div></article>
+    <article class="card"><video data-src="../assets/deck/wedding.mp4" poster="../assets/deck/wedding.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>04 · أفراح</small><h3>أفلام أفراح</h3><p>كل إحساس، محفوظ للأبد.</p></div></article>
+    <article class="card"><video data-src="../assets/deck/color.mp4" poster="../assets/deck/color.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>05 · مونتاج</small><h3>مونتاج وتلوين</h3><p>تلوين سينمائي على DaVinci Resolve.</p></div></article>
+    <article class="card"><video data-src="../assets/deck/beforeafter.mp4" poster="../assets/deck/beforeafter.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>06 · مونتاج</small><h3>قبل ← بعد</h3><p>لقطات خام من الموقع اتحولت لحكاية بناء 3D.</p></div></article>
+    <article class="card"><video data-src="../assets/deck/brand.mp4" poster="../assets/deck/brand.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>07 · براندات</small><h3>أفلام براندات</h3><p>ضيافة، وموضة، وعقارات.</p></div></article>
+    <article class="card"><video data-src="../assets/more/w1.mp4" poster="../assets/more/w1.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>08 · أفراح</small><h3>فرح في القاهرة</h3><p>قصة حب متقطّعة زي الفيلم.</p></div></article>
+    <article class="card"><video data-src="../assets/more/cafe.mp4" poster="../assets/more/cafe.jpg" muted playsinline preload="none" data-list="../assets/more/cafe.mp4,../assets/more/cod1.mp4,../assets/more/cod2.mp4,../assets/more/cod3.mp4,../assets/more/cod4.mp4,../assets/more/cod5.mp4"></video><div class="meta"><small>09 · كافيه</small><h3>COD Coffee</h3><p>ست أفلام من كافيه واحد: اللاتيه آرت، والبار، والضيوف.</p></div></article>
+    <article class="card"><video data-src="../assets/more/shop.mp4" poster="../assets/more/shop.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>10 · محلات</small><h3>البيت الحديث</h3><p>منتج، وناس، وعرض واضح.</p></div></article>
+    <article class="card"><video data-src="../assets/more/perfume.mp4" poster="../assets/more/perfume.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>11 · عطور</small><h3>Passion Box</h3><p>منتج فخم في ثواني.</p></div></article>
+    <article class="card"><video data-src="../assets/more/kitchen.mp4" poster="../assets/more/kitchen.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>12 · ديكور</small><h3>أثاث تفصيل</h3><p>كل تفصيلة في القطعة، من قريب.</p></div></article>
+    <article class="card"><video data-src="../assets/more/w2.mp4" poster="../assets/more/w2.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>13 · أفراح</small><h3>وادي القمر</h3><p>اليوم، والفستان، والرقصة.</p></div></article>
+    <article class="card"><video data-src="../assets/more/w3.mp4" poster="../assets/more/w3.jpg" muted loop playsinline preload="none"></video><div class="meta"><small>14 · أفراح</small><h3>فرح سنباط</h3><p>الإحساس الأول، وبعدين أي حاجة.</p></div></article>
   </div>
   <span class="tech"><b>DEPTH 04</b> · CARD DECK IN Z-SPACE</span>
 </section>
@@ -649,8 +655,25 @@
       <p>تصوير وإخراج ومونتاج: <b>حسام عاطف</b></p></div>
   </div>
   <div class="mk-bts"><div class="mk-stack" id="mkStack"><figure class="mk-b"><video data-v="../assets/making/b1.mp4" poster="../assets/making/b1.jpg" muted loop playsinline preload="none"></video><figcaption>كواليس 01 · التراس</figcaption></figure><figure class="mk-b"><video data-v="../assets/making/b2.mp4" poster="../assets/making/b2.jpg" muted loop playsinline preload="none"></video><figcaption>كواليس 02 · المدخل</figcaption></figure><figure class="mk-b"><video data-v="../assets/making/b3.mp4" poster="../assets/making/b3.jpg" muted loop playsinline preload="none"></video><figcaption>كواليس 03 · قريب من الريج</figcaption></figure><figure class="mk-b"><video data-v="../assets/making/b4.mp4" poster="../assets/making/b4.jpg" muted loop playsinline preload="none"></video><figcaption>كواليس 04 · الصالة</figcaption></figure><figure class="mk-b"><video data-v="../assets/making/b5.mp4" poster="../assets/making/b5.jpg" muted loop playsinline preload="none"></video><figcaption>كواليس 05 · توجيه الفريق</figcaption></figure><figure class="mk-b"><video data-v="../assets/making/b6.mp4" poster="../assets/making/b6.jpg" muted loop playsinline preload="none"></video><figcaption>كواليس 06 · الجيمبال</figcaption></figure></div>
-    <div class="mk-btsbar"><span class="lbl">الكواليس</span><div class="ticks" id="mkTicks"><span>01</span><span>02</span><span>03</span><span>04</span><span>05</span><span>06</span></div></div></div>
+    <div class="mk-btsbar"><span class="lbl">الكواليس</span><div class="ticks"><span>01</span><span>02</span><span>03</span><span>04</span><span>05</span><span>06</span></div></div></div>
   <span class="tech"><b>DEPTH 04B</b> · FINAL CUT + BTS STACK IN DEPTH</span>
+</section>
+
+<!-- ===== 04B2 · THE MAKING OF (2): a lounge shoot, two vertical final cuts + the BTS takes ===== -->
+<section class="making mk-vert" id="making2">
+  <div class="mk-title"><span class="scene">المشهد 04 · ب · ورا الكواليس 02</span><h2>لاونج واحد. <span class="g">نسختين نهائيين، وإزاي اتصوّروا.</span></h2></div>
+  <div class="mk-final">
+    <div class="mk-duo"><div class="mk-frame"><video data-src="../assets/making2/final1.mp4" poster="../assets/making2/final1.jpg" muted loop playsinline preload="none"></video>
+      <span class="mk-tag">النسخة النهائية · 01</span>
+      <button class="mk-snd" onclick="const v=this.parentNode.querySelector('video');v.muted=!v.muted;v.play();this.textContent=v.muted?'🔇 Tap for sound':'🔊 Sound on'">🔇 دوس للصوت</button></div><div class="mk-frame"><video data-src="../assets/making2/final2.mp4" poster="../assets/making2/final2.jpg" muted loop playsinline preload="none"></video>
+      <span class="mk-tag">النسخة النهائية · 02</span>
+      <button class="mk-snd" onclick="const v=this.parentNode.querySelector('video');v.muted=!v.muted;v.play();this.textContent=v.muted?'🔇 Tap for sound':'🔊 Sound on'">🔇 دوس للصوت</button></div></div>
+    <div class="mk-facts"><div><b>2</b><span>نسخ نهائية</span></div><div><b>2</b><span>لقطات كواليس</span></div><div><b>1</b><span>كاميرا · جيمبال واحد</span></div>
+      <p>تصوير وإخراج ومونتاج: <b>حسام عاطف</b></p></div>
+  </div>
+  <div class="mk-bts"><div class="mk-stack"><figure class="mk-b"><video data-v="../assets/making2/b1.mp4" poster="../assets/making2/b1.jpg" muted loop playsinline preload="none"></video><figcaption>كواليس 01 · لقطة الكنبة</figcaption></figure><figure class="mk-b"><video data-v="../assets/making2/b2.mp4" poster="../assets/making2/b2.jpg" muted loop playsinline preload="none"></video><figcaption>كواليس 02 · مشية بالجيمبال</figcaption></figure></div>
+    <div class="mk-btsbar"><span class="lbl">الكواليس</span><div class="ticks"><span>01</span><span>02</span></div></div></div>
+  <span class="tech"><b>DEPTH 04B</b> · FINAL CUTS + BTS STACK IN DEPTH</span>
 </section>
 
 <!-- ===== 04C · COLOR: S-Log 3 → final look, revealed by a scroll-driven divider ===== -->
@@ -842,7 +865,7 @@ const words = $$('#say .w');
 /* every tile is a real reel playing (light 360p, 6-second loops). The two outer columns sit in the fog,
    so they stay as still frames to keep the page light. */
 // filmed reels mixed with reels made with AI (the ai-* ones get a thin gold frame)
-const clips = ['reel-n1','ai-studio','reel-royal','reel-n3','ai-omni','reel-golden','reel-n4','ai-motionsites','bts-studio','reel-n5','ai-motion','reel-camera','reel-n2','ai-picsart','bts-product','bts-setup','ai-skills','bts-lens'];
+const clips = ['reel-n1','ai-studio','reel-royal','reel-n3','ai-omni','reel-golden','reel-n4','ai-motionsites','bts-studio','reel-n5','ai-motion','reel-camera','reel-n2','ai-picsart','bts-product','bts-setup','ai-skills','bts-lens','reel-handwork','cod-latte','reel-build','cod-cheers','bts-hotel','cod-shaker'];
 const wg = $('#wallGrid');
 for (let c = 0; c < 7; c++) { const col = document.createElement('div'); col.className = 'col';
   for (let r = 0; r < 5; r++) { const n = clips[(c * 5 + r * 3) % clips.length];
@@ -921,7 +944,7 @@ ScrollTrigger.matchMedia({
     words.forEach((w, i) => w.classList.toggle('lit', clamp((p - .84) / .14, 0, 1) >= (i + 1) / words.length));
   };
   placeStory(0);
-  ScrollTrigger.create({ trigger: '#story', start: 'top top', end: '+=820%', pin: true, scrub: true, onUpdate: s => placeStory(s.progress) });
+  ScrollTrigger.create({ trigger: '#story', start: 'top top', end: '+=910%', pin: true, scrub: true, onUpdate: s => placeStory(s.progress) });
 
   // 04 · deck: the front card flies toward the camera, the next steps forward
   const cards = $$('#stack .card'), N = cards.length;
@@ -934,7 +957,7 @@ ScrollTrigger.matchMedia({
   placeDeck(0);
   ScrollTrigger.create({ trigger: '#work', start: 'top top', end: '+=' + N * 70 + '%', pin: true, scrub: true, onUpdate: s => placeDeck(s.progress * (N - 1)) });
 
-  initMaking(); // 04B · the making of (created here so pins stay in page order)
+  initMaking('making'); initMaking('making2'); // 04B · the making of (created here so pins stay in page order)
 
   // 05 · AI LAB
   //  0 → .38  the gold line wipes RAW into AI + CRAFT (the v2 slider), HUD labels light up
@@ -1002,8 +1025,8 @@ ScrollTrigger.matchMedia({
 
 
 // 04B · THE MAKING OF: BTS clips stack into depth like the story photos; the front clip plays
-function initMaking() {
-  const root = document.getElementById('making'), B = [...root.querySelectorAll('.mk-b')], T = [...root.querySelectorAll('#mkTicks span')];
+function initMaking(id) {
+  const root = document.getElementById(id), B = [...root.querySelectorAll('.mk-b')], T = [...root.querySelectorAll('.mk-btsbar .ticks span')];
   const V = B.map(f => f.querySelector('video')), N = B.length; let inView = false, cur = 0;
   const play = i => V.forEach((v, k) => { if ((k === i || innerWidth <= 900) && inView) { if (!v.src) v.src = v.dataset.v; v.play().catch(() => {}); } else v.pause(); });
   const place = p => {
@@ -1021,11 +1044,15 @@ function initMaking() {
   if (innerWidth > 900) {
     place(0);
     gsap.timeline({ scrollTrigger: { trigger: root, start: 'top top', end: '+=380%', pin: true, scrub: true, onUpdate: st => place(st.progress) } })
-      .fromTo('#making .mk-frame', { scale: .82, rotateY: 12, opacity: .4 }, { scale: 1, rotateY: 0, opacity: 1, duration: .12 }, 0)
-      .fromTo('#making .mk-facts > *', { opacity: 0, y: 20 }, { opacity: 1, y: 0, stagger: .02, duration: .06 }, .06)
+      .fromTo(root.querySelectorAll('.mk-frame'), { scale: .82, rotateY: 12, opacity: .4 }, { scale: 1, rotateY: 0, opacity: 1, duration: .12 }, 0)
+      .fromTo(root.querySelectorAll('.mk-facts > *'), { opacity: 0, y: 20 }, { opacity: 1, y: 0, stagger: .02, duration: .06 }, .06)
       .to({}, { duration: .001 }, 1);
   }
 }
+
+// 04 · deck cards with a playlist (COD: six films from one café) play them one after another
+document.querySelectorAll('video[data-list]').forEach(v => { const L = v.dataset.list.split(','); let k = 0;
+  v.addEventListener('ended', () => { k = (k + 1) % L.length; v.src = L[k]; v.play().catch(() => {}); }); });
 
 // 02 · CINEMA: two ultra-wide films play one after the other (food, then the Ferrari)
 (() => { const v = document.getElementById('cineVid'), list = ['../assets/cinema-wide.mp4', '../assets/cinema-wide2.mp4']; let k = 0;
@@ -1037,7 +1064,7 @@ gsap.fromTo('#color', { '--cut': '100%' }, { '--cut': '0%', ease: 'none', scroll
 // phone: story videos play when they scroll into view (desktop drives them from the pinned scene)
 if (innerWidth <= 900) { const vio = new IntersectionObserver(es => es.forEach(e => { const v = e.target;
     if (e.isIntersecting) { if (!v.src) v.src = v.dataset.v; v.play().catch(() => {}); } else v.pause(); }), { threshold: .35 });
-  document.querySelectorAll('#story .stp > video, #making .mk-b video').forEach(v => vio.observe(v)); }
+  document.querySelectorAll('#story .stp > video, .making .mk-b video').forEach(v => vio.observe(v)); }
 addEventListener('load', () => { ScrollTrigger.refresh(); placeBills(); });
 addEventListener('resize', placeBills);
 </script>
