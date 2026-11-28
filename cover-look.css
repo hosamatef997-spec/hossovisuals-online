@@ -161,3 +161,47 @@ body { position: relative; }
 .h3d .h3d-canvas { width: 100%; height: 100%; display: block; opacity: 0; animation: h3d-in 1.1s ease-out .05s forwards; }
 @keyframes h3d-in { to { opacity: 1; } }
 .h3d-on .cl-objs { opacity: 0; transition: opacity .6s ease; }
+
+/* ===================================================================================================================
+   HOSSO v3 look, 2026-11-28: every inner page now wears the new homepage's look (hossovisuals.online):
+   night navy #05080f, gold #d9b46a, a glass pill menu in the middle, gold hairlines instead of white glass rims.
+   Appended here so every page that loads cover-look.css gets it, with no change to the pages themselves.
+   =================================================================================================================== */
+:root {
+  --black: #05080f; --bg: #05080f; --deep: #05080f; --card: #0e1426; --border: rgba(217,180,106,.2);
+  --gold: #d9b46a; --gold-light: #f0d394; --gold-deep: #d9b46a; --on-gold: #16100a;
+  --text: #ece8df; --white: #ece8df; --ink: #ece8df; --muted: #9097a8;
+  --cl-champ: #d9b46a; --cl-navy: #16100a; --cl-ivory: #ece8df; --cl-muted: #9097a8; --cl-line: rgba(217,180,106,.2);
+  --g-fill: rgba(12,18,36,.62); --g-rim: rgba(217,180,106,.2);
+}
+body { background: radial-gradient(1200px 720px at 50% -90px, rgba(28,40,78,.55), rgba(28,40,78,0) 70%) no-repeat, radial-gradient(900px 600px at 85% 110%, rgba(217,180,106,.06), transparent 70%) no-repeat, #05080f !important; color: #ece8df; }
+::selection { background: #d9b46a; color: #16100a; }
+.cl-grid { background-image: linear-gradient(rgba(217,180,106,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(217,180,106,.045) 1px, transparent 1px); }
+
+/* menu: logo left, the links in one glass pill, «Let's talk» as a gold outline pill (same as the homepage) */
+nav#nav, nav#nav.solid { background: transparent !important; border: 0 !important; box-shadow: none !important;
+  -webkit-backdrop-filter: none !important; backdrop-filter: none !important; }
+nav#nav::before { display: none !important; }
+@media (min-width: 881px) {
+  nav#nav .nav-links { background: rgba(12,18,36,.55); border: 1px solid rgba(217,180,106,.18); border-radius: 999px; padding: 5px 8px; gap: 2px;
+    -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); }
+  nav#nav .nav-links a { padding: .5rem .95rem; border-radius: 999px; font-size: .86rem; letter-spacing: 0; color: #cfd3dd; opacity: 1; transition: .25s; }
+  nav#nav .nav-links a:hover { background: rgba(217,180,106,.12); color: #f0d394; }
+}
+nav#nav .nav-cta { border: 1px solid rgba(217,180,106,.6); color: #f0d394; background: rgba(12,18,36,.55); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); }
+nav#nav .nav-cta:hover { background: #d9b46a; color: #16100a; }
+
+/* buttons */
+.btn-gold { background: #d9b46a !important; color: #16100a !important; border-radius: 999px; }
+.btn-gold:hover { background: #f0d394 !important; box-shadow: 0 14px 34px rgba(217,180,106,.28); }
+.btn-outline { border-color: rgba(217,180,106,.45) !important; color: #f0d394 !important; border-radius: 999px; }
+.btn-outline:hover { background: rgba(217,180,106,.12); }
+
+/* panels: gold hairline rim instead of the white glass rim */
+.x-steps > li::before, .note::before, .x-pcard::before, .lib-grid a::before, .eps::before, .x-how::before, .x-style::before, .lk::before {
+  background: linear-gradient(145deg, rgba(217,180,106,.5), rgba(217,180,106,.1) 30%, rgba(217,180,106,0) 58%, rgba(217,180,106,.28)) !important; }
+.x-steps > li, .note, .x-pcard, .lib-grid a, .eps, .x-how, .x-style, .lk { box-shadow: 0 30px 70px rgba(0,0,0,.45) !important; }
+.lk:hover, .lib-grid a:hover { border-color: rgba(217,180,106,.55) !important; }
+.lk.main { background: #d9b46a !important; color: #16100a !important; }
+.x-steps .x-num { color: #d9b46a; }
+footer { border-top: 1px solid rgba(217,180,106,.18) !important; background: transparent; }
